@@ -17,6 +17,9 @@ public class levelup : MonoBehaviour
     [SerializeField] Text SPDText;
     [SerializeField] Text MAGText;
     [SerializeField] Text FreePointText;
+    public int MaxEXP;
+    [SerializeField] int EXP;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
