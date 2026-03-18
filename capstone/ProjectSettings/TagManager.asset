@@ -8,6 +8,7 @@ TagManager:
   - DEF
   - SPD
   - MAG
+  - ground
   layers:
   - Default
   - TransparentFX
