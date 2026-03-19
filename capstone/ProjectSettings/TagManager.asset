@@ -2,8 +2,18 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
+<<<<<<< HEAD
   serializedVersion: 2
   tags: []
+=======
+  serializedVersion: 3
+  tags:
+  - ATK
+  - DEF
+  - SPD
+  - MAG
+  - ground
+>>>>>>> 570aea5da2e9779e7e86c81aeee192306045c131
   layers:
   - Default
   - TransparentFX
