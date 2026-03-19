@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
+<<<<<<< HEAD
   productGUID: f743b9b1c554e5c4a812e8c3fb1a6a57
+=======
+  productGUID: 0b2672cb1ca07304d80d64b0fdd4ec8f
+>>>>>>> 213582fea33423d72ce5048329694c885786ca3a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -932,7 +936,7 @@ PlayerSettings:
   cloudProjectId: 777e1360-eab2-4236-9061-a4e14bb0a6a3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: capstone
   organizationId: kavinrajm2008
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
