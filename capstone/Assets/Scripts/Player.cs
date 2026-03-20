@@ -1,7 +1,8 @@
 using Unity.Multiplayer.Center.NetcodeForGameObjectsExample.DistributedAuthority;
 using UnityEngine;
+using Unity.Netcode;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehavior
 {
     [SerializeField] Animator ani;
     [SerializeField] float speed = 10f;
@@ -16,6 +17,10 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (IsOwner) { 
+            GetComponent<SpriteRenderer>().color
+        }
+
         rb = GetComponent<Rigidbody2D>();
     }
 
