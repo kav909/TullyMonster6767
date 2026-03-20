@@ -14,6 +14,9 @@ public class Player : NetworkBehavior
    // [SerializeField] GameObject starting3;
     public bool onetime = true;
     public float speeeeed = 2f;
+
+    //https://www.youtube.com/watch?v=_NLsWFgVX6E
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
