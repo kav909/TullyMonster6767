@@ -9,6 +9,10 @@ public class Interaction : MonoBehaviour
     [SerializeField] Text StateText;
     public bool interactable;
     [SerializeField] TextStorage storage;
+    [SerializeField] GameObject chest1;
+    [SerializeField] GameObject openChest1;
+    [SerializeField] GameObject chest2;
+    [SerializeField] GameObject openChest2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +45,10 @@ public class Interaction : MonoBehaviour
                 textWindow.SetActive(true);
                 StateText.text = storage.SignsLevel1();
                 StateText.enabled = true;
+            }
+            if (ConversationTab.tag == "Sign1")
+            {
+
             }
         }
     }

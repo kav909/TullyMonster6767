@@ -3020,6 +3020,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &373025613
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4471,6 +4475,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &414685572
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18274,6 +18282,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &538137919
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21297,6 +21309,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &548788495
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21559,6 +21575,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &588362705
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -31502,7 +31522,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1514283205}
+  - {fileID: 1830182239}
   - {fileID: 1881425137}
+  - {fileID: 1504441382}
   - {fileID: 948396641}
   - {fileID: 1346682804}
   - {fileID: 1786254999}
@@ -31726,6 +31748,10 @@ MonoBehaviour:
   StateText: {fileID: 248040074}
   interactable: 0
   storage: {fileID: 413451232}
+  chest1: {fileID: 0}
+  openChest1: {fileID: 0}
+  chest2: {fileID: 0}
+  openChest2: {fileID: 0}
 --- !u!60 &800937269
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -36858,6 +36884,90 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d86ec8825b7674a9736d1cb0cd98a2, type: 3}
+--- !u!1001 &1504441381
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 789488921}
+    m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_Name
+      value: PF Props - Chest 01 Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17b0c1ef334d17e4bbb74c4778001705, type: 3}
+--- !u!4 &1504441382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+    type: 3}
+  m_PrefabInstance: {fileID: 1504441381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1511659960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 9fb66d8c9d3b5194a82e9eed65a54afb,
@@ -39300,6 +39410,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1830182238
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 789488921}
+    m_Modifications:
+    - target: {fileID: 2055102311959635368, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_Name
+      value: PF Props - Chest 01 Open (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.80747
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.205463
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17b0c1ef334d17e4bbb74c4778001705, type: 3}
+--- !u!4 &1830182239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830182238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1833557611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7509736641193634087, guid: a0a66c9b152e801409fc26c4ca493d18,
@@ -40160,6 +40354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Props - Chest 01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 99597c7b4aa47494fb2b6061505735da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 99597c7b4aa47494fb2b6061505735da,
         type: 3}
