@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - SPD
+  - MAG
+  - DEF
+  - ATK
+  - ground
+  - Statue
+  - Stone Stele
+  - Chest1
+  - Chest2
+  - Door1
+  - Sign1
   layers:
   - Default
   - TransparentFX
