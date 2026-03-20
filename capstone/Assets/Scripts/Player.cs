@@ -1,4 +1,4 @@
-using Unity.Multiplayer.Center.NetcodeForGameObjectsExample.DistributedAuthority;
+/*using Unity.Multiplayer.Center.NetcodeForGameObjectsExample.DistributedAuthority;
 using UnityEngine;
 using Unity.Netcode;
 
@@ -17,9 +17,9 @@ public class Player : NetworkBehavior
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (IsOwner) { 
-            GetComponent<SpriteRenderer>().color
-        }
+       /// if (IsOwner) { 
+       //     GetComponent<SpriteRenderer>().color
+       // }
 
         rb = GetComponent<Rigidbody2D>();
     }
@@ -27,7 +27,7 @@ public class Player : NetworkBehavior
     // Update is called once per frame
     void Update()
     {
-        if (true /*!man.GetComponent<manager>().end*/)
+        if (true /*!man.GetComponent<manager>().end)
         {
             rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, rb.linearVelocity.y);
 
@@ -89,7 +89,7 @@ public class Player : NetworkBehavior
                 Destroy(starting3, 10f);
                 Destroy(starting2, 10f);
                 Destroy(starting, 10f);
-            }*/
+            }
         }
 
     }
@@ -98,7 +98,7 @@ public class Player : NetworkBehavior
     {
         bool isGrounded = false;
 
-        Vector2 castFrom = new Vector2(transform.position.x, transform.position.y/* - GetComponent<PolygonCollider2D>().bounds.size.y / 2 - .01f*/);
+        Vector2 castFrom = new Vector2(transform.position.x, transform.position.y/* - GetComponent<PolygonCollider2D>().bounds.size.y / 2 - .01f);
         RaycastHit2D[] hit = Physics2D.RaycastAll(castFrom, Vector2.down, 5f);
         Debug.DrawRay(castFrom, (Vector2.down * .5f), Color.yellow, 2f, true);
 
@@ -109,3 +109,4 @@ public class Player : NetworkBehavior
         return isGrounded;
     }
 }
+*/
