@@ -24,18 +24,22 @@ public class TestingScript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+           // Debug.Log("go Left");
             moveX = -1f;
         }
         if (Input.GetKey(KeyCode.D))
         {
+           // Debug.Log("go Right");
             moveX = 1f;
         }
         if (Input.GetKey(KeyCode.W))
         {
+           // Debug.Log("go Up");
             moveY = 1f;
         }
         if (Input.GetKey(KeyCode.S))
         {
+           // Debug.Log("go Down");
             moveY = -1f;
         }
         Vector3 movement = new Vector3(moveX, moveY, 0f);

@@ -14,9 +14,17 @@ public class TextStorage : MonoBehaviour
     {
         
     }
-    public string StatueTextLevel1()
+    public string StatueTextLevel1NoKey()
+    {
+        return "“Where steel once sang, silence now reigns.\r\nThe worthy are gathered in Eirene, cradled by the gods in endless rest.\r\nDisturb not their slumber, for it was dearly won.” \r Continue(C)";
+    }
+    public string StatueTextLevel1HaveKey()
     {
         return "“Where steel once sang, silence now reigns.\r\nThe worthy are gathered in Eirene, cradled by the gods in endless rest.\r\nDisturb not their slumber, for it was dearly won.”";
+    }
+    public string ReciveKey()
+    {
+        return "You've recived: Key * 1";
     }
     public string StoneSteleLevel1()
     {

@@ -15,6 +15,10 @@ TagManager:
   - Chest2
   - Door1
   - Sign1
+  - Chest1Range
+  - Chest2Range
+  - Door
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
