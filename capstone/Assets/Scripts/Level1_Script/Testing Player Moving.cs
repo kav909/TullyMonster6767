@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class TestingScript : MonoBehaviour
+public class TestingScript : NetworkBehaviour
 {
     [SerializeField] GameObject Player;
     Rigidbody2D rb;
@@ -8,6 +9,10 @@ public class TestingScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (IsOwner)
+        {
+            GetComponent<SpriteRenderer>().color = Color.coral;
+        }
         speed = 5f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -15,6 +20,7 @@ public class TestingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner) return;
     }
     void FixedUpdate()
     {
