@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
     [SerializeField] GameObject ConversationTab;
+    [SerializeField] TestingScript TestingScript;
     [SerializeField] Text Text;
     [SerializeField] GameObject textWindow;
     [SerializeField] Text StateText;
@@ -15,8 +16,10 @@ public class Interaction : MonoBehaviour
     public bool haveKey;
     public bool talking;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
+        textWindow = TestingScript.getTheTextWindow();
         talking = false;
         haveKey = false;
         ConversationTab.SetActive(false);

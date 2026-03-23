@@ -4,6 +4,7 @@ using UnityEngine;
 public class TestingScript : NetworkBehaviour
 {
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject TheTextWindow;
     Rigidbody2D rb;
     public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -50,5 +51,8 @@ public class TestingScript : NetworkBehaviour
         }
         Vector3 movement = new Vector3(moveX, moveY, 0f);
         transform.Translate(movement * speed * Time.deltaTime);
+    }
+    public GameObject getTheTextWindow(){
+        return TheTextWindow;
     }
 }
