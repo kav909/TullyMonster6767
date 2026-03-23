@@ -15,29 +15,38 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void play() {
-
+    public void play()
+    {
         Debug.Log("play");
-        SceneManager.LoadScene(2);
-
+        var networkConnect = FindObjectOfType<NetworkConnect>();
+        if (networkConnect != null)
+        {
+            networkConnect.PlayGame();
+        }
+        else
+        {
+            // not connected, load normally
+            SceneManager.LoadScene("shop");
+        }
     }
+
+
 
     public void sound() {
 
         Debug.Log("sound");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene( 1);
     }
 
     public void Options() {
         Debug.Log("Options");
+        SceneManager.LoadScene(2);
     }
 
     public void Back() {
         Debug.Log("back");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+        SceneManager.LoadScene(0);
     }
 
-    public void startGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
 }
