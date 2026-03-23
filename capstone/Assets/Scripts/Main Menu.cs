@@ -36,4 +36,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log("back");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
     }
+
+    public void startGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
