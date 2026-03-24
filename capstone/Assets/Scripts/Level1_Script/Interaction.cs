@@ -92,7 +92,7 @@ public class Interaction : MonoBehaviour
             LockedDoor.unLock();
         }
     }
-  /*  */
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Chest.IsChest1Taken() || Chest.IsChest2Taken())

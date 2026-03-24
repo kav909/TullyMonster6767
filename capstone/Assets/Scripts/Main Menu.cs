@@ -18,16 +18,9 @@ public class MainMenu : MonoBehaviour
     public void play()
     {
         Debug.Log("play");
-        var networkConnect = FindObjectOfType<NetworkConnect>();
-        if (networkConnect != null)
-        {
-            networkConnect.PlayGame();
-        }
-        else
-        {
-            // not connected, load normally
-           SceneManager.LoadScene("shop");
-        }
+        
+           SceneManager.LoadScene("Level 1");
+        
     }
 
 
