@@ -1,4 +1,4 @@
-using Unity.Services.Lobbies.Models;
+/*using Unity.Services.Lobbies.Models;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -92,7 +92,7 @@ public class Interaction : MonoBehaviour
             LockedDoor.unLock();
         }
     }
-  /*  */
+  /*  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Chest.IsChest1Taken() || Chest.IsChest2Taken())
@@ -125,3 +125,4 @@ public class Interaction : MonoBehaviour
         return interactable;
     }
 }
+*/

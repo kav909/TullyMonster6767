@@ -30,7 +30,7 @@ public class NetworkConnect : MonoBehaviour
         await UnityServices.InitializeAsync();
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
-        //JoinOrCreate();
+        JoinOrCreate();
     }
 
     void Start()
@@ -41,14 +41,14 @@ public class NetworkConnect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* heartbeatTimer += Time.deltaTime;
+         heartbeatTimer += Time.deltaTime;
          if (heartbeatTimer > 15) {
              heartbeatTimer -= 15;
 
              if(currentLobby != null && currentLobby.HostId == AuthenticationService.Instance.PlayerId) {
                  LobbyService.Instance.SendHeartbeatPingAsync(currentLobby.Id);
              }
-         }*/
+         }
     }
 
     public async void JoinOrCreate()
@@ -78,14 +78,14 @@ public class NetworkConnect : MonoBehaviour
         Debug.Log("Jion Code: " + newJoinCode);
         text.text = "Join Code: " + newJoinCode;
         transport.SetHostRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port, allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
-        //currentLobby = await LobbyService.Instance.CreateLobbyAsync("Lobby Name", maxConnections);
-        // CreateLobbyOptions lobbyOptions = new CreateLobbyOptions(); 
-        //lobbyOptions.IsPrivate =false;
-        //lobbyOptions.Data = new  Dictionary<string, DataObject>();
-        //DataObject dataObject = new DataObject(DataObject.VisibilityOptions.Public, newJoinCode);
-        // lobbyOptions.Data.Add("JOIN_CODE", dataObject);
+        currentLobby = await LobbyService.Instance.CreateLobbyAsync("Lobby Name", maxConnections);
+         CreateLobbyOptions lobbyOptions = new CreateLobbyOptions(); 
+        lobbyOptions.IsPrivate =false;
+        lobbyOptions.Data = new  Dictionary<string, DataObject>();
+        DataObject dataObject = new DataObject(DataObject.VisibilityOptions.Public, newJoinCode);
+         lobbyOptions.Data.Add("JOIN_CODE", dataObject);
 
-        // currentLobby = await Lobbies.Instance.CreateLobbyAsync("Lobby Name", maxConnections, lobbyOptions);
+         currentLobby = await Lobbies.Instance.CreateLobbyAsync("Lobby Name", maxConnections, lobbyOptions);
 
         NetworkManager.Singleton.StartHost();
     }
@@ -93,11 +93,11 @@ public class NetworkConnect : MonoBehaviour
     public async void Join()
     {
 
-        // currentLobby = await Lobbies.Instance.QuickJoinLobbyAsync();
+         currentLobby = await Lobbies.Instance.QuickJoinLobbyAsync();
 
-        //string relayJoinCode = currentLobby.Data["JOIN_CODE"].Value;
-        //joinCode = joinCodeInput.text;
-        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+        string relayJoinCode = currentLobby.Data["JOIN_CODE"].Value;
+        
+        JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(relayJoinCode);
 
         transport.SetClientRelayData(allocation.RelayServer.IpV4, (ushort)allocation.RelayServer.Port, allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData, allocation.HostConnectionData);
 
