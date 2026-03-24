@@ -5,11 +5,18 @@ public class TestingScript : NetworkBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject TheTextWindow;
+    [SerializeField] CameraMove cameraMove;
     Rigidbody2D rb;
     public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        CameraMove cam = FindObjectOfType<CameraMove>();
+
+        if (cam != null)
+        {
+            cam.SetTransformTarget(transform);
+        }
         if (IsOwner)
         {
             GetComponent<SpriteRenderer>().color = Color.coral;

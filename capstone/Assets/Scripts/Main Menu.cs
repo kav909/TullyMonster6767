@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
         else
         {
             // not connected, load normally
-            SceneManager.LoadScene("shop");
+           SceneManager.LoadScene("shop");
         }
     }
 

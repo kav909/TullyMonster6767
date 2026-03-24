@@ -1,11 +1,13 @@
-/*using UnityEditor.Tilemaps;
+using Unity.Services.Lobbies.Models;
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
     [SerializeField] GameObject ConversationTab;
-    [SerializeField] TestingScript TestingScript;
+    //[SerializeField] TestingScript TestingScript;
     [SerializeField] Text Text;
     [SerializeField] GameObject textWindow;
     [SerializeField] Text StateText;
@@ -19,7 +21,7 @@ public class Interaction : MonoBehaviour
 
     void Start()
     {
-        textWindow = TestingScript.getTheTextWindow();
+        //textWindow = TestingScript.getTheTextWindow();
         talking = false;
         haveKey = false;
         ConversationTab.SetActive(false);
@@ -90,6 +92,7 @@ public class Interaction : MonoBehaviour
             LockedDoor.unLock();
         }
     }
+  /*  */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Chest.IsChest1Taken() || Chest.IsChest2Taken())
@@ -121,4 +124,4 @@ public class Interaction : MonoBehaviour
     {
         return interactable;
     }
-}*/
+}
