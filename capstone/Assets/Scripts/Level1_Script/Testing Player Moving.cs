@@ -12,10 +12,14 @@ public class TestingScript : NetworkBehaviour
     void Start()
     {
         CameraMove cam = FindObjectOfType<CameraMove>();
-
+        Monsterfollow target = FindObjectOfType<Monsterfollow>();
         if (cam != null)
         {
             cam.SetTransformTarget(transform);
+        }
+        if (target != null)
+        {
+            target.SetFollowTarget(gameObject);
         }
         if (IsOwner)
         {

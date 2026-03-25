@@ -35815,8 +35815,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5192535088006955960, guid: 2494195e2bd53cf43b981078afbe4d85,
         type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1177469715}
+    - targetCorrespondingSourceObject: {fileID: 5192535088006955960, guid: 2494195e2bd53cf43b981078afbe4d85,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1177469713}
+    - targetCorrespondingSourceObject: {fileID: 5192535088006955960, guid: 2494195e2bd53cf43b981078afbe4d85,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1177469717}
   m_SourcePrefab: {fileID: 100100000, guid: 2494195e2bd53cf43b981078afbe4d85, type: 3}
 --- !u!4 &1176994689 stripped
 Transform:
@@ -35957,6 +35965,49 @@ PolygonCollider2D:
       - {x: -0.125, y: -1.390625}
       - {x: -0.109375, y: -1.265625}
   m_UseDelaunayMesh: 0
+--- !u!114 &1177469715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177469709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2320991d1388bce41ba3a1eadd497720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRange: 3
+  playerLocation: {fileID: 0}
+  speed: 5
+  inRange: 0
+--- !u!50 &1177469717
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177469709}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.01
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &1184065907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39537,6 +39588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634533046}
   - component: {fileID: 1634533048}
+  - component: {fileID: 1634533049}
   - component: {fileID: 1634533047}
   m_Layer: 0
   m_Name: Circle
@@ -39683,6 +39735,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1634533049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634533045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f1ec8fe04a2e44fa33dde8304670de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: {fileID: 1634533045}
+  Monsterfollow: {fileID: 1177469715}
 --- !u!4 &1635992163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3679833107318686742, guid: c6d86ec8825b7674a9736d1cb0cd98a2,
@@ -43889,6 +43955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928986728665537579, guid: cae4bb324e8d07e41a8055c58e5250a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
