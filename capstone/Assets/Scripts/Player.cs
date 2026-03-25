@@ -1,5 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
+using System.Collections.Generic;
+using Unity.Services.Lobbies.Models;
 
 public class Player : NetworkBehaviour
 {
@@ -13,6 +15,8 @@ public class Player : NetworkBehaviour
    // [SerializeField] GameObject starting3;
     public bool onetime = true;
     public float speeeeed = 2f;
+
+    public Dictionary<string, PlayerDataObject> Data { get; internal set; }
 
     //https://www.youtube.com/watch?v=_NLsWFgVX6E
 
