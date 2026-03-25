@@ -32,6 +32,7 @@ public class TestingScript : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.linearVelocity = Vector3.zero;
         if (!IsOwner) return;
     }
     void FixedUpdate()
