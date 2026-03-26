@@ -39928,6 +39928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxConnections: 20
   transport: {fileID: 0}
+  playerPrefab: {fileID: 0}
 --- !u!114 &1664743023
 MonoBehaviour:
   m_ObjectHideFlags: 0

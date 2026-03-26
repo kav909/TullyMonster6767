@@ -19,6 +19,20 @@ TagManager:
   - Chest2Range
   - Door
   - LockedDoor
+  - Head
+  - Front
+  - Body
+  - Pants
+  - Glove
+  - Shoe
+  - Weapon
+  - HeadItem
+  - FrontItem
+  - BodyItem
+  - PantsItem
+  - GloveItem
+  - ShoeItem
+  - WeaponItem
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7314831453368187695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5402692369646068547}
+  - component: {fileID: 1877481278146618155}
+  m_Layer: 0
+  m_Name: ItemStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5402692369646068547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314831453368187695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.87067, y: -0.04842, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877481278146618155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314831453368187695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179661c21e40c634fa4ddd52cd0ace33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 8621879749087587687, guid: 50c51c817cc6381488a121e8f406f0a8, type: 3}
+  Bow: {fileID: 215272254792812798, guid: 2afedd729fe09ad44b6ca60ac28d0db1, type: 3}
+  GreatAxe: {fileID: 7624513980651714369, guid: 5a9d038c9d0d6da49a33e98a1dcf952a,
+    type: 3}
+  Mace: {fileID: 3596547580076828766, guid: 7532dcda391d439418910463ec0e5851, type: 3}
+  Shield: {fileID: 1027125106889221817, guid: e23f198d4da87c3499dd73b0bd8207ff, type: 3}
+  Axe: {fileID: 6865826832110157348, guid: dddb382d1ddee2a47be2554dc322d20d, type: 3}
+  PriestStaff: {fileID: 477475846541341425, guid: 1cf678c158799864fb643a77be354603,
+    type: 3}
+  MageStaff: {fileID: 530120260178354956, guid: e7353d10aec41154a924baf46ec24ec9,
+    type: 3}
+  LongSword: {fileID: 2936149269073717160, guid: 29584f4602b0bf64583b74ce36347f4b,
+    type: 3}
+  cloth1: {fileID: 7092484586319230396, guid: 94aa9505716010641ae7bec6cdbc7b64, type: 3}
+  cloth2: {fileID: 5514842072488939438, guid: 21150acf98ec53748b9053d6c6952cac, type: 3}
+  cloth3: {fileID: 2666405318114942758, guid: 08be885e65b7a3b40b743e90220879b2, type: 3}
+  Front1: {fileID: 7319897893297361394, guid: 09e81b53f5fe19e46b3deded1738e46d, type: 3}
+  Front2: {fileID: 4449819409820410953, guid: c3cd2e4f4c9c71d4ba259d196d1044c6, type: 3}
+  Front3: {fileID: 5632881616742360326, guid: 888de43270a75674ab78fd603d39dd57, type: 3}
+  Front4: {fileID: 8976188197518696085, guid: 82abb12a4c10610409534bdbc1799f76, type: 3}
+  Head1: {fileID: 6371644083075813940, guid: c8a2c77d21e19134b8c2e71a1bb24ebe, type: 3}
+  Head2: {fileID: 8694663402651362954, guid: fd4ca783bdddce548b14b5ee47c481a9, type: 3}
+  Head3: {fileID: 603845794369749171, guid: 3bacf0e6978cbdf438b835865fad69cb, type: 3}
+  glove1: {fileID: 7884954721885230046, guid: 300f4e6bda7aafb47a612f48ea9f158b, type: 3}
+  glove2: {fileID: 5424879858799121674, guid: 3b0c354ff41757a45867bfd2c7fbb757, type: 3}
+  glove3: {fileID: 3900130198840064220, guid: e77e68883b2917c43864dc0f73be2c23, type: 3}
+  Shoe1: {fileID: 2465989092571206492, guid: 6cf98e236c6446842bb79a2987a75568, type: 3}
+  Shoe2: {fileID: 485689553014502862, guid: c4efc6d0e598e9d48b14413e3b8742c5, type: 3}
+  Shoe3: {fileID: 8752192618048045064, guid: 07cdcbff5612c814e89578f729063a20, type: 3}
+  Pants1: {fileID: 8090193804205701965, guid: 4e876f178f05d5444bb79214ab7f60c6, type: 3}
+  Pants2: {fileID: 4821190721578172572, guid: f5d5839ddc3041a479c37286c3e9f201, type: 3}
+  Pants3: {fileID: 3424921305766638078, guid: 312abe8e593d8d64eac1af6cbd408c39, type: 3}
+  Elit_cloth1: {fileID: 7008977444590726977, guid: f62b0b7e5d9765b459fe894060274b66,
+    type: 3}
+  Elit_cloth2: {fileID: 7808293116098739613, guid: 0945348db69a72544b9116e372386cff,
+    type: 3}
+  Elit_cloth3: {fileID: 185366840689865889, guid: 502b8d2313b4d7b44ad73068a54c0972,
+    type: 3}
+  Elit_Front1: {fileID: 1056177487853314471, guid: e3c6a7f5e81051f4c98457ba1a88e19a,
+    type: 3}
+  Elit_Front2: {fileID: 117113086753038601, guid: f2cdacb0fdbe2c2488d7e8c93be5b6b2,
+    type: 3}
+  Elit_Front3: {fileID: 574965468818864881, guid: babda1d92a2b0d6448eebbf92fad1541,
+    type: 3}
+  Elit_Front4: {fileID: 4134715884363150503, guid: 0ab02e67892e7a04a8a4b2fe1a49ccf1,
+    type: 3}
+  Elit_Head1: {fileID: 1722822626923538702, guid: e7cd876a445f48544b537c05ebe62cf8,
+    type: 3}
+  Elit_Head2: {fileID: 1476650385079876524, guid: fa21ae55500f41240bdde116a4237e30,
+    type: 3}
+  Elit_Head3: {fileID: 3890657346941342153, guid: abc07113a94fe8c46b50d1fa330b22ba,
+    type: 3}
+  Elit_glove1: {fileID: 8013077539545855089, guid: 25bedd92f3303bd4f8dd44fa9c667c79,
+    type: 3}
+  Elit_glove2: {fileID: 6198087473883405521, guid: 9a50fdd9c84ddab44b5f8b415d294ba7,
+    type: 3}
+  Elit_glove3: {fileID: 4094085385216045714, guid: 11e9ba252b230b4498069438819956d6,
+    type: 3}
+  Elit_Shoe1: {fileID: 6276579512954700808, guid: d92d3c8b301c4d245ae64025a6e0ff9b,
+    type: 3}
+  Elit_Shoe2: {fileID: 8122061462641160872, guid: 025190e9df723a141b7b05e29688539a,
+    type: 3}
+  Elit_Shoe3: {fileID: 3102499025035722764, guid: afdd9ee816ae8eb4f992137aea6a1a47,
+    type: 3}
+  Elit_Pants1: {fileID: 3396003289034314358, guid: 601575449f2a0814a974532e834804c5,
+    type: 3}
+  Elit_Pants2: {fileID: 264176854178366540, guid: a5ebb465ac937824eb0041fa0abe08d6,
+    type: 3}
+  Elit_Pants3: {fileID: 3204418674617321653, guid: 6cc3931d3f1a0464aa05e206c557fd99,
+    type: 3}

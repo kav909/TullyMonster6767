@@ -20,7 +20,6 @@ public class levelup : MonoBehaviour
     public float MaxEXP;
     [SerializeField] GameObject EXPBar;
     [SerializeField] float EXP;
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,17 +28,17 @@ public class levelup : MonoBehaviour
         SPDNum = 1;
         MAGNum = 1;
         FreePointNum = 5;
+        //EXPBar.transform.position += Vector3.left * 80f;
     }
 
     // Update is called once per frame
     void Update()
     {
         float EXPPercent = (EXP/MaxEXP);
-        Debug.Log(EXPPercent);
         Vector3 currentScale = EXPBar.transform.localScale;
-        currentScale.x = 3.5f*EXPPercent;
+        currentScale.x = 3.5f * EXPPercent;
         EXPBar.transform.localScale = currentScale;
-        EXPBar.transform.position = Vector3.left * -(EXPPercent * 2.7f);
+        EXPBar.transform.position = Vector3.left * (-3.5f * (EXPPercent / 2f) + 8.5f) + Vector3.up * 4.4f;
         ATKText.text = "" + ATKNum;
         DEFText.text = "" + DEFNum;
         SPDText.text = "" + SPDNum;
