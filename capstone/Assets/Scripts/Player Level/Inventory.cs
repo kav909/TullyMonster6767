@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     GameObject[] PantsItem = new GameObject[12];
     GameObject[] GloveItem = new GameObject[12];
     GameObject[] ShoeItem = new GameObject[12];
-    GameObject[] WeaponItem = new GameObject[12];
+    GameObject[] WeaponItem;
     [SerializeField] ItemStorage ItemStorage;
     [SerializeField] GameObject InventoryTab;
     [SerializeField] GameObject item1;
@@ -27,7 +27,8 @@ public class Inventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InventoryTab.SetActive(false);
+        WeaponItem = new GameObject[12];
+        //InventoryTab.SetActive(false);
         WeaponItem[0] = ItemStorage.getWeaponSlot()[0];
         Debug.Log(WeaponItem[0] + "start ");
         //Debug.Log(" " + WeaponItem[1]);
@@ -42,9 +43,12 @@ public class Inventory : MonoBehaviour
     {
         if (gameObject.tag == "Weapon")
         {
-            InventoryTab.SetActive(true);
-            Debug.Log(ItemStorage.getWeaponSlot()[0]);
-            Debug.Log(WeaponItem[0]);
+            //InventoryTab.SetActive(true);
+            //Debug.Log(ItemStorage.getWeaponSlot()[0]);
+            //Debug.Log("384484384" +WeaponItem[0]);
+            if(WeaponItem[0] == null){
+                Debug.Log(WeaponItem[0] + "is Null");
+            }
             ApplyWeapon();
         }
     }
