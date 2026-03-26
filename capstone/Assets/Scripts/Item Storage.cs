@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemStorage : MonoBehaviour
@@ -75,7 +76,8 @@ public class ItemStorage : MonoBehaviour
         //Debug.Log(PantsSlot.Length);
         //Debug.Log(GloveSlot.Length);
         //Debug.Log(ShoeSlot.Length);
-        //Debug.Log(WeaponSlot.Length);
+        Debug.Log(WeaponSlot.Length);
+       // Debug.Log(WeaponSlot.);
     }
 
     // Update is called once per frame
