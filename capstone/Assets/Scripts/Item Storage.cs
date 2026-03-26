@@ -52,13 +52,13 @@ public class ItemStorage : MonoBehaviour
     [SerializeField] GameObject Elit_Pants2;
     [SerializeField] GameObject Elit_Pants3;
 
-    GameObject[] HeadSlot;
-    GameObject[] FrontSlot;
-    GameObject[] BodySlot;
-    GameObject[] PantsSlot;
-    GameObject[] GloveSlot;
-    GameObject[] ShoeSlot;
-    GameObject[] WeaponSlot;
+    GameObject[] HeadSlot = new GameObject[6];
+    GameObject[] FrontSlot = new GameObject[8];
+    GameObject[] BodySlot = new GameObject[6];
+    GameObject[] PantsSlot = new GameObject[6];
+    GameObject[] GloveSlot = new GameObject[6];
+    GameObject[] ShoeSlot = new GameObject[6];
+    GameObject[] WeaponSlot = new GameObject[9];
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -69,13 +69,13 @@ public class ItemStorage : MonoBehaviour
         GloveSlot = GameObject.FindGameObjectsWithTag("Glove");
         ShoeSlot = GameObject.FindGameObjectsWithTag("Shoe");
         WeaponSlot = GameObject.FindGameObjectsWithTag("Weapon");
-        Debug.Log(HeadSlot.Length);
-        Debug.Log(FrontSlot.Length);
-        Debug.Log(BodySlot.Length);
-        Debug.Log(PantsSlot.Length);
-        Debug.Log(GloveSlot.Length);
-        Debug.Log(ShoeSlot.Length);
-        Debug.Log(WeaponSlot.Length);
+        //Debug.Log(HeadSlot.Length);
+        //Debug.Log(FrontSlot.Length);
+        //Debug.Log(BodySlot.Length);
+        //Debug.Log(PantsSlot.Length);
+        //Debug.Log(GloveSlot.Length);
+        //Debug.Log(ShoeSlot.Length);
+        //Debug.Log(WeaponSlot.Length);
     }
 
     // Update is called once per frame
