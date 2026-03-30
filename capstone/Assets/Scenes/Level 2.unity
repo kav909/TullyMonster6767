@@ -3655,6 +3655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest2
       objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 99597c7b4aa47494fb2b6061505735da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Chest2
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 99597c7b4aa47494fb2b6061505735da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5776,7 +5781,7 @@ PrefabInstance:
     - target: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8,
         type: 3}
       propertyPath: m_TagString
-      value: Door
+      value: Door1
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 6a057178eb028e94fb93bf39262ea3e8,
         type: 3}
@@ -24494,6 +24499,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest1
       objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 99597c7b4aa47494fb2b6061505735da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Chest1
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 99597c7b4aa47494fb2b6061505735da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24742,7 +24752,7 @@ GameObject:
   - component: {fileID: 787237654}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35258,6 +35268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Props - Road Sign 01 E
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: b823debd04fd63f4d8e579210fe0ff20,
+        type: 3}
+      propertyPath: m_TagString
+      value: Sign1
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: b823debd04fd63f4d8e579210fe0ff20,
         type: 3}
