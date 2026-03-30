@@ -1,4 +1,4 @@
-using Unity.Services.Lobbies.Models;
+/*using Unity.Services.Lobbies.Models;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -125,3 +125,4 @@ public class Interaction : MonoBehaviour
         return interactable;
     }
 }
+*/
