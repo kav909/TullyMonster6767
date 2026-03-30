@@ -18,8 +18,8 @@ public class MainMenu : MonoBehaviour
     public void play()
     {
         Debug.Log("play");
-         FindObjectOfType<NetworkConnect>().PlayGame();
-        //SceneManager.LoadScene("Level 1");
+        
+       SceneManager.LoadScene("Level 1");
         
     }
 
