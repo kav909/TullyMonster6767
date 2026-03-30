@@ -24,7 +24,7 @@ public class NetworkConnect : MonoBehaviour
 
     public async Task CreateRelay(string lobbyId)
     {
-        Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections, "us-central1");
+        Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
         string newJoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 
         // saves relay code in lobby
