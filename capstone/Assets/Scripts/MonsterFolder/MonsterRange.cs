@@ -4,6 +4,7 @@ public class MonsterRange : MonoBehaviour
 {
     [SerializeField] GameObject Range;
     [SerializeField] Monsterfollow Monsterfollow;
+    [SerializeField] SkeletonFacing SkeletonFacing;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +21,7 @@ public class MonsterRange : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Monsterfollow.setInRange(true);
+            SkeletonFacing.setIsAttacking(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -27,6 +29,7 @@ public class MonsterRange : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Monsterfollow.setInRange(false);
+            SkeletonFacing.setIsAttacking(false);
         }
     }
 }
