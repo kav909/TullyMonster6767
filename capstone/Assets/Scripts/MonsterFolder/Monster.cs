@@ -2,7 +2,7 @@
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Monsterfollow : MonoBehaviour
+public class Monster : MonoBehaviour
 {
     [SerializeField] float AttackRange;
     [SerializeField] GameObject playerLocation;
