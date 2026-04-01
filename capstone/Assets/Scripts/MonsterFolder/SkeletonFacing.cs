@@ -35,20 +35,20 @@ public class SkeletonFacing : MonoBehaviour
     public void setIsAttacking(bool IsA){
         IsAttacking = IsA;
     }
-    public void setIsAttacking(bool NoA){
+   /* public void setIsAttacking(bool NoA){
         IsAttacking = NoA;
-    }
+    }*/
     public void whichWayToFace(){
-        if(displacementX < 0 && Math.abs(displacementX) > Math.abs(displacementY)){
+        if(displacementX < 0 && Mathf.Abs(displacementX) > Mathf.Abs(displacementY)){
             facing = "left";
         }
-        if(displacementX > 0 && Math.abs(displacementX) > Math.abs(displacementY)){
+        if(displacementX > 0 && Mathf.Abs(displacementX) > Mathf.Abs(displacementY)){
             facing = "right";
         }
-        if(displacementY > 0 && Math.abs(displacementX) < Math.abs(displacementY)){
+        if(displacementY > 0 && Mathf.Abs(displacementX) < Mathf.Abs(displacementY)){
             facing = "up";
         }
-        if(displacementY < 0 && Math.abs(displacementX) < Math.abs(displacementY)){
+        if(displacementY < 0 && Mathf.Abs(displacementX) < Mathf.Abs(displacementY)){
             facing = "down";
         }
     }

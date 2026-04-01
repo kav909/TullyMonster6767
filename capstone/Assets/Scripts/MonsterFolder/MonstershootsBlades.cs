@@ -9,42 +9,59 @@ public class MonstershootsBlades : MonoBehaviour
     [SerializeField] List<GameObject> blades;
     public GameObject player;
     Rigidbody2D rb;
+    Animator ani;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) < 5)
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) < 15)
         {
-            int directionX = player.transform.position.x - transform.position.x > 0 ? 1 : -1;
-            int directionY = player.transform.position.y - transform.position.y > 0 ? 1 : -1;
-
+            float directionX = player.transform.position.x - transform.position.x > 0 ? 1 : -1;
+            float directionY = player.transform.position.y - transform.position.y > 0 ? 1 : -1;
             rb.linearVelocity = new Vector2(directionX * 3f, directionY * 3f);
-
-            if (directionX == -1)
+            /* if (directionX == -1)
+             {
+                 GetComponent<SpriteRenderer>().flipX = true;
+                 ani.SetBool("moving", false);
+             }
+             else
+             {
+                 GetComponent<SpriteRenderer>().flipX = false;
+             }*/
+            if (Mathf.Abs(directionX) > Mathf.Abs(directionY))
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                ani.SetFloat("moveX", directionX);
+                ani.SetFloat("moveY", 0);
             }
             else
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                ani.SetFloat("moveX", 0);
+                ani.SetFloat("moveY", directionY);
             }
+
+            ani.SetBool("moving", true);
         }
         else
         {
             rb.linearVelocity = Vector2.zero;
+            ani.SetBool("moving", false);
+            ani.SetFloat("moveX", 0);
+            ani.SetFloat("moveY", 0);
         }
 
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("1 pressed");
+            ani.SetTrigger("attack");
             UseWeapon();
         }
 
@@ -55,7 +72,7 @@ public class MonstershootsBlades : MonoBehaviour
         int dir = player.GetComponent<SpriteRenderer>().flipX ? -1 : 1;
 
         for (int i = 0; i < blades.Count; i++) {
-            GameObject a = Instantiate(blades[i], new Vector2(mob.GetComponent<Transform>().position.x + 1 * dir*i, player.GetComponent<Transform>().position.y + 5), player.GetComponent<Transform>().rotation);
+            GameObject a = Instantiate(blades[i], new Vector2(mob.GetComponent<Transform>().position.x + 1 * dir*i, mob.GetComponent<Transform>().position.y + 5), player.GetComponent<Transform>().rotation);
             Vector3 direction = player.GetComponent<Transform>().position - a.GetComponent<Transform>().position;
             float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)-90;
             Debug.Log(angle);

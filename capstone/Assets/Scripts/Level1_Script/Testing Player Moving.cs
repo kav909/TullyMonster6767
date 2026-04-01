@@ -1,7 +1,7 @@
-using Unity.Netcode;
+
 using UnityEngine;
 
-public class TestingScript : NetworkBehaviour
+public class TestingScript : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject TheTextWindow;
@@ -12,19 +12,16 @@ public class TestingScript : NetworkBehaviour
     void Start()
     {
         CameraMove cam = FindObjectOfType<CameraMove>();
-        Monsterfollow target = FindObjectOfType<Monsterfollow>();
+       // Monsterfollow target = FindObjectOfType<Monsterfollow>();
         if (cam != null)
         {
             cam.SetTransformTarget(transform);
         }
-        if (target != null)
-        {
-            target.SetFollowTarget(gameObject);
-        }
-        if (IsOwner)
-        {
-            GetComponent<SpriteRenderer>().color = Color.coral;
-        }
+       // if (target != null)
+       // {
+       //     target.SetFollowTarget(gameObject);
+        //}
+        
         speed = 5f;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -33,7 +30,7 @@ public class TestingScript : NetworkBehaviour
     void Update()
     {
         rb.linearVelocity = Vector3.zero;
-        if (!IsOwner) return;
+       
     }
     void FixedUpdate()
     {
