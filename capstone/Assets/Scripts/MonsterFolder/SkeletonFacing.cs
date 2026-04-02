@@ -3,6 +3,7 @@ using UnityEngine;
 public class SkeletonFacing : MonoBehaviour
 {
     [SerializeField] Animator Animator;
+    [SerializeField] Monsterfollow Monsterfollow;
     [SerializeField] GameObject Player;
     Vector3 PlayerPosition;
     Vector3 CurrnetPosition;
@@ -40,16 +41,34 @@ public class SkeletonFacing : MonoBehaviour
     }*/
     public void whichWayToFace(){
         if(displacementX < 0 && Mathf.Abs(displacementX) > Mathf.Abs(displacementY)){
+            changeDir();
+            Monsterfollow.stopforaSec();
+            Animator.SetBool("WalkLeft", true);
             facing = "left";
         }
         if(displacementX > 0 && Mathf.Abs(displacementX) > Mathf.Abs(displacementY)){
+            changeDir();
+            Monsterfollow.stopforaSec();
             facing = "right";
+            Animator.SetBool("WalkRight", true);
         }
         if(displacementY > 0 && Mathf.Abs(displacementX) < Mathf.Abs(displacementY)){
+            changeDir();
+            Monsterfollow.stopforaSec();
             facing = "up";
+            Animator.SetBool("WalkUp", true);
         }
         if(displacementY < 0 && Mathf.Abs(displacementX) < Mathf.Abs(displacementY)){
+            changeDir();
+            Monsterfollow.stopforaSec();
             facing = "down";
+            Animator.SetBool("WalkDown", true);
         }
+    }
+    public void changeDir(){
+        Animator.SetBool("WalkLeft", false);
+        Animator.SetBool("WalkRight", false);
+        Animator.SetBool("WalkUp", false);
+        Animator.SetBool("WalkDown", false);
     }
 }

@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 
 public class MonsterRange : MonoBehaviour
 {
@@ -32,4 +32,4 @@ public class MonsterRange : MonoBehaviour
             SkeletonFacing.setIsAttacking(false);
         }
     }
-}*/
+}

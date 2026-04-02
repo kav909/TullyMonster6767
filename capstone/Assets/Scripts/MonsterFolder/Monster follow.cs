@@ -1,4 +1,4 @@
-/*using Unity.VisualScripting;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -9,6 +9,7 @@ public class Monsterfollow : MonoBehaviour
     [SerializeField] float speed;
     public bool inRange;
     Rigidbody2D rb;
+    Vector3 direction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,18 +22,18 @@ public class Monsterfollow : MonoBehaviour
     {
         if (inRange)
         {
-            if ((playerLocation.transform.position.x - gameObject.transform.position.x) > 0)
+            /*if ((playerLocation.transform.position.x - gameObject.transform.position.x) > 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
             else
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
+            }*/
             if (Vector3.Distance(gameObject.transform.position, playerLocation.transform.position) > AttackRange)
             {
-                Debug.Log("Need to move to the player");
-                Vector3 direction = (playerLocation.transform.position - gameObject.transform.position).normalized;
+                //Debug.Log("Need to move to the player");
+                direction = (playerLocation.transform.position - gameObject.transform.position).normalized;
                 rb.linearVelocity = direction * speed;
             }
         }
@@ -46,6 +47,11 @@ public class Monsterfollow : MonoBehaviour
     {
         inRange = isInRange;
     }
-
+    public void stopforaSec(){
+        speed = 0f;
+        Invoke("hold", 3f);//------------------Problem
+    }
+    public void hold(){
+        speed = 1.5f;
+    }
 }
-*/
