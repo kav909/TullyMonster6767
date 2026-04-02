@@ -102,10 +102,5 @@ public class MonstershootsBlades : MonoBehaviour
 
         }
 
-        
-
-               // Destroy(a, 5f);
-        
-
     }
 }
