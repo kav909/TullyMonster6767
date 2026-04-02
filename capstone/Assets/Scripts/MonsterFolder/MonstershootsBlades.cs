@@ -27,44 +27,62 @@ public class MonstershootsBlades : MonoBehaviour
             float directionX = player.transform.position.x - transform.position.x > 0 ? 1 : -1;
             float directionY = player.transform.position.y - transform.position.y > 0 ? 1 : -1;
             rb.linearVelocity = new Vector2(directionX * 3f, directionY * 3f);
-            /* if (directionX == -1)
-             {
-                 GetComponent<SpriteRenderer>().flipX = true;
-                 ani.SetBool("moving", false);
-             }
-             else
-             {
-                 GetComponent<SpriteRenderer>().flipX = false;
-             }*/
-            if (Mathf.Abs(directionX) > Mathf.Abs(directionY))
+           
+
+            if (Mathf.Abs(player.transform.position.y - transform.position.y) > Mathf.Abs(player.transform.position.x - transform.position.x))
             {
-                ani.SetFloat("moveX", directionX);
-                ani.SetFloat("moveY", 0);
+                if (directionX > 0 && Mathf.Abs(rb.linearVelocityX) > 1)
+                {
+                    ani.SetBool("right", true);
+                    ani.SetBool("left", false);
+                }
+                else if (directionX < 0 && Mathf.Abs(rb.linearVelocityX) > 1)
+                {
+                    ani.SetBool("right", false);
+                    ani.SetBool("left", true);
+                }
+                else
+                {
+                    ani.SetBool("up", false);
+                    ani.SetBool("down", false);
+                    ani.SetBool("right", false);
+                    ani.SetBool("left", false);
+                    rb.linearVelocity = Vector2.zero;
+                }
             }
-            else
+            else {
+
+                if (directionY < 0 && Mathf.Abs(rb.linearVelocityY) > 1)
+                {
+                    ani.SetBool("up", false);
+                    ani.SetBool("down", true);
+                }
+                else if (directionY > 0 && Mathf.Abs(rb.linearVelocityY) > 1)
+                {
+                    ani.SetBool("up", true);
+                    ani.SetBool("down", false);
+                }
+                else
+                {
+                    ani.SetBool("up", false);
+                    ani.SetBool("down", false);
+                    ani.SetBool("right", false);
+                    ani.SetBool("left", false);
+                    rb.linearVelocity = Vector2.zero;
+                }
+
+            }
+
+            Debug.Log(rb.linearVelocityX + ", " + rb.linearVelocityY);
+
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                ani.SetFloat("moveX", 0);
-                ani.SetFloat("moveY", directionY);
+                Debug.Log("1 pressed");
+                ani.SetTrigger("attack");
+                UseWeapon();
             }
-
-            ani.SetBool("moving", true);
         }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-            ani.SetBool("moving", false);
-            ani.SetFloat("moveX", 0);
-            ani.SetFloat("moveY", 0);
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("1 pressed");
-            ani.SetTrigger("attack");
-            UseWeapon();
-        }
-
     }
 
     public void UseWeapon()
@@ -78,6 +96,8 @@ public class MonstershootsBlades : MonoBehaviour
             Debug.Log(angle);
             a.transform.rotation = Quaternion.Euler(0, 0, angle);
             a.GetComponent<Rigidbody2D>().linearVelocity= direction* .5f;
+
+            Destroy(a, 3f);
 
 
         }
