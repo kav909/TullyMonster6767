@@ -1,0 +1,148 @@
+using System.Collections;
+using UnityEngine;
+using System.Collections.Generic;
+
+public class monster2script : MonoBehaviour
+{
+    [SerializeField] GameObject swordUp;
+    [SerializeField] GameObject swordDown;
+    [SerializeField] GameObject swordLeft;
+    [SerializeField] GameObject swordRight;
+
+    [SerializeField] List<GameObject> fireballs;
+
+    public GameObject player;
+    Rigidbody2D rb;
+    Animator ani;
+
+    public float speed = 3f;
+    public float attackRange = 10f;
+
+    string currentDir = "down";
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        ani = GetComponent<Animator>();
+
+        swordUp.SetActive(false);
+        swordDown.SetActive(false);
+        swordLeft.SetActive(false);
+        swordRight.SetActive(false);
+    }
+
+    void Update()
+    {
+        Vector2 direction = player.transform.position - transform.position;
+
+        if (direction.magnitude < attackRange)
+        {
+            MoveToPlayer(direction);
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                rb.linearVelocity = Vector2.zero;
+                ani.SetTrigger("attack");
+                StartCoroutine(SwordAttack());
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ani.SetTrigger("attack2");
+                FireAttack();
+            }
+        }
+    }
+
+    private void MoveToPlayer(Vector2 direction)
+    {
+        Vector2 moveDir = direction.normalized;
+        rb.linearVelocity = moveDir * speed;
+
+        float absX = Mathf.Abs(direction.x);
+        float absY = Mathf.Abs(direction.y);
+
+        ani.SetBool("up", false);
+        ani.SetBool("down", false);
+        ani.SetBool("left", false);
+        ani.SetBool("right", false);
+
+        if (absX > absY)
+        {
+            if (direction.x > 0)
+            {
+                ani.SetBool("right", true);
+                currentDir = "right";
+            }
+            else
+            {
+                ani.SetBool("left", true);
+                currentDir = "left";
+            }
+        }
+        else
+        {
+            if (direction.y > 0)
+            {
+                ani.SetBool("up", true);
+                currentDir = "up";
+            }
+            else
+            {
+                ani.SetBool("down", true);
+                currentDir = "down";
+            }
+        }
+    }
+
+    private IEnumerator SwordAttack()
+    {
+        yield return new WaitForSeconds(0.25f);
+
+        EnableSword();
+
+        yield return new WaitForSeconds(0.2f);
+
+        swordUp.SetActive(false);
+        swordDown.SetActive(false);
+        swordLeft.SetActive(false);
+        swordRight.SetActive(false);
+    }
+
+    private void EnableSword()
+    {
+        swordUp.SetActive(false);
+        swordDown.SetActive(false);
+        swordLeft.SetActive(false);
+        swordRight.SetActive(false);
+
+        if (currentDir == "up") 
+            swordUp.SetActive(true);
+        if (currentDir == "down") 
+            swordDown.SetActive(true);
+        if (currentDir == "left") 
+            swordLeft.SetActive(true);
+        if (currentDir == "right") 
+            swordRight.SetActive(true);
+    }
+
+
+
+    void FireAttack()
+    {
+       
+
+        for (int i = 0; i < fireballs.Count; i++)
+        {
+            float offsetX = (i - (fireballs.Count - 1) / 2f) * 1.1f;
+
+            Vector3 spawnPos = transform.position + new Vector3(offsetX, 2f, 0);
+            GameObject fire = Instantiate(fireballs[i],spawnPos, Quaternion.identity);
+            Vector2 dir = (player.transform.position - fire.transform.position).normalized;
+            fire.GetComponent<Rigidbody2D>().linearVelocity = dir * 2f;
+
+            Destroy(fire, 3f);
+        }
+    }
+}

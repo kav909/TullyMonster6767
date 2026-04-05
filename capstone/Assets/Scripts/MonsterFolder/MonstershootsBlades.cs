@@ -1,106 +1,130 @@
-using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class MonstershootsBlades : MonoBehaviour
 {
     [SerializeField] GameObject mob;
+    [SerializeField] GameObject dmgfield;
     [SerializeField] List<GameObject> blades;
+
     public GameObject player;
+
     Rigidbody2D rb;
     Animator ani;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public float speed = 3f;
+    public float attackRange = 10f;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
-
+        dmgfield.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) < 15)
+        
+        Vector2 direction = player.transform.position - transform.position;
+
+        if (direction.magnitude < attackRange)
         {
-            float directionX = player.transform.position.x - transform.position.x > 0 ? 1 : -1;
-            float directionY = player.transform.position.y - transform.position.y > 0 ? 1 : -1;
-            rb.linearVelocity = new Vector2(directionX * 3f, directionY * 3f);
-           
+            MoveToPlayer(direction);
 
-            if (Mathf.Abs(player.transform.position.y - transform.position.y) > Mathf.Abs(player.transform.position.x - transform.position.x))
-            {
-                if (directionX > 0 && Mathf.Abs(rb.linearVelocityX) > 1)
-                {
-                    ani.SetBool("right", true);
-                    ani.SetBool("left", false);
-                }
-                else if (directionX < 0 && Mathf.Abs(rb.linearVelocityX) > 1)
-                {
-                    ani.SetBool("right", false);
-                    ani.SetBool("left", true);
-                }
-                else
-                {
-                    ani.SetBool("up", false);
-                    ani.SetBool("down", false);
-                    ani.SetBool("right", false);
-                    ani.SetBool("left", false);
-                    rb.linearVelocity = Vector2.zero;
-                }
-            }
-            else {
-
-                if (directionY < 0 && Mathf.Abs(rb.linearVelocityY) > 1)
-                {
-                    ani.SetBool("up", false);
-                    ani.SetBool("down", true);
-                }
-                else if (directionY > 0 && Mathf.Abs(rb.linearVelocityY) > 1)
-                {
-                    ani.SetBool("up", true);
-                    ani.SetBool("down", false);
-                }
-                else
-                {
-                    ani.SetBool("up", false);
-                    ani.SetBool("down", false);
-                    ani.SetBool("right", false);
-                    ani.SetBool("left", false);
-                    rb.linearVelocity = Vector2.zero;
-                }
-
-            }
-
-            Debug.Log(rb.linearVelocityX + ", " + rb.linearVelocityY);
-
-
+            
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Debug.Log("1 pressed");
                 ani.SetTrigger("attack");
                 UseWeapon();
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                rb.linearVelocity = Vector2.zero;
+                ani.SetTrigger("attack2");
+                StartCoroutine(UseSwipe());
+            }
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            ani.SetBool("up", false);
+            ani.SetBool("down", false);
+            ani.SetBool("left", false);
+            ani.SetBool("right", false);
         }
     }
 
+   private void MoveToPlayer(Vector2 direction)
+    {
+        Vector2 moveDir = direction.normalized;
+        rb.linearVelocity = moveDir * speed;
+
+        float absX = Mathf.Abs(direction.x);
+        float absY = Mathf.Abs(direction.y);
+
+        ani.SetBool("up", false);
+        ani.SetBool("down", false);
+        ani.SetBool("left", false);
+        ani.SetBool("right", false);
+
+        if (absX > absY)
+        {
+            if (direction.x > 0)
+                ani.SetBool("right", true);
+            else
+                ani.SetBool("left", true);
+        }
+        else
+        {
+            if (direction.y > 0)
+                ani.SetBool("up", true);
+            else
+                ani.SetBool("down", true);
+        }
+    }
+
+
+
     public void UseWeapon()
     {
-        int dir = player.GetComponent<SpriteRenderer>().flipX ? -1 : 1;
+        Vector2 baseDirection = (player.transform.position - transform.position).normalized;
+        float centerAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
+        float spread = 30f; 
 
-        for (int i = 0; i < blades.Count; i++) {
-            GameObject a = Instantiate(blades[i], new Vector2(mob.GetComponent<Transform>().position.x + 1 * dir*i, mob.GetComponent<Transform>().position.y + 5), player.GetComponent<Transform>().rotation);
-            Vector3 direction = player.GetComponent<Transform>().position - a.GetComponent<Transform>().position;
-            float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)-90;
-            Debug.Log(angle);
-            a.transform.rotation = Quaternion.Euler(0, 0, angle);
-            a.GetComponent<Rigidbody2D>().linearVelocity= direction* .5f;
+        for (int i = 0; i < blades.Count; i++)
+        {
+            float angleOffset = 0;
 
-            Destroy(a, 3f);
+            if (blades.Count > 1)
+                angleOffset = Mathf.Lerp(-spread, spread, (float)i / (blades.Count - 1));
 
+            float finalAngle = centerAngle + angleOffset;
 
+            float rad = finalAngle * Mathf.Deg2Rad;
+
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+
+            GameObject blade = Instantiate(blades[i],transform.position + (Vector3)(dir * 1f),Quaternion.identity);
+
+            blade.transform.rotation = Quaternion.Euler(0, 0, finalAngle - 90);
+
+            blade.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
+
+            Destroy(blade, 3f);
         }
+    }
 
+    private IEnumerator UseSwipe()
+    {
+        yield return new WaitForSeconds(0.3f); 
+
+        dmgfield.SetActive(true);
+
+        yield return new WaitForSeconds(0.2f); 
+
+        dmgfield.SetActive(false);
     }
 }
