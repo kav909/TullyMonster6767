@@ -13,8 +13,8 @@ public class MonstershootsBlades : MonoBehaviour
     Rigidbody2D rb;
     Animator ani;
 
-    public float speed = 3f;
-    public float attackRange = 10f;
+    [SerializeField] float speed = 3f;
+    [SerializeField] float attackRange = 10f;
 
     void Start()
     {
@@ -102,17 +102,12 @@ public class MonstershootsBlades : MonoBehaviour
                 angleOffset = Mathf.Lerp(-spread, spread, (float)i / (blades.Count - 1));
 
             float finalAngle = centerAngle + angleOffset;
-
             float rad = finalAngle * Mathf.Deg2Rad;
 
             Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
-
             GameObject blade = Instantiate(blades[i],transform.position + (Vector3)(dir * 1f),Quaternion.identity);
-
             blade.transform.rotation = Quaternion.Euler(0, 0, finalAngle - 90);
-
             blade.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
-
             Destroy(blade, 3f);
         }
     }
@@ -120,11 +115,8 @@ public class MonstershootsBlades : MonoBehaviour
     private IEnumerator UseSwipe()
     {
         yield return new WaitForSeconds(0.3f); 
-
         dmgfield.SetActive(true);
-
         yield return new WaitForSeconds(0.2f); 
-
         dmgfield.SetActive(false);
     }
 }

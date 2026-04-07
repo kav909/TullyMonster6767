@@ -8,9 +8,9 @@ public class simpleplayer : MonoBehaviour
 
     Rigidbody2D rb;
 
-    public float speed = 5f;
-    public int hp = 100;
-    public int damage = 10;
+    [SerializeField] float speed = 5f;
+    [SerializeField] int hp = 100;
+    [SerializeField] int damage = 10;
 
     Vector2 movement;
 

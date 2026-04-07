@@ -15,8 +15,8 @@ public class monster2script : MonoBehaviour
     Rigidbody2D rb;
     Animator ani;
 
-    public float speed = 3f;
-    public float attackRange = 10f;
+    [SerializeField] float speed = 3f;
+    [SerializeField] float attackRange = 10f;
 
     string currentDir = "down";
 
@@ -129,7 +129,7 @@ public class monster2script : MonoBehaviour
 
 
 
-    void FireAttack()
+   private void FireAttack()
     {
        
 
@@ -140,7 +140,7 @@ public class monster2script : MonoBehaviour
             Vector3 spawnPos = transform.position + new Vector3(offsetX, 2f, 0);
             GameObject fire = Instantiate(fireballs[i],spawnPos, Quaternion.identity);
             Vector2 dir = (player.transform.position - fire.transform.position).normalized;
-            fire.GetComponent<Rigidbody2D>().linearVelocity = dir * 2f;
+            fire.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
 
             Destroy(fire, 3f);
         }
