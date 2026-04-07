@@ -44189,6 +44189,11 @@ PrefabInstance:
       propertyPath: TheTextWindow
       value: 
       objectReference: {fileID: 1268089965}
+    - target: {fileID: 1728252908794572141, guid: cae4bb324e8d07e41a8055c58e5250a5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5588087593801119617, guid: cae4bb324e8d07e41a8055c58e5250a5,
         type: 3}
       propertyPath: m_LocalPosition.x

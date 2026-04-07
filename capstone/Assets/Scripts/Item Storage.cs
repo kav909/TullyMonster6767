@@ -53,23 +53,26 @@ public class ItemStorage : MonoBehaviour
     [SerializeField] GameObject Elit_Pants2;
     [SerializeField] GameObject Elit_Pants3;
 
-    GameObject[] HeadSlot = new GameObject[6];
-    GameObject[] FrontSlot = new GameObject[8];
-    GameObject[] BodySlot = new GameObject[6];
-    GameObject[] PantsSlot = new GameObject[6];
-    GameObject[] GloveSlot = new GameObject[6];
-    GameObject[] ShoeSlot = new GameObject[6];
-    GameObject[] WeaponSlot = new GameObject[9];
+    public GameObject[] HeadSlot;// = new GameObject[6];
+    public GameObject[] FrontSlot;// = new GameObject[8];
+    public GameObject[] BodySlot;// = new GameObject[6];
+    public GameObject[] PantsSlot;// = new GameObject[6];
+    public GameObject[] GloveSlot;// = new GameObject[6];
+    public GameObject[] ShoeSlot;// = new GameObject[6];
+    public GameObject[] WeaponSlot;// = new GameObject[9];
+    //public GameObject[] allSlot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        //Debug.Log("Head count: " + HeadSlot.Length);
         HeadSlot = GameObject.FindGameObjectsWithTag("Head");
         FrontSlot = GameObject.FindGameObjectsWithTag("Front");
         BodySlot = GameObject.FindGameObjectsWithTag("Body");
         PantsSlot = GameObject.FindGameObjectsWithTag("Pants");
         GloveSlot = GameObject.FindGameObjectsWithTag("Glove");
         ShoeSlot = GameObject.FindGameObjectsWithTag("Shoe");
-        WeaponSlot = GameObject.FindGameObjectsWithTag("Weapon");
+         WeaponSlot = GameObject.FindGameObjectsWithTag("Weapon");
         //Debug.Log(HeadSlot.Length);
         //Debug.Log(FrontSlot.Length);
         //Debug.Log(BodySlot.Length);
@@ -77,8 +80,16 @@ public class ItemStorage : MonoBehaviour
         //Debug.Log(GloveSlot.Length);
         //Debug.Log(ShoeSlot.Length);
         //Debug.Log(WeaponSlot.Length);
-       // Debug.Log(WeaponSlot.);
-
+        // Debug.Log(WeaponSlot.);
+        /*WeaponSlot[0] = sword;
+        WeaponSlot[1] = Bow;
+        WeaponSlot[2] = GreatAxe;
+        WeaponSlot[3] = Mace;
+        WeaponSlot[4] = Shield;
+        WeaponSlot[5] = Axe;
+        WeaponSlot[6] = PriestStaff;
+        WeaponSlot[7] = MageStaff;
+        WeaponSlot[8] = LongSword;*/
     }
 
     // Update is called once per frame
@@ -114,5 +125,37 @@ public class ItemStorage : MonoBehaviour
     {
         return WeaponSlot;
     }
+    
+    /*public void undoSelect()
+    {
+        for (int i = 0; i < HeadSlot.Length; i++)
+        {
+            HeadSlot[i].is;
+        }
+        for (int i = 0; i < FrontSlot.Length; i++)
+        {
+            FrontSlot[i].GetComponent<AddEquipment>().unselect();
+        }
+        for (int i = 0; i < BodySlot.Length; i++)
+        {
+            BodySlot[i].GetComponent<AddEquipment>().unselect();
+        }
+        for (int i = 0; i < PantsSlot.Length; i++)
+        {
+            PantsSlot[i].GetComponent<AddEquipment>().unselect();
+        }
+        for (int i = 0; i < GloveSlot.Length; i++)
+        {
+            GloveSlot[i].GetComponent<AddEquipment>().unselect();
+        }
+        for (int i = 0; i < ShoeSlot.Length; i++)
+        {
+            ShoeSlot[i].GetComponent<AddEquipment>().unselect();
+        }
+        for (int i = 0; i < WeaponSlot.Length; i++)
+        {
+            WeaponSlot[i].GetComponent<AddEquipment>().unselect();
+        }
+    }*/
 }
 
