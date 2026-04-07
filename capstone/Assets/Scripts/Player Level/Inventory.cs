@@ -23,47 +23,54 @@ public class Inventory : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!containEquipment)
-        {
-            if (gameObject.tag == "Weapon")
+       // if (!containEquipment)
+        //{
+            if (gameObject.tag == "WeaponItem")
             {
+                Debug.Log("weapon");
                 InventoryTab.SetActive(true);
                 equip.ApplyWeapon();
             }
-            if (gameObject.tag == "Head")
+            if (gameObject.tag == "HeadItem")
             {
+                Debug.Log("head");
                 InventoryTab.SetActive(true);
                 equip.ApplyHead();
             }
-            if (gameObject.tag == "Front")
+            if (gameObject.tag == "FrontItem")
             {
+                Debug.Log("front");
                 InventoryTab.SetActive(true);
                 equip.ApplyFront();
             }
-            if (gameObject.tag == "Body")
+            if (gameObject.tag == "BodyItem")
             {
+                Debug.Log("body");
                 InventoryTab.SetActive(true);
                 equip.ApplyBody();
             }
-            if (gameObject.tag == "Pants")
+            if (gameObject.tag == "PantsItem")
             {
+                Debug.Log("pants");
                 InventoryTab.SetActive(true);
                 equip.ApplyPants();
             }
-            if (gameObject.tag == "Glove")
+            if (gameObject.tag == "GloveItem")
             {
+                Debug.Log("glove");
                 InventoryTab.SetActive(true);
                 equip.ApplyGlove();
             }
-            if (gameObject.tag == "Shoe")
+            if (gameObject.tag == "ShoeItem")
             {
+                Debug.Log("shoe");
                 InventoryTab.SetActive(true);
                 equip.ApplyShoe();
             }
-        }
-        else
+        //}
+       /* else
         {
-            /*if (gameObject.tag == "Weapon")
+            if (gameObject.tag == "Weapon")
             {
                 
             }
@@ -96,8 +103,8 @@ public class Inventory : MonoBehaviour
             {
                 InventoryTab.SetActive(true);
                 equip.ApplyShoe();
-            }*/
-        }
+            }
+        }*/
     }
     public void isEquiped(bool ISit)
     {
