@@ -85,8 +85,7 @@ public class Equip : MonoBehaviour
         {
             if (WeaponItem[i] != null)
             {
-                //Debug.Log(itemArray[i]);
-                //Debug.Log(itemArray[i].transform.position);
+                WeaponItem[i].GetComponent<AddEquipment>().undoSelect();
                 WeaponItem[i].transform.position = itemArray[i].transform.position;
                 //equipedWeapon = WeaponItem[i];
                 //WeaponItem[i] = null;
@@ -101,6 +100,7 @@ public class Equip : MonoBehaviour
         {
             if (HeadItem[i] != null)
             {
+                HeadItem[i].GetComponent<AddEquipment>().undoSelect();
                 HeadItem[i].transform.position = itemArray[i].transform.position;
                 //equipedHead = HeadItem[i];
                 //HeadItem[i] = null;
@@ -115,6 +115,7 @@ public class Equip : MonoBehaviour
         {
             if (FrontItem[i] != null)
             {
+                FrontItem[i].GetComponent<AddEquipment>().undoSelect();
                 FrontItem[i].transform.position = itemArray[i].transform.position;
                 //equipedFront = FrontItem[i];
                 //FrontItem[i] = null;
@@ -129,6 +130,7 @@ public class Equip : MonoBehaviour
         {
             if (BodyItem[i] != null)
             {
+                BodyItem[i].GetComponent<AddEquipment>().undoSelect();
                 BodyItem[i].transform.position = itemArray[i].transform.position;
                 //equipedBody = BodyItem[i];
                 //BodyItem[i] = null;
@@ -143,6 +145,7 @@ public class Equip : MonoBehaviour
         {
             if (PantsItem[i] != null)
             {
+                PantsItem[i].GetComponent<AddEquipment>().undoSelect();
                 PantsItem[i].transform.position = itemArray[i].transform.position;
                 //equipedPants = PantsItem[i];
                 //PantsItem[i] = null;
@@ -157,6 +160,7 @@ public class Equip : MonoBehaviour
         {
             if (GloveItem[i] != null)
             {
+                GloveItem[i].GetComponent<AddEquipment>().undoSelect();
                 GloveItem[i].transform.position = itemArray[i].transform.position;
                 //equipedGlove = GloveItem[i];
                 //GloveItem[i] = null;
@@ -172,6 +176,7 @@ public class Equip : MonoBehaviour
             //Debug.Log("Shoe Items are: " + ShoeItem[i]);
             if (ShoeItem[i] != null)
             {
+                ShoeItem[i].GetComponent<AddEquipment>().undoSelect();
                 ShoeItem[i].transform.position = itemArray[i].transform.position;
                 //equipedShoe = ShoeItem[i];
                 //ShoeItem[i] = null;
@@ -184,42 +189,54 @@ public class Equip : MonoBehaviour
         {//&& !WeaponItem[i].GetComponent<AddEquipment>().getSelect()
             if (WeaponItem[i] != null )
             {
-                WeaponItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!WeaponItem[i].GetComponent<AddEquipment>().getSelect()){
+                    WeaponItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < HeadItem.Length; i++)
         {
             if (HeadItem[i] != null)
             {
-                HeadItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!HeadItem[i].GetComponent<AddEquipment>().getSelect()){
+                    HeadItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < FrontItem.Length; i++)
         {
             if (FrontItem[i] != null)
             {
-                FrontItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!FrontItem[i].GetComponent<AddEquipment>().getSelect()){
+                    FrontItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < BodyItem.Length; i++)
         {
             if (BodyItem[i] != null)
             {
-                BodyItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!BodyItem[i].GetComponent<AddEquipment>().getSelect()){
+                    BodyItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < PantsItem.Length; i++)
         {
             if (PantsItem[i] != null)
             {
-                PantsItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!PantsItem[i].GetComponent<AddEquipment>().getSelect()){
+                    PantsItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < GloveItem.Length; i++)
         {
             if (GloveItem[i] != null)
             {
-                GloveItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!GloveItem[i].GetComponent<AddEquipment>().getSelect()){
+                    GloveItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
         for (int i = 0; i < ShoeItem.Length; i++)
@@ -227,7 +244,9 @@ public class Equip : MonoBehaviour
             // !ShoeItem[i].GetComponent<AddEquipment>().getSelect()
             if (ShoeItem[i] != null)
             {
-                ShoeItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                if(!ShoeItem[i].GetComponent<AddEquipment>().getSelect()){
+                    ShoeItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
         }
     }

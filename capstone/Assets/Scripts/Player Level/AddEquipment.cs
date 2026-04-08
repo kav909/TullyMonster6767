@@ -4,6 +4,10 @@ using UnityEngine;
 public class AddEquipment : MonoBehaviour
 {
     public bool isSelecting;
+    public int AddATK;
+    public int AddDEF;
+    public int AddSPD;
+    public int AddMAG;
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Equip Equip;
     [SerializeField] GameObject weaponSlot;
