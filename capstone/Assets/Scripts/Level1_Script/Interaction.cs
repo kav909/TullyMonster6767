@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
+    [SerializeField] Equip equip;
+    [SerializeField] GameObject lootEquipment;
     [SerializeField] GameObject ConversationTab;
     //[SerializeField] TestingScript TestingScript;
     [SerializeField] Text Text;
@@ -82,6 +84,10 @@ public class Interaction : MonoBehaviour
             if (ConversationTab.tag == "Chest2")
             {
                 Chest.OpenChest("Chest2");
+            }
+            if (ConversationTab.tag == "PickUpEquipment")
+            {
+                equip.pickUpFindCatagory(lootEquipment);
             }
         }
         if (talking && Input.GetKeyDown(KeyCode.C))

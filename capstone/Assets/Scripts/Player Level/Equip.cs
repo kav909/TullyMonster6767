@@ -298,5 +298,29 @@ public class Equip : MonoBehaviour
     {
         item.transform.position = position.transform.position;
     }
-    
+    public void pickUpFindCatagory(GameObject equipment){
+        Debug.Log("a");
+        if(equipment.tag == "Weapon"){
+            for(int i = 0; i < ItemStorage.getWeaponSlot().Length; i++){
+                if(equipment == ItemStorage.getWeaponSlot()[i]){
+                    Debug.Log("the open index is " + findOpenWeaponIndex());
+                    Debug.Log("b");
+                    WeaponItem[findOpenWeaponIndex()] = equipment;
+                }
+            }
+        }
+    }
+    public int findOpenWeaponIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < WeaponItem.Length; i++){
+            Debug.Log("c");
+            if(WeaponItem[i] == null){
+                Debug.Log("d");
+                Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
 }

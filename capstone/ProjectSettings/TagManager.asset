@@ -35,6 +35,7 @@ TagManager:
   - WeaponItem
   - dmg
   - objects
+  - PickUpEquipment
   layers:
   - Default
   - TransparentFX
