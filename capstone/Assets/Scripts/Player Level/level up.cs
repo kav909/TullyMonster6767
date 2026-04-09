@@ -23,10 +23,10 @@ public class levelup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ATKNum = 1;
-        DEFNum = 1;
-        SPDNum = 1;
-        MAGNum = 1;
+        ATKNum = 5;
+        DEFNum = 5;
+        SPDNum = 5;
+        MAGNum = 5;
         FreePointNum = 5;
         //EXPBar.transform.position += Vector3.left * 80f;
     }
@@ -68,5 +68,37 @@ public class levelup : MonoBehaviour
     public int freePointCount()
     {
         return FreePointNum;
+    }
+    public void equipATK(int point)
+    {
+        ATKNum += point;
+    }
+    public void equipDEF(int point)
+    {
+        DEFNum += point;
+    }
+    public void equipSPD(int point)
+    {
+        SPDNum += point;
+    }
+    public void equipMAG(int point)
+    {
+        MAGNum += point;
+    }
+    public void unequipATK(int point)
+    {
+        ATKNum -= point;
+    }
+    public void unequipDEF(int point)
+    {
+        DEFNum -= point;
+    }
+    public void unequipSPD(int point)
+    {
+        SPDNum -= point;
+    }
+    public void unequipMAG(int point)
+    {
+        MAGNum -= point;
     }
 }

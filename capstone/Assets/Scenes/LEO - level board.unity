@@ -351,12 +351,12 @@ PrefabInstance:
     - target: {fileID: 5186955979392520179, guid: babda1d92a2b0d6448eebbf92fad1541,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 5186955979392520179, guid: babda1d92a2b0d6448eebbf92fad1541,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.98
       objectReference: {fileID: 0}
     - target: {fileID: 5186955979392520179, guid: babda1d92a2b0d6448eebbf92fad1541,
         type: 3}
@@ -529,12 +529,12 @@ PrefabInstance:
     - target: {fileID: 3026931192225392397, guid: 888de43270a75674ab78fd603d39dd57,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.56
       objectReference: {fileID: 0}
     - target: {fileID: 3026931192225392397, guid: 888de43270a75674ab78fd603d39dd57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.96
       objectReference: {fileID: 0}
     - target: {fileID: 3026931192225392397, guid: 888de43270a75674ab78fd603d39dd57,
         type: 3}
@@ -636,12 +636,12 @@ PrefabInstance:
     - target: {fileID: 4729720126351965165, guid: f2cdacb0fdbe2c2488d7e8c93be5b6b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 4729720126351965165, guid: f2cdacb0fdbe2c2488d7e8c93be5b6b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.32
       objectReference: {fileID: 0}
     - target: {fileID: 4729720126351965165, guid: f2cdacb0fdbe2c2488d7e8c93be5b6b2,
         type: 3}
@@ -825,12 +825,12 @@ PrefabInstance:
     - target: {fileID: 8854171008985902380, guid: e77e68883b2917c43864dc0f73be2c23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 8854171008985902380, guid: e77e68883b2917c43864dc0f73be2c23,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.33
       objectReference: {fileID: 0}
     - target: {fileID: 8854171008985902380, guid: e77e68883b2917c43864dc0f73be2c23,
         type: 3}
@@ -933,12 +933,12 @@ PrefabInstance:
     - target: {fileID: 2972370779941835705, guid: e3c6a7f5e81051f4c98457ba1a88e19a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 2972370779941835705, guid: e3c6a7f5e81051f4c98457ba1a88e19a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.11
       objectReference: {fileID: 0}
     - target: {fileID: 2972370779941835705, guid: e3c6a7f5e81051f4c98457ba1a88e19a,
         type: 3}
@@ -1499,12 +1499,12 @@ PrefabInstance:
     - target: {fileID: 3660294148997384879, guid: 08be885e65b7a3b40b743e90220879b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.61
       objectReference: {fileID: 0}
     - target: {fileID: 3660294148997384879, guid: 08be885e65b7a3b40b743e90220879b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.75
       objectReference: {fileID: 0}
     - target: {fileID: 3660294148997384879, guid: 08be885e65b7a3b40b743e90220879b2,
         type: 3}
@@ -1595,12 +1595,12 @@ PrefabInstance:
     - target: {fileID: 4440196965051771868, guid: c4efc6d0e598e9d48b14413e3b8742c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 4440196965051771868, guid: c4efc6d0e598e9d48b14413e3b8742c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.18
       objectReference: {fileID: 0}
     - target: {fileID: 4440196965051771868, guid: c4efc6d0e598e9d48b14413e3b8742c5,
         type: 3}
@@ -1691,12 +1691,12 @@ PrefabInstance:
     - target: {fileID: 5941727146386101588, guid: a5ebb465ac937824eb0041fa0abe08d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5519999
+      value: -0.19
       objectReference: {fileID: 0}
     - target: {fileID: 5941727146386101588, guid: a5ebb465ac937824eb0041fa0abe08d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.014
+      value: -17.75
       objectReference: {fileID: 0}
     - target: {fileID: 5941727146386101588, guid: a5ebb465ac937824eb0041fa0abe08d6,
         type: 3}
@@ -1940,12 +1940,12 @@ PrefabInstance:
     - target: {fileID: 7562091501458293125, guid: dddb382d1ddee2a47be2554dc322d20d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 7562091501458293125, guid: dddb382d1ddee2a47be2554dc322d20d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.19
       objectReference: {fileID: 0}
     - target: {fileID: 7562091501458293125, guid: dddb382d1ddee2a47be2554dc322d20d,
         type: 3}
@@ -2026,12 +2026,12 @@ PrefabInstance:
     - target: {fileID: 2806215032038881934, guid: 21150acf98ec53748b9053d6c6952cac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3921999
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 2806215032038881934, guid: 21150acf98ec53748b9053d6c6952cac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.7376995
+      value: -16.18
       objectReference: {fileID: 0}
     - target: {fileID: 2806215032038881934, guid: 21150acf98ec53748b9053d6c6952cac,
         type: 3}
@@ -2127,12 +2127,12 @@ PrefabInstance:
     - target: {fileID: 2324494776365747961, guid: 9a50fdd9c84ddab44b5f8b415d294ba7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 2324494776365747961, guid: 9a50fdd9c84ddab44b5f8b415d294ba7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.71
       objectReference: {fileID: 0}
     - target: {fileID: 2324494776365747961, guid: 9a50fdd9c84ddab44b5f8b415d294ba7,
         type: 3}
@@ -2461,12 +2461,12 @@ PrefabInstance:
     - target: {fileID: 3843572366315328228, guid: 5a9d038c9d0d6da49a33e98a1dcf952a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 3843572366315328228, guid: 5a9d038c9d0d6da49a33e98a1dcf952a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.51
       objectReference: {fileID: 0}
     - target: {fileID: 3843572366315328228, guid: 5a9d038c9d0d6da49a33e98a1dcf952a,
         type: 3}
@@ -2580,12 +2580,12 @@ PrefabInstance:
     - target: {fileID: 7726647426378787736, guid: 6cc3931d3f1a0464aa05e206c557fd99,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 7726647426378787736, guid: 6cc3931d3f1a0464aa05e206c557fd99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.42
       objectReference: {fileID: 0}
     - target: {fileID: 7726647426378787736, guid: 6cc3931d3f1a0464aa05e206c557fd99,
         type: 3}
@@ -2710,6 +2710,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 5
+  AddDEF: 1
+  AddSPD: -2
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -2838,12 +2843,12 @@ PrefabInstance:
     - target: {fileID: 4886550919612538359, guid: 25bedd92f3303bd4f8dd44fa9c667c79,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.31
       objectReference: {fileID: 0}
     - target: {fileID: 4886550919612538359, guid: 25bedd92f3303bd4f8dd44fa9c667c79,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.2
       objectReference: {fileID: 0}
     - target: {fileID: 4886550919612538359, guid: 25bedd92f3303bd4f8dd44fa9c667c79,
         type: 3}
@@ -2974,6 +2979,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 4
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -3590,12 +3600,12 @@ PrefabInstance:
     - target: {fileID: 6920952395731165923, guid: 07cdcbff5612c814e89578f729063a20,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 6920952395731165923, guid: 07cdcbff5612c814e89578f729063a20,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.86
       objectReference: {fileID: 0}
     - target: {fileID: 6920952395731165923, guid: 07cdcbff5612c814e89578f729063a20,
         type: 3}
@@ -3738,6 +3748,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -3964,12 +3979,12 @@ PrefabInstance:
     - target: {fileID: 7839655178738437891, guid: e7353d10aec41154a924baf46ec24ec9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 7839655178738437891, guid: e7353d10aec41154a924baf46ec24ec9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.92
       objectReference: {fileID: 0}
     - target: {fileID: 7839655178738437891, guid: e7353d10aec41154a924baf46ec24ec9,
         type: 3}
@@ -4214,12 +4229,12 @@ PrefabInstance:
     - target: {fileID: 3207992569754627961, guid: 300f4e6bda7aafb47a612f48ea9f158b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.66
       objectReference: {fileID: 0}
     - target: {fileID: 3207992569754627961, guid: 300f4e6bda7aafb47a612f48ea9f158b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.17
       objectReference: {fileID: 0}
     - target: {fileID: 3207992569754627961, guid: 300f4e6bda7aafb47a612f48ea9f158b,
         type: 3}
@@ -4326,12 +4341,12 @@ PrefabInstance:
     - target: {fileID: 5660148949017793649, guid: 2afedd729fe09ad44b6ca60ac28d0db1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13
+      value: 5.09
       objectReference: {fileID: 0}
     - target: {fileID: 5660148949017793649, guid: 2afedd729fe09ad44b6ca60ac28d0db1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.16
       objectReference: {fileID: 0}
     - target: {fileID: 5660148949017793649, guid: 2afedd729fe09ad44b6ca60ac28d0db1,
         type: 3}
@@ -4424,12 +4439,12 @@ PrefabInstance:
     - target: {fileID: 181143478343871410, guid: e23f198d4da87c3499dd73b0bd8207ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 5.06
       objectReference: {fileID: 0}
     - target: {fileID: 181143478343871410, guid: e23f198d4da87c3499dd73b0bd8207ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.82
       objectReference: {fileID: 0}
     - target: {fileID: 181143478343871410, guid: e23f198d4da87c3499dd73b0bd8207ff,
         type: 3}
@@ -4520,12 +4535,12 @@ PrefabInstance:
     - target: {fileID: 1902685681586481908, guid: f5d5839ddc3041a479c37286c3e9f201,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 1902685681586481908, guid: f5d5839ddc3041a479c37286c3e9f201,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.69
       objectReference: {fileID: 0}
     - target: {fileID: 1902685681586481908, guid: f5d5839ddc3041a479c37286c3e9f201,
         type: 3}
@@ -4655,6 +4670,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -4825,12 +4845,12 @@ PrefabInstance:
     - target: {fileID: 981784166613539462, guid: 3bacf0e6978cbdf438b835865fad69cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 981784166613539462, guid: 3bacf0e6978cbdf438b835865fad69cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.57
       objectReference: {fileID: 0}
     - target: {fileID: 981784166613539462, guid: 3bacf0e6978cbdf438b835865fad69cb,
         type: 3}
@@ -5222,6 +5242,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -5267,12 +5292,12 @@ PrefabInstance:
     - target: {fileID: 7841522240367611186, guid: c8a2c77d21e19134b8c2e71a1bb24ebe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.65
       objectReference: {fileID: 0}
     - target: {fileID: 7841522240367611186, guid: c8a2c77d21e19134b8c2e71a1bb24ebe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.51
       objectReference: {fileID: 0}
     - target: {fileID: 7841522240367611186, guid: c8a2c77d21e19134b8c2e71a1bb24ebe,
         type: 3}
@@ -5586,12 +5611,12 @@ PrefabInstance:
     - target: {fileID: 787260551360645786, guid: 82abb12a4c10610409534bdbc1799f76,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 787260551360645786, guid: 82abb12a4c10610409534bdbc1799f76,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.16
       objectReference: {fileID: 0}
     - target: {fileID: 787260551360645786, guid: 82abb12a4c10610409534bdbc1799f76,
         type: 3}
@@ -6119,6 +6144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -6193,6 +6223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -6613,6 +6648,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 1
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -6658,12 +6698,12 @@ PrefabInstance:
     - target: {fileID: 4782535880545636994, guid: abc07113a94fe8c46b50d1fa330b22ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.27
       objectReference: {fileID: 0}
     - target: {fileID: 4782535880545636994, guid: abc07113a94fe8c46b50d1fa330b22ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.54
       objectReference: {fileID: 0}
     - target: {fileID: 4782535880545636994, guid: abc07113a94fe8c46b50d1fa330b22ba,
         type: 3}
@@ -7081,12 +7121,12 @@ PrefabInstance:
     - target: {fileID: 7290354893598716547, guid: 502b8d2313b4d7b44ad73068a54c0972,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.26
       objectReference: {fileID: 0}
     - target: {fileID: 7290354893598716547, guid: 502b8d2313b4d7b44ad73068a54c0972,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.72
       objectReference: {fileID: 0}
     - target: {fileID: 7290354893598716547, guid: 502b8d2313b4d7b44ad73068a54c0972,
         type: 3}
@@ -7299,6 +7339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 5
+  AddDEF: 1
+  AddSPD: -2
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -7508,6 +7553,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 2
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -7582,6 +7632,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -7617,12 +7672,12 @@ PrefabInstance:
     - target: {fileID: 4731094990072835382, guid: f62b0b7e5d9765b459fe894060274b66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 4731094990072835382, guid: f62b0b7e5d9765b459fe894060274b66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.63
       objectReference: {fileID: 0}
     - target: {fileID: 4731094990072835382, guid: f62b0b7e5d9765b459fe894060274b66,
         type: 3}
@@ -7752,6 +7807,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -7914,6 +7974,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 2
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8067,6 +8132,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 1
+  AddMAG: 2
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8141,6 +8211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8215,6 +8290,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 4
+  AddDEF: -1
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8578,6 +8658,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 2
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8670,6 +8755,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 3
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8710,12 +8800,12 @@ PrefabInstance:
     - target: {fileID: 1054967807686551233, guid: 0ab02e67892e7a04a8a4b2fe1a49ccf1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.27
       objectReference: {fileID: 0}
     - target: {fileID: 1054967807686551233, guid: 0ab02e67892e7a04a8a4b2fe1a49ccf1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.15
       objectReference: {fileID: 0}
     - target: {fileID: 1054967807686551233, guid: 0ab02e67892e7a04a8a4b2fe1a49ccf1,
         type: 3}
@@ -8840,6 +8930,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -8885,12 +8980,12 @@ PrefabInstance:
     - target: {fileID: 6679534450055114500, guid: 1cf678c158799864fb643a77be354603,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 6679534450055114500, guid: 1cf678c158799864fb643a77be354603,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.39
       objectReference: {fileID: 0}
     - target: {fileID: 6679534450055114500, guid: 1cf678c158799864fb643a77be354603,
         type: 3}
@@ -8981,12 +9076,12 @@ PrefabInstance:
     - target: {fileID: 7026094765964690301, guid: 11e9ba252b230b4498069438819956d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.26
       objectReference: {fileID: 0}
     - target: {fileID: 7026094765964690301, guid: 11e9ba252b230b4498069438819956d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.29
       objectReference: {fileID: 0}
     - target: {fileID: 7026094765964690301, guid: 11e9ba252b230b4498069438819956d6,
         type: 3}
@@ -9106,6 +9201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 0
+  AddSPD: 0
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -9180,6 +9280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 3
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -9215,12 +9320,12 @@ PrefabInstance:
     - target: {fileID: 1692389860712597452, guid: 29584f4602b0bf64583b74ce36347f4b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 5.03
       objectReference: {fileID: 0}
     - target: {fileID: 1692389860712597452, guid: 29584f4602b0bf64583b74ce36347f4b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.52
       objectReference: {fileID: 0}
     - target: {fileID: 1692389860712597452, guid: 29584f4602b0bf64583b74ce36347f4b,
         type: 3}
@@ -9356,6 +9461,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -9713,12 +9823,12 @@ PrefabInstance:
     - target: {fileID: 3994089203710756955, guid: 09e81b53f5fe19e46b3deded1738e46d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.66
       objectReference: {fileID: 0}
     - target: {fileID: 3994089203710756955, guid: 09e81b53f5fe19e46b3deded1738e46d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.08
       objectReference: {fileID: 0}
     - target: {fileID: 3994089203710756955, guid: 09e81b53f5fe19e46b3deded1738e46d,
         type: 3}
@@ -9994,12 +10104,12 @@ PrefabInstance:
     - target: {fileID: 7553281149587757918, guid: 50c51c817cc6381488a121e8f406f0a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 4.41
       objectReference: {fileID: 0}
     - target: {fileID: 7553281149587757918, guid: 50c51c817cc6381488a121e8f406f0a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.69
       objectReference: {fileID: 0}
     - target: {fileID: 7553281149587757918, guid: 50c51c817cc6381488a121e8f406f0a8,
         type: 3}
@@ -10101,12 +10211,12 @@ PrefabInstance:
     - target: {fileID: 8735652968960828367, guid: c3cd2e4f4c9c71d4ba259d196d1044c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 8735652968960828367, guid: c3cd2e4f4c9c71d4ba259d196d1044c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.32
       objectReference: {fileID: 0}
     - target: {fileID: 8735652968960828367, guid: c3cd2e4f4c9c71d4ba259d196d1044c6,
         type: 3}
@@ -10226,6 +10336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 2
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -10271,12 +10386,12 @@ PrefabInstance:
     - target: {fileID: 8697920581728037759, guid: 4e876f178f05d5444bb79214ab7f60c6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.74
       objectReference: {fileID: 0}
     - target: {fileID: 8697920581728037759, guid: 4e876f178f05d5444bb79214ab7f60c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.19
       objectReference: {fileID: 0}
     - target: {fileID: 8697920581728037759, guid: 4e876f178f05d5444bb79214ab7f60c6,
         type: 3}
@@ -10396,6 +10511,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -10431,12 +10551,12 @@ PrefabInstance:
     - target: {fileID: 3153706141914583601, guid: d92d3c8b301c4d245ae64025a6e0ff9b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 3153706141914583601, guid: d92d3c8b301c4d245ae64025a6e0ff9b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.71
       objectReference: {fileID: 0}
     - target: {fileID: 3153706141914583601, guid: d92d3c8b301c4d245ae64025a6e0ff9b,
         type: 3}
@@ -10537,12 +10657,12 @@ PrefabInstance:
     - target: {fileID: 6014026107172631967, guid: fa21ae55500f41240bdde116a4237e30,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6014026107172631967, guid: fa21ae55500f41240bdde116a4237e30,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.6
       objectReference: {fileID: 0}
     - target: {fileID: 6014026107172631967, guid: fa21ae55500f41240bdde116a4237e30,
         type: 3}
@@ -10633,12 +10753,12 @@ PrefabInstance:
     - target: {fileID: 8873473897475988070, guid: e7cd876a445f48544b537c05ebe62cf8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.23
       objectReference: {fileID: 0}
     - target: {fileID: 8873473897475988070, guid: e7cd876a445f48544b537c05ebe62cf8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.54
       objectReference: {fileID: 0}
     - target: {fileID: 8873473897475988070, guid: e7cd876a445f48544b537c05ebe62cf8,
         type: 3}
@@ -10852,6 +10972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 4
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -10926,6 +11051,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 3
+  AddDEF: 0
+  AddSPD: 2
+  AddMAG: -1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -11000,6 +11130,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -11074,6 +11209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 4
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -11227,6 +11367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 1
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -11360,12 +11505,12 @@ PrefabInstance:
     - target: {fileID: 9040293618849302669, guid: 6cf98e236c6446842bb79a2987a75568,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 9040293618849302669, guid: 6cf98e236c6446842bb79a2987a75568,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.7
       objectReference: {fileID: 0}
     - target: {fileID: 9040293618849302669, guid: 6cf98e236c6446842bb79a2987a75568,
         type: 3}
@@ -11755,6 +11900,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -12131,6 +12281,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 0
+  AddSPD: 0
+  AddMAG: 5
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -12171,12 +12326,12 @@ PrefabInstance:
     - target: {fileID: 6520728474496790331, guid: 0945348db69a72544b9116e372386cff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 6520728474496790331, guid: 0945348db69a72544b9116e372386cff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.16
       objectReference: {fileID: 0}
     - target: {fileID: 6520728474496790331, guid: 0945348db69a72544b9116e372386cff,
         type: 3}
@@ -12436,6 +12591,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 5
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -12476,12 +12636,12 @@ PrefabInstance:
     - target: {fileID: 5295873742831014959, guid: 025190e9df723a141b7b05e29688539a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 5295873742831014959, guid: 025190e9df723a141b7b05e29688539a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.27
       objectReference: {fileID: 0}
     - target: {fileID: 5295873742831014959, guid: 025190e9df723a141b7b05e29688539a,
         type: 3}
@@ -12577,12 +12737,12 @@ PrefabInstance:
     - target: {fileID: 4981458592586556994, guid: 7532dcda391d439418910463ec0e5851,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 4.37
       objectReference: {fileID: 0}
     - target: {fileID: 4981458592586556994, guid: 7532dcda391d439418910463ec0e5851,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.31
       objectReference: {fileID: 0}
     - target: {fileID: 4981458592586556994, guid: 7532dcda391d439418910463ec0e5851,
         type: 3}
@@ -12792,6 +12952,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 6
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -12866,6 +13031,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 0
+  AddSPD: 2
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13092,6 +13262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 2
+  AddSPD: 0
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13166,6 +13341,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 4
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13240,6 +13420,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13314,6 +13499,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 1
+  AddMAG: 1
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13349,12 +13539,12 @@ PrefabInstance:
     - target: {fileID: 5276294728956776045, guid: 3b0c354ff41757a45867bfd2c7fbb757,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 5276294728956776045, guid: 3b0c354ff41757a45867bfd2c7fbb757,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.68
       objectReference: {fileID: 0}
     - target: {fileID: 5276294728956776045, guid: 3b0c354ff41757a45867bfd2c7fbb757,
         type: 3}
@@ -13455,12 +13645,12 @@ PrefabInstance:
     - target: {fileID: 6969170500595837151, guid: 601575449f2a0814a974532e834804c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 6969170500595837151, guid: 601575449f2a0814a974532e834804c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.2
       objectReference: {fileID: 0}
     - target: {fileID: 6969170500595837151, guid: 601575449f2a0814a974532e834804c5,
         type: 3}
@@ -13580,6 +13770,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13654,6 +13849,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 4
+  AddDEF: 0
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13694,12 +13894,12 @@ PrefabInstance:
     - target: {fileID: 4672096189834773352, guid: afdd9ee816ae8eb4f992137aea6a1a47,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 4672096189834773352, guid: afdd9ee816ae8eb4f992137aea6a1a47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -17.87
       objectReference: {fileID: 0}
     - target: {fileID: 4672096189834773352, guid: afdd9ee816ae8eb4f992137aea6a1a47,
         type: 3}
@@ -13824,6 +14024,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 2
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -13859,12 +14064,12 @@ PrefabInstance:
     - target: {fileID: 985186870959506083, guid: 94aa9505716010641ae7bec6cdbc7b64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 985186870959506083, guid: 94aa9505716010641ae7bec6cdbc7b64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -16.62
       objectReference: {fileID: 0}
     - target: {fileID: 985186870959506083, guid: 94aa9505716010641ae7bec6cdbc7b64,
         type: 3}
@@ -14317,12 +14522,12 @@ PrefabInstance:
     - target: {fileID: 2921601049483868505, guid: 312abe8e593d8d64eac1af6cbd408c39,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -2.6
       objectReference: {fileID: 0}
     - target: {fileID: 2921601049483868505, guid: 312abe8e593d8d64eac1af6cbd408c39,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -18.37
       objectReference: {fileID: 0}
     - target: {fileID: 2921601049483868505, guid: 312abe8e593d8d64eac1af6cbd408c39,
         type: 3}
@@ -14418,12 +14623,12 @@ PrefabInstance:
     - target: {fileID: 7108449889711946095, guid: fd4ca783bdddce548b14b5ee47c481a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13000011
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: 7108449889711946095, guid: fd4ca783bdddce548b14b5ee47c481a9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.58
+      value: -15.59
       objectReference: {fileID: 0}
     - target: {fileID: 7108449889711946095, guid: fd4ca783bdddce548b14b5ee47c481a9,
         type: 3}
@@ -14548,6 +14753,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 1
+  AddSPD: 0
+  AddMAG: 2
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -14622,6 +14832,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 0
+  AddSPD: 1
+  AddMAG: 2
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -14696,6 +14911,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: 1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -14770,6 +14990,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 3
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -14844,6 +15069,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 1
+  AddDEF: 0
+  AddSPD: 0
+  AddMAG: 2
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}
@@ -14918,6 +15148,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSelecting: 0
+  AddATK: 0
+  AddDEF: 4
+  AddSPD: -1
+  AddMAG: 0
+  levelup: {fileID: 830898798}
   itemStorage: {fileID: 1288070259}
   Equip: {fileID: 586401465}
   weaponSlot: {fileID: 435457697}

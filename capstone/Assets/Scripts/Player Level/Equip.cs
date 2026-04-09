@@ -5,6 +5,7 @@ using static UnityEditor.Progress;
 public class Equip : MonoBehaviour
 {
     [SerializeField] ItemStorage ItemStorage;
+    //[SerializeField] levelup levelup;
     GameObject[] HeadItem = new GameObject[12];
     GameObject[] FrontItem = new GameObject[12];
     GameObject[] BodyItem = new GameObject[12];
@@ -62,6 +63,14 @@ public class Equip : MonoBehaviour
         itemArray[10] = item11;
         itemArray[11] = item12;
         //Debug.Log("what??"+ ItemStorage.getWeaponSlot()[0]);
+        WeaponItem[0] = ItemStorage.getWeaponSlot()[0];
+        WeaponItem[1] = ItemStorage.getWeaponSlot()[1];
+        HeadItem[0] = ItemStorage.getHeadSlot()[0];
+        FrontItem[0] = ItemStorage.getFrontSlot()[0];
+        BodyItem[0] = ItemStorage.getBodySlot()[0];
+        PantsItem[0] = ItemStorage.getPantsSlot()[0];
+        GloveItem[0] = ItemStorage.getGloveSlot()[0];
+        ShoeItem[0] = ItemStorage.getShoeSlot()[0];
     }
 
     // Update is called once per frame
@@ -78,13 +87,17 @@ public class Equip : MonoBehaviour
     }
     public void ApplyWeapon()
     {
-        WeaponItem[0] = ItemStorage.getWeaponSlot()[0];
-        WeaponItem[1] = ItemStorage.getWeaponSlot()[1];
+        //WeaponItem[0] = ItemStorage.getWeaponSlot()[0];
+        //WeaponItem[1] = ItemStorage.getWeaponSlot()[1];
         changeItemArray();
         for (int i = 0; i < WeaponItem.Length; i++)
         {
             if (WeaponItem[i] != null)
             {
+                if (WeaponItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    WeaponItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 WeaponItem[i].GetComponent<AddEquipment>().undoSelect();
                 WeaponItem[i].transform.position = itemArray[i].transform.position;
                 //equipedWeapon = WeaponItem[i];
@@ -94,12 +107,16 @@ public class Equip : MonoBehaviour
     }
     public void ApplyHead()
     {
-        HeadItem[0] = ItemStorage.getHeadSlot()[0];
+        //HeadItem[0] = ItemStorage.getHeadSlot()[0];
         changeItemArray();
         for (int i = 0; i < HeadItem.Length; i++)
         {
             if (HeadItem[i] != null)
             {
+                if (HeadItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    HeadItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 HeadItem[i].GetComponent<AddEquipment>().undoSelect();
                 HeadItem[i].transform.position = itemArray[i].transform.position;
                 //equipedHead = HeadItem[i];
@@ -109,12 +126,16 @@ public class Equip : MonoBehaviour
     }
     public void ApplyFront()
     {
-        FrontItem[0] = ItemStorage.getFrontSlot()[0];
+        //FrontItem[0] = ItemStorage.getFrontSlot()[0];
         changeItemArray();
         for (int i = 0; i < FrontItem.Length; i++)
         {
             if (FrontItem[i] != null)
             {
+                if (FrontItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    FrontItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 FrontItem[i].GetComponent<AddEquipment>().undoSelect();
                 FrontItem[i].transform.position = itemArray[i].transform.position;
                 //equipedFront = FrontItem[i];
@@ -124,12 +145,16 @@ public class Equip : MonoBehaviour
     }
     public void ApplyBody()
     {
-        BodyItem[0] = ItemStorage.getBodySlot()[0];
+        //BodyItem[0] = ItemStorage.getBodySlot()[0];
         changeItemArray();
         for (int i = 0; i < BodyItem.Length; i++)
         {
             if (BodyItem[i] != null)
             {
+                if (BodyItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    BodyItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 BodyItem[i].GetComponent<AddEquipment>().undoSelect();
                 BodyItem[i].transform.position = itemArray[i].transform.position;
                 //equipedBody = BodyItem[i];
@@ -139,12 +164,16 @@ public class Equip : MonoBehaviour
     }
     public void ApplyPants()
     {
-        PantsItem[0] = ItemStorage.getPantsSlot()[0];
+        //PantsItem[0] = ItemStorage.getPantsSlot()[0];
         changeItemArray();
         for (int i = 0; i < PantsItem.Length; i++)
         {
             if (PantsItem[i] != null)
             {
+                if (PantsItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    PantsItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 PantsItem[i].GetComponent<AddEquipment>().undoSelect();
                 PantsItem[i].transform.position = itemArray[i].transform.position;
                 //equipedPants = PantsItem[i];
@@ -154,12 +183,16 @@ public class Equip : MonoBehaviour
     }
     public void ApplyGlove()
     {
-        GloveItem[0] = ItemStorage.getGloveSlot()[0];
+        //GloveItem[0] = ItemStorage.getGloveSlot()[0];
         changeItemArray();
         for (int i = 0; i < GloveItem.Length; i++)
         {
             if (GloveItem[i] != null)
             {
+                if (GloveItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    GloveItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 GloveItem[i].GetComponent<AddEquipment>().undoSelect();
                 GloveItem[i].transform.position = itemArray[i].transform.position;
                 //equipedGlove = GloveItem[i];
@@ -169,13 +202,17 @@ public class Equip : MonoBehaviour
     }
     public void ApplyShoe()
     {
-        ShoeItem[0] = ItemStorage.getShoeSlot()[0];
+        //ShoeItem[0] = ItemStorage.getShoeSlot()[0];
         changeItemArray();
         for (int i = 0; i < ShoeItem.Length; i++)
         {
             //Debug.Log("Shoe Items are: " + ShoeItem[i]);
             if (ShoeItem[i] != null)
             {
+                if (ShoeItem[i].GetComponent<AddEquipment>().getSelect())
+                {
+                    ShoeItem[i].GetComponent<AddEquipment>().unequipStats();
+                }
                 ShoeItem[i].GetComponent<AddEquipment>().undoSelect();
                 ShoeItem[i].transform.position = itemArray[i].transform.position;
                 //equipedShoe = ShoeItem[i];
@@ -183,7 +220,7 @@ public class Equip : MonoBehaviour
             }
         }
     }
-    public void changeItemArray()
+    public void changeItemArray()//
     {
         for (int i = 0; i < WeaponItem.Length; i++)
         {//&& !WeaponItem[i].GetComponent<AddEquipment>().getSelect()
@@ -191,6 +228,7 @@ public class Equip : MonoBehaviour
             {
                 if(!WeaponItem[i].GetComponent<AddEquipment>().getSelect()){
                     WeaponItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -200,6 +238,7 @@ public class Equip : MonoBehaviour
             {
                 if(!HeadItem[i].GetComponent<AddEquipment>().getSelect()){
                     HeadItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -209,6 +248,7 @@ public class Equip : MonoBehaviour
             {
                 if(!FrontItem[i].GetComponent<AddEquipment>().getSelect()){
                     FrontItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -218,6 +258,7 @@ public class Equip : MonoBehaviour
             {
                 if(!BodyItem[i].GetComponent<AddEquipment>().getSelect()){
                     BodyItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -227,6 +268,7 @@ public class Equip : MonoBehaviour
             {
                 if(!PantsItem[i].GetComponent<AddEquipment>().getSelect()){
                     PantsItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -236,6 +278,7 @@ public class Equip : MonoBehaviour
             {
                 if(!GloveItem[i].GetComponent<AddEquipment>().getSelect()){
                     GloveItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -246,6 +289,7 @@ public class Equip : MonoBehaviour
             {
                 if(!ShoeItem[i].GetComponent<AddEquipment>().getSelect()){
                     ShoeItem[i].transform.position = new Vector2(0.5519999f, -16.014f);
+                    
                 }
             }
         }
@@ -254,4 +298,5 @@ public class Equip : MonoBehaviour
     {
         item.transform.position = position.transform.position;
     }
+    
 }

@@ -25,46 +25,48 @@ public class Inventory : MonoBehaviour
     {
        // if (!containEquipment)
         //{
-            if (gameObject.tag == "WeaponItem")
+        containEquipment = false;
+        InventoryTab.SetActive(true);
+        if (gameObject.tag == "WeaponItem")
             {
                 Debug.Log("weapon");
-                InventoryTab.SetActive(true);
+            //InventoryTab.SetActive(true);
                 equip.ApplyWeapon();
             }
             if (gameObject.tag == "HeadItem")
             {
                 Debug.Log("head");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyHead();
             }
             if (gameObject.tag == "FrontItem")
             {
                 Debug.Log("front");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyFront();
             }
             if (gameObject.tag == "BodyItem")
             {
                 Debug.Log("body");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyBody();
             }
             if (gameObject.tag == "PantsItem")
             {
                 Debug.Log("pants");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyPants();
             }
             if (gameObject.tag == "GloveItem")
             {
                 Debug.Log("glove");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyGlove();
             }
             if (gameObject.tag == "ShoeItem")
             {
                 Debug.Log("shoe");
-                InventoryTab.SetActive(true);
+                //InventoryTab.SetActive(true);
                 equip.ApplyShoe();
             }
         //}

@@ -8,6 +8,7 @@ public class AddEquipment : MonoBehaviour
     public int AddDEF;
     public int AddSPD;
     public int AddMAG;
+    [SerializeField] levelup levelup;
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Equip Equip;
     [SerializeField] GameObject weaponSlot;
@@ -31,41 +32,54 @@ public class AddEquipment : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        isSelecting = true;
-        if (gameObject.tag == "Weapon")
+        if (gameObject.tag == "Weapon" && !weaponSlot.GetComponent<Inventory>().containEquipment)
         {
             weaponSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, weaponSlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Head")
+        if (gameObject.tag == "Head" && !headSlot.GetComponent<Inventory>().containEquipment)
         {
             headSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, headSlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Front")
+        if (gameObject.tag == "Front" && !frontSlot.GetComponent<Inventory>().containEquipment)
         {
             frontSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, frontSlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Body")
+        if (gameObject.tag == "Body" && !bodySlot.GetComponent<Inventory>().containEquipment)
         {
             bodySlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, bodySlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Pants")
+        if (gameObject.tag == "Pants" && !pantsSlot.GetComponent<Inventory>().containEquipment)
         {
             pantsSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, pantsSlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Glove")
+        if (gameObject.tag == "Glove" && !gloveSlot.GetComponent<Inventory>().containEquipment)
         {
             gloveSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, gloveSlot);
+            applyStats();
+            isSelecting = true;
         }
-        if (gameObject.tag == "Shoe")
+        if (gameObject.tag == "Shoe" && !shoeSlot.GetComponent<Inventory>().containEquipment)
         {
             shoeSlot.GetComponent<Inventory>().isEquiped(true);
             Equip.equip(gameObject, shoeSlot);
+            applyStats();
+            isSelecting = true;
         }
         
         
@@ -81,5 +95,20 @@ public class AddEquipment : MonoBehaviour
     public void undoSelect()
     {
         isSelecting = false;
+    }
+    public void applyStats()
+    {
+        levelup.equipATK(AddATK);
+        levelup.equipDEF(AddDEF);
+        levelup.equipSPD(AddSPD);
+        levelup.equipMAG(AddMAG);
+    }
+    public void unequipStats()
+    {
+        levelup.unequipATK(AddATK);
+        levelup.unequipDEF(AddDEF);
+        levelup.unequipSPD(AddSPD);
+        levelup.unequipMAG(AddMAG);
+
     }
 }
