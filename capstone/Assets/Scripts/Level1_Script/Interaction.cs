@@ -87,7 +87,9 @@ public class Interaction : MonoBehaviour
             }
             if (ConversationTab.tag == "PickUpEquipment")
             {
+                equip.printWeaponSlot();
                 equip.pickUpFindCatagory(lootEquipment);
+                equip.printWeaponSlot();
             }
         }
         if (talking && Input.GetKeyDown(KeyCode.C))

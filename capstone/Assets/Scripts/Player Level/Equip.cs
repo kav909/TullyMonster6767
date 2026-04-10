@@ -6,14 +6,14 @@ public class Equip : MonoBehaviour
 {
     [SerializeField] ItemStorage ItemStorage;
     //[SerializeField] levelup levelup;
-    GameObject[] HeadItem = new GameObject[12];
-    GameObject[] FrontItem = new GameObject[12];
-    GameObject[] BodyItem = new GameObject[12];
-    GameObject[] PantsItem = new GameObject[12];
-    GameObject[] GloveItem = new GameObject[12];
-    GameObject[] ShoeItem = new GameObject[12];
-    GameObject[] WeaponItem = new GameObject[12];
-    GameObject[] itemArray = new GameObject[12];
+    public GameObject[] HeadItem = new GameObject[12];
+    public GameObject[] FrontItem = new GameObject[12];
+    public GameObject[] BodyItem = new GameObject[12];
+    public GameObject[] PantsItem = new GameObject[12];
+    public GameObject[] GloveItem = new GameObject[12];
+    public GameObject[] ShoeItem = new GameObject[12];
+    public GameObject[] WeaponItem = new GameObject[12];
+    public GameObject[] itemArray = new GameObject[12];
     
     //public GameObject equipedHead;
     //public GameObject equipedFront;
@@ -38,6 +38,7 @@ public class Equip : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         if (ItemStorage == null)
         {
              ItemStorage = FindAnyObjectByType<ItemStorage>();
@@ -63,20 +64,26 @@ public class Equip : MonoBehaviour
         itemArray[10] = item11;
         itemArray[11] = item12;
         //Debug.Log("what??"+ ItemStorage.getWeaponSlot()[0]);
-        WeaponItem[0] = ItemStorage.getWeaponSlot()[0];
-        WeaponItem[1] = ItemStorage.getWeaponSlot()[1];
-        HeadItem[0] = ItemStorage.getHeadSlot()[0];
-        FrontItem[0] = ItemStorage.getFrontSlot()[0];
-        BodyItem[0] = ItemStorage.getBodySlot()[0];
-        PantsItem[0] = ItemStorage.getPantsSlot()[0];
-        GloveItem[0] = ItemStorage.getGloveSlot()[0];
-        ShoeItem[0] = ItemStorage.getShoeSlot()[0];
+        WeaponItem[findOpenWeaponIndex()] = ItemStorage.getWeaponSlot()[0];
+        WeaponItem[findOpenWeaponIndex()] = ItemStorage.getWeaponSlot()[1];
+        HeadItem[findOpenHeadIndex()] = ItemStorage.getHeadSlot()[0];
+        FrontItem[findOpenFrontIndex()] = ItemStorage.getFrontSlot()[0];
+        BodyItem[findOpenBodyIndex()] = ItemStorage.getBodySlot()[0];
+        PantsItem[findOpenPantsIndex()] = ItemStorage.getPantsSlot()[0];
+        GloveItem[findOpenGloveIndex()] = ItemStorage.getGloveSlot()[0];
+        ShoeItem[findOpenShoeIndex()] = ItemStorage.getShoeSlot()[0];
+        Debug.Log("finish adding");
+        printWeaponSlot();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("sdfsafsd");
+            printWeaponSlot();
+        }
     }
     private void OnMouseDown()
     {
@@ -299,12 +306,12 @@ public class Equip : MonoBehaviour
         item.transform.position = position.transform.position;
     }
     public void pickUpFindCatagory(GameObject equipment){
-        Debug.Log("a");
+        //Debug.Log("a");
         if(equipment.tag == "Weapon"){
             for(int i = 0; i < ItemStorage.getWeaponSlot().Length; i++){
                 if(equipment == ItemStorage.getWeaponSlot()[i]){
-                    Debug.Log("the open index is " + findOpenWeaponIndex());
-                    Debug.Log("b");
+                    //Debug.Log("the open index is " + findOpenWeaponIndex());
+                    //Debug.Log("b");
                     WeaponItem[findOpenWeaponIndex()] = equipment;
                 }
             }
@@ -313,14 +320,103 @@ public class Equip : MonoBehaviour
     public int findOpenWeaponIndex(){
         bool hasEmptySlot = false;
         for(int i = 0; i < WeaponItem.Length; i++){
-            Debug.Log("c");
+            //Debug.Log("c");
             if(WeaponItem[i] == null){
-                Debug.Log("d");
-                Debug.Log("the open index is " + i);
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
                 hasEmptySlot = true;
                 return i;
             }
         }
         return -1;
+    }
+    public int findOpenHeadIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < HeadItem.Length; i++){
+            //Debug.Log("c");
+            if(HeadItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int findOpenFrontIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < FrontItem.Length; i++){
+            //Debug.Log("c");
+            if(FrontItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int findOpenBodyIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < BodyItem.Length; i++){
+            //Debug.Log("c");
+            if(BodyItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int findOpenPantsIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < PantsItem.Length; i++){
+            //Debug.Log("c");
+            if(PantsItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int findOpenGloveIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < GloveItem.Length; i++){
+            //Debug.Log("c");
+            if(GloveItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int findOpenShoeIndex(){
+        bool hasEmptySlot = false;
+        for(int i = 0; i < ShoeItem.Length; i++){
+            //Debug.Log("c");
+            if(ShoeItem[i] == null){
+                //Debug.Log("d");
+                //Debug.Log("the open index is " + i);
+                hasEmptySlot = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+    public void printWeaponSlot(){
+        for(int i = 0; i < WeaponItem.Length; i++){
+            if(WeaponItem[i] != null){
+                Debug.Log(WeaponItem[i] + "\n");
+            }
+            else{
+                Debug.Log("The rest is Null");
+                break;
+            }
+        }
     }
 }
