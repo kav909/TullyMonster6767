@@ -7,6 +7,11 @@ public class Inventory : MonoBehaviour
     [SerializeField] Equip equip;
     public bool containEquipment;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        InventoryTab = GameObject.Find("Inventory Tab");
+        equip = InventoryTab.GetComponent<Equip>();
+    }
     void Start()
     {
         

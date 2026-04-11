@@ -36,6 +36,8 @@ TagManager:
   - dmg
   - objects
   - PickUpEquipment
+  - goToLevelBoard
+  - PickUpEquipmentRange
   layers:
   - Default
   - TransparentFX

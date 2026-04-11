@@ -60,9 +60,14 @@ public class ItemStorage : MonoBehaviour
     public GameObject[] GloveSlot;// = new GameObject[6];
     public GameObject[] ShoeSlot;// = new GameObject[6];
     public GameObject[] WeaponSlot;// = new GameObject[9];
-    //public GameObject[] allSlot;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+        //public GameObject[] allSlot;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
     {
         
         //Debug.Log("Head count: " + HeadSlot.Length);

@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AddEquipment : MonoBehaviour
 {
@@ -18,8 +19,31 @@ public class AddEquipment : MonoBehaviour
     [SerializeField] GameObject pantsSlot;
     [SerializeField] GameObject gloveSlot;
     [SerializeField] GameObject shoeSlot;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+        levelup = FindAnyObjectByType<levelup>();
+        weaponSlot = GameObject.FindGameObjectWithTag("WeaponItem");
+        headSlot = GameObject.FindGameObjectWithTag("HeadItem");
+        frontSlot = GameObject.FindGameObjectWithTag("FrontItem");
+        bodySlot = GameObject.FindGameObjectWithTag("BodyItem");
+        pantsSlot = GameObject.FindGameObjectWithTag("PantsItem");
+        gloveSlot = GameObject.FindGameObjectWithTag("GloveItem");
+        shoeSlot = GameObject.FindGameObjectWithTag("ShoeItem");
+
+
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     void Start()
     {
         isSelecting = false;

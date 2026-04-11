@@ -1,5 +1,7 @@
 using Newtonsoft.Json;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Progress;
 
 public class Equip : MonoBehaviour
@@ -39,6 +41,18 @@ public class Equip : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        foreach (var obj in WeaponItem)
+        {
+            Debug.Log("AAAAA");
+
+            if (obj != null)
+            {
+                Debug.Log("There are weapon in here");
+                DontDestroyOnLoad(obj);
+            }
+
+        }
+
         if (ItemStorage == null)
         {
              ItemStorage = FindAnyObjectByType<ItemStorage>();
@@ -48,6 +62,17 @@ public class Equip : MonoBehaviour
         {
             Debug.LogError("ItemStorage not found in scene!");
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+        ItemStorage = FindAnyObjectByType<ItemStorage>();
+        
+
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
     void Start()
     {
@@ -81,7 +106,6 @@ public class Equip : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Debug.Log("sdfsafsd");
             printWeaponSlot();
         }
     }
@@ -418,5 +442,9 @@ public class Equip : MonoBehaviour
                 break;
             }
         }
+    }
+    public GameObject[] GetWeaponArray()
+    {
+        return WeaponItem;
     }
 }
