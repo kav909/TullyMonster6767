@@ -15,6 +15,11 @@ public class CameraMove : MonoBehaviour
     [SerializeField] float rightB;
     [SerializeField] float upB;
     [SerializeField] float bottomB;
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        //SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     void Start()
     {
         leftB = transform.position.x - 1.5f;

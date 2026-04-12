@@ -19,11 +19,13 @@ public class Interaction : MonoBehaviour
     [SerializeField] TextStorage storage;
     public bool haveKey;
     public bool talking;
+    public bool hasPickUpEquip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
         //textWindow = TestingScript.getTheTextWindow();
+        hasPickUpEquip = false;
         talking = false;
         haveKey = false;
         ConversationTab.SetActive(false);
@@ -85,12 +87,18 @@ public class Interaction : MonoBehaviour
             {
                 Chest.OpenChest("Chest2");
             }
-            if (ConversationTab.tag == "PickUpEquipment")
+            if (!hasPickUpEquip)
             {
-                equip.printWeaponSlot();
-                equip.pickUpFindCatagory(lootEquipment);
-                equip.printWeaponSlot();
+                if (ConversationTab.tag == "PickUpEquipment")
+                {
+                    equip.printWeaponSlot();
+                    equip.pickUpFindCatagory(lootEquipment);
+                    equip.printWeaponSlot();
+                    hasPickUpEquip = true;
+                    lootEquipment.transform.position = new Vector2(0.5519999f, -16.014f);
+                }
             }
+            
         }
         if (talking && Input.GetKeyDown(KeyCode.C))
         {

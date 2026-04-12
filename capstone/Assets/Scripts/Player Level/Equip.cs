@@ -37,9 +37,16 @@ public class Equip : MonoBehaviour
     [SerializeField] GameObject item10;
     [SerializeField] GameObject item11;
     [SerializeField] GameObject item12;
+    public static Equip Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // destroy duplicate
+            return;
+        }
+        Instance = this;
         DontDestroyOnLoad(gameObject);
         foreach (var obj in WeaponItem)
         {

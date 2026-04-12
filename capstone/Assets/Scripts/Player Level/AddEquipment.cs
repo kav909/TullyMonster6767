@@ -19,12 +19,19 @@ public class AddEquipment : MonoBehaviour
     [SerializeField] GameObject pantsSlot;
     [SerializeField] GameObject gloveSlot;
     [SerializeField] GameObject shoeSlot;
-
+    public static AddEquipment Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Awake()
+    void Awake()
     {
-        DontDestroyOnLoad(this);
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 

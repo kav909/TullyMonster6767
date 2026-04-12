@@ -587,7 +587,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15044873}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1934,7 +1934,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106843846}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -2845,7 +2845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pick Up (P)
+  m_Text: Interact (T)
 --- !u!1001 &181303760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3457,7 +3457,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252829698}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -5203,6 +5203,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!1 &382678940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3204418674617321653, guid: 6cc3931d3f1a0464aa05e206c557fd99,
@@ -6531,7 +6532,7 @@ GameObject:
   - component: {fileID: 405658099}
   - component: {fileID: 405658098}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Change Scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6598,6 +6599,7 @@ MonoBehaviour:
   Equip: {fileID: 340426329}
   EquipmentPickUpRange: {fileID: 2094053465}
   subWeaponItems: []
+  lastIndex: 0
 --- !u!212 &405658100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6902,6 +6904,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!1 &415476494 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3396003289034314358, guid: 601575449f2a0814a974532e834804c5,
@@ -21580,6 +21583,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!60 &538137919
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24779,6 +24783,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!60 &548788495
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25148,6 +25153,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!60 &588362705
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -28433,7 +28439,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739451106}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -36897,6 +36903,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!60 &800937269
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -38721,7 +38728,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905785489}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -39937,7 +39944,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976076675}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -41244,7 +41251,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092709901}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -41379,7 +41386,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101082780}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -41514,7 +41521,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102109018}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -45929,7 +45936,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466166721}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -51624,7 +51631,7 @@ PrefabInstance:
     - target: {fileID: 3346726253790195474, guid: e23f198d4da87c3499dd73b0bd8207ff,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -52506,7 +52513,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882648525}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -55119,6 +55126,7 @@ MonoBehaviour:
   storage: {fileID: 413451232}
   haveKey: 0
   talking: 0
+  hasPickUpEquip: 0
 --- !u!212 &2094053469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55423,7 +55431,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106643298}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

@@ -6,16 +6,18 @@ public class ChangesScene : MonoBehaviour
     [SerializeField] Equip Equip;
     [SerializeField] GameObject EquipmentPickUpRange;
     public GameObject[] subWeaponItems;
+    public int lastIndex;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Equip = FindAnyObjectByType<Equip>();
+
     }
 
     private void OnDestroy()
@@ -28,7 +30,7 @@ public class ChangesScene : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             subWeaponItems = Equip.GetWeaponArray();
-
+            lastIndex = 3;
             foreach (GameObject obj in subWeaponItems)
             {
                 if (obj != null)
@@ -37,7 +39,13 @@ public class ChangesScene : MonoBehaviour
                 }
             }
             Destroy(EquipmentPickUpRange);
+            
             SceneManager.LoadScene(5);
+            //
+        }
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            SceneManager.LoadScene(lastIndex);
         }
     }
 

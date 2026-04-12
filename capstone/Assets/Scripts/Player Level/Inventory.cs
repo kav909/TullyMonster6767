@@ -31,6 +31,7 @@ public class Inventory : MonoBehaviour
        // if (!containEquipment)
         //{
         containEquipment = false;
+        InventoryTab.transform.position = new Vector2(-2.08f, -2.4f);
         InventoryTab.SetActive(true);
         if (gameObject.tag == "WeaponItem")
             {
