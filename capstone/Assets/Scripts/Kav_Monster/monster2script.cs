@@ -12,16 +12,18 @@ public class monster2script : MonoBehaviour
     [SerializeField] List<GameObject> fireballs;
 
     public GameObject player;
+    public GameObject soundManager;
     Rigidbody2D rb;
     Animator ani;
 
     [SerializeField] float speed = 3f;
     [SerializeField] float attackRange = 10f;
-
+    float footstepTimer = 0f;
     string currentDir = "down";
 
     void Start()
     {
+        soundManager = GameObject.Find("soundMain");
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
@@ -30,6 +32,7 @@ public class monster2script : MonoBehaviour
         swordDown.SetActive(false);
         swordLeft.SetActive(false);
         swordRight.SetActive(false);
+        
     }
 
     void Update()
@@ -39,6 +42,7 @@ public class monster2script : MonoBehaviour
         if (direction.magnitude < attackRange)
         {
             MoveToPlayer(direction);
+
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -53,10 +57,17 @@ public class monster2script : MonoBehaviour
                 FireAttack();
             }
         }
+        
     }
 
     private void MoveToPlayer(Vector2 direction)
     {
+        footstepTimer -= Time.deltaTime;
+        if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
+        {
+            soundManager.GetComponent<soundmanger>().PlaySFX(0);
+            footstepTimer = 0.35f;
+        }
         Vector2 moveDir = direction.normalized;
         rb.linearVelocity = moveDir * speed;
 
@@ -98,6 +109,7 @@ public class monster2script : MonoBehaviour
 
     private IEnumerator SwordAttack()
     {
+        soundManager.GetComponent<soundmanger>().PlaySFX(5);
         yield return new WaitForSeconds(0.25f);
 
         EnableSword();
@@ -127,12 +139,12 @@ public class monster2script : MonoBehaviour
             swordRight.SetActive(true);
     }
 
+   
 
-
-   private void FireAttack()
+    private void FireAttack()
     {
-       
 
+        soundManager.GetComponent<soundmanger>().PlaySFX(1);
         for (int i = 0; i < fireballs.Count; i++)
         {
             float offsetX = (i - (fireballs.Count - 1) / 2f) * 1.1f;

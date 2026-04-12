@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEO - level board.unity
     guid: f5db18827b949de4db086bc5a0c283b6
+  - enabled: 1
+    path: Assets/Scenes/newtesting.unity
+    guid: f0c3b248452cffb479a6edd00b6f9a2d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

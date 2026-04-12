@@ -5,6 +5,11 @@ public class soundmanger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public AudioSource musicSource;
     public AudioSource sfxSource;
+    public AudioClip[] sfxClips;
+    public AudioClip[] musicClips;
+    public float masterVol = 0f;
+    public float musicVol = 0f;
+    public float sfxVol = 0f;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -13,6 +18,8 @@ public class soundmanger : MonoBehaviour
     {
         musicSource = GameObject.Find("music").GetComponent<AudioSource>();
         sfxSource = GameObject.Find("sfx").GetComponent<AudioSource>();
+        PlayMusic(0);
+        SetMusic(0);
     }
 
     // Update is called once per frame
@@ -20,25 +27,33 @@ public class soundmanger : MonoBehaviour
     {
         
     }
-    public void SetMaster(float x)
+    public void SetMaster(float val)
     {
-        musicSource.volume = x;
-        sfxSource.volume = x;
+        masterVol = val;
+        musicSource.volume = masterVol * musicVol;
+        sfxSource.volume = masterVol * sfxVol;
     }
 
-    public void SetMusic(float x) { 
-        musicSource.volume = x; 
-    }
-    public void SetSFX(float x) {
-        sfxSource.volume = x; 
-    }
-    
-    public void PlaySFX(AudioClip clip) 
-    { 
-        sfxSource.PlayOneShot(clip);
+    public void SetMusic(float val)
+    {
+        musicVol = val;
+        musicSource.volume = masterVol * musicVol;
     }
 
-    public void PlayMusic(AudioClip clip) {
-        musicSource.clip = clip; musicSource.Play(); 
+    public void SetSFX(float val)
+    {
+        sfxVol = val;
+        sfxSource.volume = masterVol * sfxVol;
+    }
+
+    public void PlaySFX(int x) 
+    {
+        sfxSource.PlayOneShot(sfxClips[x]);
+    }
+
+    public void PlayMusic(int x)
+    {
+        musicSource.clip = musicClips[x];
+        musicSource.Play();
     }
 }

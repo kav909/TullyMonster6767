@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 77ea588ebc5f632428eb2b78a8e12691
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 8
+  defaultSettings:
+    serializedVersion: 2
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+    preloadAudioData: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 335554
+  packageName: LOW END IMPACTS VOLUME ONE
+  packageVersion: 1.0
+  assetPath: Assets/ROHHSA/LOW END IMPACTS VOLUME ONE by ROHHSA/GAIN098 [2025-09-06
+    155536].wav
+  uploadId: 820572

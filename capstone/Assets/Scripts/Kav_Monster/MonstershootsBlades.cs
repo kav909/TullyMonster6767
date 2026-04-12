@@ -9,15 +9,16 @@ public class MonstershootsBlades : MonoBehaviour
     [SerializeField] List<GameObject> blades;
 
     public GameObject player;
-
+    public GameObject soundManager;
     Rigidbody2D rb;
     Animator ani;
-
+    float footstepTimer = 0f;
     [SerializeField] float speed = 3f;
     [SerializeField] float attackRange = 10f;
 
     void Start()
     {
+        soundManager = GameObject.Find("soundMain");
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
@@ -59,6 +60,12 @@ public class MonstershootsBlades : MonoBehaviour
 
    private void MoveToPlayer(Vector2 direction)
     {
+        footstepTimer -= Time.deltaTime;
+        if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
+        {
+            soundManager.GetComponent<soundmanger>().PlaySFX(2);
+            footstepTimer = 0.75f;
+        }
         Vector2 moveDir = direction.normalized;
         rb.linearVelocity = moveDir * speed;
 
@@ -90,6 +97,7 @@ public class MonstershootsBlades : MonoBehaviour
 
     public void UseWeapon()
     {
+        soundManager.GetComponent<soundmanger>().PlaySFX(4);
         Vector2 baseDirection = (player.transform.position - transform.position).normalized;
         float centerAngle = Mathf.Atan2(baseDirection.y, baseDirection.x) * Mathf.Rad2Deg;
         float spread = 30f; 
@@ -114,6 +122,7 @@ public class MonstershootsBlades : MonoBehaviour
 
     private IEnumerator UseSwipe()
     {
+        soundManager.GetComponent<soundmanger>().PlaySFX(3);
         yield return new WaitForSeconds(0.3f); 
         dmgfield.SetActive(true);
         yield return new WaitForSeconds(0.2f); 
