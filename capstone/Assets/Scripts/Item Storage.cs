@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ItemStorage : MonoBehaviour
 {
     
@@ -60,10 +60,22 @@ public class ItemStorage : MonoBehaviour
     public GameObject[] GloveSlot;// = new GameObject[6];
     public GameObject[] ShoeSlot;// = new GameObject[6];
     public GameObject[] WeaponSlot;// = new GameObject[9];
-
+    public static ItemStorage Instance;
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // destroy duplicate
+            return;
+        }
+        Instance = this;
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+        
+
     }
         //public GameObject[] allSlot;
         // Start is called once before the first execution of Update after the MonoBehaviour is created

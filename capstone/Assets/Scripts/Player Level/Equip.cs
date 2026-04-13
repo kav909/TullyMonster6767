@@ -48,7 +48,7 @@ public class Equip : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        foreach (var obj in WeaponItem)
+        /*foreach (var obj in WeaponItem)
         {
             Debug.Log("AAAAA");
 
@@ -58,7 +58,7 @@ public class Equip : MonoBehaviour
                 DontDestroyOnLoad(obj);
             }
 
-        }
+        }*/
 
         if (ItemStorage == null)
         {

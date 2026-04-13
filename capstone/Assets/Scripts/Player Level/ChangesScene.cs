@@ -45,6 +45,7 @@ public class ChangesScene : MonoBehaviour
         }
         if(SceneManager.GetActiveScene().buildIndex == 5)
         {
+            //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);
             SceneManager.LoadScene(lastIndex);
         }
     }
