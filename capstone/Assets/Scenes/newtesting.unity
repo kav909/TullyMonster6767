@@ -1461,26 +1461,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 730031044479340334, guid: cae4bb324e8d07e41a8055c58e5250a5,
-        type: 3}
-      propertyPath: m_Name
-      value: playercanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076857152313063066, guid: cae4bb324e8d07e41a8055c58e5250a5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076857152313063066, guid: cae4bb324e8d07e41a8055c58e5250a5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076857152313063066, guid: cae4bb324e8d07e41a8055c58e5250a5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5588087593801119617, guid: cae4bb324e8d07e41a8055c58e5250a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1530,11 +1510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6464571554588826682, guid: cae4bb324e8d07e41a8055c58e5250a5,
-        type: 3}
-      propertyPath: m_Name
-      value: playertext
       objectReference: {fileID: 0}
     - target: {fileID: 8928986728665537579, guid: cae4bb324e8d07e41a8055c58e5250a5,
         type: 3}

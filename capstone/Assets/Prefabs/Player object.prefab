@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8683870368091920670}
   - component: {fileID: 1920587178265579434}
   m_Layer: 0
-  m_Name: hero-idle-back
-  m_TagString: Untagged
+  m_Name: player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 6417069595202173417}
   - component: {fileID: 3525823536604623162}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: playercanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 7181869580350049622}
   - component: {fileID: 3426566339443558278}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: playertext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,12 +8,12 @@ public class player : MonoBehaviour
     public Text text;
 
     Rigidbody2D rb;
-
+    float footstepTimer = 0f;
     [SerializeField] float speed = 5f;
     [SerializeField] int hp = 100;
     [SerializeField] int damage = 10;
     [SerializeField] Animator ani;
-
+    public GameObject soundManager;
     Vector2 movement;
 
     void Start()
@@ -21,7 +21,7 @@ public class player : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
-
+        soundManager = GameObject.Find("soundMain");
     }
 
     void Update()
@@ -62,13 +62,21 @@ public class player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha3)) {
             ani.SetTrigger("attack");
+            soundManager.GetComponent<soundmanger>().PlaySFX(8);
         }
         if (Input.GetKey(KeyCode.Alpha4))
         {
             ani.SetTrigger("attack2");
+            soundManager.GetComponent<soundmanger>().PlaySFX(7);
         }
 
-          text.text = "HP: " + hp;
+        footstepTimer -= Time.deltaTime;
+        if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
+        {
+            soundManager.GetComponent<soundmanger>().PlaySFX(6);
+            footstepTimer = 0.75f;
+        }
+        text.text = "HP: " + hp;
     }
 
     private void FixedUpdate()
