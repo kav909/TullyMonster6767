@@ -5,23 +5,23 @@ using UnityEngine.UIElements;
 
 public class player : MonoBehaviour
 {
-  //  [SerializeField] Text text;
+    public Text text;
 
     Rigidbody2D rb;
-
+    float footstepTimer = 0f;
     [SerializeField] float speed = 5f;
     [SerializeField] int hp = 100;
     [SerializeField] int damage = 10;
     [SerializeField] Animator ani;
-
+    public GameObject soundManager;
     Vector2 movement;
 
     void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
-
-
+        text = GameObject.Find("playertext").GetComponent<Text>();
+        soundManager = GameObject.Find("soundMain");
     }
 
     void Update()
@@ -30,35 +30,53 @@ public class player : MonoBehaviour
         movement.y = 0;
         if (Input.GetKey(KeyCode.A)) {
             movement.x = -1;
-            ani.SetBool("side", true);
             GetComponent<SpriteRenderer>().flipX = true;
             ani.SetBool("up", false);
-           
+            ani.SetBool("side", true);
+            ani.SetBool("down", false);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            movement.x = 1;
-            ani.SetBool("side", true);
-            GetComponent<SpriteRenderer>().flipX = false;
+           movement.x = 1;
+           
+          GetComponent<SpriteRenderer>().flipX = false;
             ani.SetBool("up", false);
+            ani.SetBool("side", true);
+            ani.SetBool("down", false);
         }
         if (Input.GetKey(KeyCode.W))
         {
             movement.y = 1;
-            ani.SetBool("side", false);
-            GetComponent<SpriteRenderer>().flipX = false;
             ani.SetBool("up", true);
+            ani.SetBool("side", false);
+            ani.SetBool("down", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
             movement.y = -1;
+            ani.SetBool("up", false);
             ani.SetBool("side", false);
-            GetComponent<SpriteRenderer>().flipX = false;
-            ani.SetBool("up", true);
+            ani.SetBool("down", true);
         }
 
-      //  text.text = "HP: " + hp;
+        if (Input.GetKey(KeyCode.Alpha3)) {
+            ani.SetTrigger("attack");
+            soundManager.GetComponent<soundmanger>().PlaySFX(8);
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            ani.SetTrigger("attack2");
+            soundManager.GetComponent<soundmanger>().PlaySFX(7);
+        }
+
+        footstepTimer -= Time.deltaTime;
+        if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
+        {
+            soundManager.GetComponent<soundmanger>().PlaySFX(6);
+            footstepTimer = 0.75f;
+        }
+        text.text = "HP: " + hp;
     }
 
     private void FixedUpdate()
