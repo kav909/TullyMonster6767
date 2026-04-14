@@ -38,6 +38,8 @@ TagManager:
   - PickUpEquipment
   - goToLevelBoard
   - PickUpEquipmentRange
+  - Character
+  - InventoryTab
   layers:
   - Default
   - TransparentFX

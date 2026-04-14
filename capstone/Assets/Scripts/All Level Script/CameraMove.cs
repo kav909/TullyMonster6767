@@ -15,17 +15,10 @@ public class CameraMove : MonoBehaviour
     [SerializeField] float rightB;
     [SerializeField] float upB;
     [SerializeField] float bottomB;
-    public static CameraMove Instance;
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject); // destroy duplicate
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        
+}
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
     {

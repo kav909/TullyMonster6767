@@ -3965,7 +3965,6 @@ Transform:
   m_Children:
   - {fileID: 1268089967}
   - {fileID: 1466234361}
-  - {fileID: 405658101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &292375109
@@ -4301,7 +4300,7 @@ GameObject:
   - component: {fileID: 340426328}
   m_Layer: 0
   m_Name: Inventory Tab
-  m_TagString: Untagged
+  m_TagString: InventoryTab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6596,7 +6595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5579d85bf1275cd4aa2c9fac92f27ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Equip: {fileID: 340426329}
+  Equip: {fileID: 0}
   EquipmentPickUpRange: {fileID: 2094053465}
   subWeaponItems: []
   lastIndex: 0
@@ -6665,12 +6664,12 @@ Transform:
   m_GameObject: {fileID: 405658097}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.4613, y: 4.261, z: 10}
+  m_LocalPosition: {x: 7.4613, y: 4.261, z: 0}
   m_LocalScale: {x: 2.245472, y: 0.8959007, z: 0.8959007}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 358375917}
-  m_Father: {fileID: 292375108}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &405993725 stripped
 Transform:
@@ -56164,6 +56163,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 292375108}
+  - {fileID: 405658101}
   - {fileID: 42123041}
   - {fileID: 789488921}
   - {fileID: 1539611401925170682}

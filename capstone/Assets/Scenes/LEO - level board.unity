@@ -3788,7 +3788,7 @@ GameObject:
   - component: {fileID: 586401461}
   m_Layer: 0
   m_Name: Inventory Tab
-  m_TagString: Untagged
+  m_TagString: InventoryTab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
