@@ -1,4 +1,4 @@
-using TMPro;
+/*using TMPro;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -57,3 +57,4 @@ public class CameraMove : MonoBehaviour
     }
 
 }
+*/

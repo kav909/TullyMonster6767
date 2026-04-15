@@ -212,6 +212,7 @@ MonoBehaviour:
   hp: 100
   damage: 10
   ani: {fileID: 2019840637738796775}
+  soundManager: {fileID: 0}
 --- !u!1 &730031044479340334
 GameObject:
   m_ObjectHideFlags: 0
