@@ -1,5 +1,5 @@
 
-using UnityEngine;
+/*using UnityEngine;
 
 public class TestingScript : MonoBehaviour
 {
@@ -64,4 +64,4 @@ public class TestingScript : MonoBehaviour
     public GameObject getTheTextWindow(){
         return TheTextWindow;
     }
-}
+}*/

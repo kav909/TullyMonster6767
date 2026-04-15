@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class soundmanger : MonoBehaviour
 {
@@ -44,6 +46,7 @@ public class soundmanger : MonoBehaviour
     {
         sfxVol = val;
         sfxSource.volume = masterVol * sfxVol;
+        
     }
 
     public void PlaySFX(int x) 
