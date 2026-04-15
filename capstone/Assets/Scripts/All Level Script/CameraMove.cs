@@ -18,8 +18,8 @@ public class CameraMove : MonoBehaviour
     void Awake()
     {
         
-}
     }
+    
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
     {
         
@@ -55,5 +55,6 @@ public class CameraMove : MonoBehaviour
     {
         target = newTarget;
     }
+
 
 }
