@@ -64,6 +64,7 @@ public class AddEquipment : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        Debug.Log("CHOOSEJDSJDSJ");
         if (gameObject.tag == "Weapon" && !weaponSlot.GetComponent<Inventory>().containEquipment)
         {
             weaponSlot.GetComponent<Inventory>().isEquiped(true);

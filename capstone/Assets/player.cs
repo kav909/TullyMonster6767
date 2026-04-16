@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -15,7 +15,20 @@ public class player : MonoBehaviour
     [SerializeField] Animator ani;
     public GameObject soundManager;
     Vector2 movement;
-
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+        text = GameObject.FindGameObjectWithTag("SubTag").GetComponent<Text>();
+        ani = GameObject.Find("player").GetComponent<Animator>();
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     void Start()
     {
 

@@ -40,6 +40,7 @@ TagManager:
   - PickUpEquipmentRange
   - Character
   - InventoryTab
+  - SubTag
   layers:
   - Default
   - TransparentFX

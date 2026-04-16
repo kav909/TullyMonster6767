@@ -1,6 +1,6 @@
 using System.Drawing;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TeleportLightUp : MonoBehaviour
 {
     [SerializeField] GameObject Light1;
@@ -13,9 +13,14 @@ public class TeleportLightUp : MonoBehaviour
     private SpriteRenderer sr2;
     private SpriteRenderer sr3;
     private SpriteRenderer sr4;
+    public float neededWaitTime = 1.3f;
+    public float timeWaited;
+    bool isin;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isin = false;
+        timeWaited = 0f;
         LightSpeed = 1;
         sr1 = Light1.GetComponent<SpriteRenderer>();
         sr2 = Light2.GetComponent<SpriteRenderer>();
@@ -32,13 +37,28 @@ public class TeleportLightUp : MonoBehaviour
         sr2.color = color;
         sr3.color = color;
         sr4.color = color;
+        if(isin){
+            timeWaited += Time.deltaTime;
+            if(timeWaited > neededWaitTime){
+                isin = false;
+                timeWaited = 0f;
+                if(SceneManager.GetActiveScene().buildIndex == 3){
+                    SceneManager.LoadScene(7);
+                }
+                if(SceneManager.GetActiveScene().buildIndex == 7){
+                    SceneManager.LoadScene(8);
+                }
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        isin = true;
         TargetShade = 1f;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        isin = false;
         TargetShade = 0f;
     }
     public void setOpacity(float opacity)
