@@ -1,4 +1,4 @@
-/*using TMPro;
+using TMPro;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +15,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] float rightB;
     [SerializeField] float upB;
     [SerializeField] float bottomB;
+    public bool isAtLevelBoard;
     void Awake()
     {
         
@@ -27,6 +28,8 @@ public class CameraMove : MonoBehaviour
     }
     void Start()
     {
+        isAtLevelBoard = false;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         leftB = transform.position.x - 1.5f;
         rightB = transform.position.x + 1.5f;
         upB = transform.position.y + 0.5f;
@@ -36,6 +39,9 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isAtLevelBoard){
+            return;
+        }
 
         if (target.position.x <= leftB || target.position.x >= rightB || target.position.y >= upB || target.position.y <= bottomB)
         {
@@ -58,4 +64,3 @@ public class CameraMove : MonoBehaviour
 
 
 }
-*/

@@ -8,6 +8,7 @@ public class TeleportLightUp : MonoBehaviour
     [SerializeField] GameObject Light3;
     [SerializeField] GameObject Light4;
     [SerializeField] int LightSpeed;
+    [SerializeField] GameObject player;
     public float TargetShade;
     private SpriteRenderer sr1;
     private SpriteRenderer sr2;
@@ -27,7 +28,21 @@ public class TeleportLightUp : MonoBehaviour
         sr3 = Light3.GetComponent<SpriteRenderer>();
         sr4 = Light4.GetComponent<SpriteRenderer>();
     }
+    void Awake()
+    {
+        //DontDestroyOnLoad(gameObject);
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -44,6 +59,7 @@ public class TeleportLightUp : MonoBehaviour
                 timeWaited = 0f;
                 if(SceneManager.GetActiveScene().buildIndex == 3){
                     SceneManager.LoadScene(7);
+                    player.transform.position = new Vector2(-5.3f, -28.5f);
                 }
                 if(SceneManager.GetActiveScene().buildIndex == 7){
                     SceneManager.LoadScene(8);
