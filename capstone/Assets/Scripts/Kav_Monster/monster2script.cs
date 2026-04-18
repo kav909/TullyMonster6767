@@ -20,6 +20,10 @@ public class monster2script : MonoBehaviour
     [SerializeField] float attackRange = 10f;
     float footstepTimer = 0f;
     string currentDir = "down";
+    bool hasLineOfSight;
+    float distance;
+    bool inRange = false;
+    [SerializeField] float distanceThreshold = 5f;
 
     void Start()
     {
@@ -39,7 +43,7 @@ public class monster2script : MonoBehaviour
     {
         Vector2 direction = player.transform.position - transform.position;
 
-        if (direction.magnitude < attackRange)
+        if (hasLineOfSight && inRange)
         {
             MoveToPlayer(direction);
 
@@ -59,7 +63,22 @@ public class monster2script : MonoBehaviour
         }
         
     }
+    private void FixedUpdate()
+    {
+        hasLineOfSight = false;
+        RaycastHit2D[] ray = Physics2D.RaycastAll(transform.position, player.transform.position - transform.position);
+        if (ray.Length > 1 && ray[1].collider != null)
+        {
+            hasLineOfSight = ray[1].collider.gameObject == player;
+            if (hasLineOfSight)
+                Debug.DrawLine(transform.position, player.transform.position, Color.green);
+            else
+                Debug.DrawLine(transform.position, player.transform.position, Color.red);
+        }
 
+        distance = Vector2.Distance(transform.position, player.transform.position);
+        inRange = distance < distanceThreshold;
+    }
     private void MoveToPlayer(Vector2 direction)
     {
         footstepTimer -= Time.deltaTime;

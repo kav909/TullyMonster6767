@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class player : MonoBehaviour
 {
@@ -14,21 +15,29 @@ public class player : MonoBehaviour
     [SerializeField] int damage = 10;
     [SerializeField] Animator ani;
     public GameObject soundManager;
+    [SerializeField] GameObject arrow;
+    [SerializeField] GameObject circle;
     Vector2 movement;
+    [SerializeField] GameObject punchUp;
+    [SerializeField] GameObject punchDown;
+    [SerializeField] GameObject punchLeft;
+    [SerializeField] GameObject punchRight;
+    string currentDir = "down";
+
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //DontDestroyOnLoad(gameObject);
+       // SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
-    {
-        text = GameObject.FindGameObjectWithTag("SubTag").GetComponent<Text>();
-        ani = GameObject.Find("player").GetComponent<Animator>();
-    }
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+   // public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+  //  {
+       // text = GameObject.FindGameObjectWithTag("SubTag").GetComponent<Text>();
+        //ani = GameObject.Find("player").GetComponent<Animator>();
+   // }
+ //   private void OnDestroy()
+   // {
+       // SceneManager.sceneLoaded -= OnSceneLoaded;
+   // }
     void Start()
     {
 
@@ -47,6 +56,7 @@ public class player : MonoBehaviour
             ani.SetBool("up", false);
             ani.SetBool("side", true);
             ani.SetBool("down", false);
+            currentDir = "left";
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -57,6 +67,7 @@ public class player : MonoBehaviour
             ani.SetBool("up", false);
             ani.SetBool("side", true);
             ani.SetBool("down", false);
+            currentDir = "right";
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -64,6 +75,7 @@ public class player : MonoBehaviour
             ani.SetBool("up", true);
             ani.SetBool("side", false);
             ani.SetBool("down", false);
+            currentDir = "up";
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -71,16 +83,20 @@ public class player : MonoBehaviour
             ani.SetBool("up", false);
             ani.SetBool("side", false);
             ani.SetBool("down", true);
+            currentDir = "down";
         }
 
-        if (Input.GetKey(KeyCode.Alpha3)) {
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
             ani.SetTrigger("attack");
             soundManager.GetComponent<soundmanger>().PlaySFX(8);
+           
+            StartCoroutine(useArrow());
         }
-        if (Input.GetKey(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ani.SetTrigger("attack2");
-            soundManager.GetComponent<soundmanger>().PlaySFX(7);
+           
+            StartCoroutine(PunchAttack());
         }
 
         footstepTimer -= Time.deltaTime;
@@ -106,5 +122,59 @@ public class player : MonoBehaviour
         }
     }
 
+    private IEnumerator useArrow()
+    {
+        float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
+
+        GameObject a = Instantiate(arrow, transform.position, Quaternion.identity);
+        a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 1f).normalized * 10f;
+        a.transform.rotation = Quaternion.Euler(0, 0, dir > 0 ? -135f : -45f); 
+        yield return new WaitForSeconds(0.5f);
+
+        Vector2 pos = a.transform.position;
+        Destroy(a);
+        circle.transform.position = new Vector2(pos.x, pos.y - 5.5f);
+        circle.SetActive(true);
+
+        for (int i = 0; i < 10; i++)
+        {
+            float randX = Random.Range(-1f, 1f);
+            GameObject a2 = Instantiate(arrow, new Vector2(pos.x + randX, pos.y), Quaternion.identity);
+            a2.transform.rotation = Quaternion.Euler(0, 0, 90f);
+            a2.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -1f).normalized * 10f;
+            Destroy(a2, .5f);
+            yield return new WaitForSeconds(0.1f); 
+        }
+        yield return new WaitForSeconds(.5f);
+        circle.SetActive(false);
+    }
+    private IEnumerator PunchAttack()
+    {
+        soundManager.GetComponent<soundmanger>().PlaySFX(7);
+        yield return new WaitForSeconds(0.25f);
+        EnablePunch();
+        yield return new WaitForSeconds(0.2f);
+        punchUp.SetActive(false);
+        punchDown.SetActive(false);
+        punchLeft.SetActive(false);
+        punchRight.SetActive(false);
+    }
+
+    private void EnablePunch()
+    {
+        punchUp.SetActive(false);
+        punchDown.SetActive(false);
+        punchLeft.SetActive(false);
+        punchRight.SetActive(false);
+
+        if (currentDir == "up") 
+            punchUp.SetActive(true);
+        if (currentDir == "down")
+            punchDown.SetActive(true);
+        if (currentDir == "left")
+            punchLeft.SetActive(true);
+        if (currentDir == "right") 
+            punchRight.SetActive(true);
+    }
 
 }
