@@ -18,10 +18,10 @@ public class player : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject circle;
     Vector2 movement;
-    public GameObject punchUp;
-    public GameObject punchDown;
-    public GameObject punchLeft;
-    public GameObject punchRight;
+    [SerializeField] GameObject punchUp;
+    [SerializeField] GameObject punchDown;
+    [SerializeField] GameObject punchLeft;
+    [SerializeField] GameObject punchRight;
     string currentDir = "down";
 
     void Awake()
@@ -29,9 +29,9 @@ public class player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ////<<--- 
     {
-      
+        
         ani = GameObject.Find("player").GetComponent<Animator>();
     }
     private void OnDestroy()
@@ -40,15 +40,9 @@ public class player : MonoBehaviour
     }
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
-        punchDown = GameObject.Find("pldown");
-        punchLeft = GameObject.Find("plleft");
-        punchRight = GameObject.Find("plright");
-        punchUp = GameObject.Find("plup");
-
     }
 
     void Update()
