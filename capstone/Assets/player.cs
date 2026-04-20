@@ -18,10 +18,10 @@ public class player : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject circle;
     Vector2 movement;
-    [SerializeField] GameObject punchUp;
-    [SerializeField] GameObject punchDown;
-    [SerializeField] GameObject punchLeft;
-    [SerializeField] GameObject punchRight;
+    public GameObject punchUp;
+    public GameObject punchDown;
+    public GameObject punchLeft;
+    public GameObject punchRight;
     string currentDir = "down";
 
     void Awake()
@@ -43,6 +43,16 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
+
+        punchDown = GameObject.Find("pldown");
+        punchLeft = GameObject.Find("plleft");
+        punchRight = GameObject.Find("plright");
+        punchUp = GameObject.Find("plup");
+
+        punchUp.SetActive(false);
+        punchDown.SetActive(false);
+        punchLeft.SetActive(false);
+        punchRight.SetActive(false);
     }
 
     void Update()
