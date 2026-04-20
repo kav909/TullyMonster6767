@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class monster2script : MonoBehaviour
 {
-    [SerializeField] GameObject swordUp;
-    [SerializeField] GameObject swordDown;
-    [SerializeField] GameObject swordLeft;
-    [SerializeField] GameObject swordRight;
+    public GameObject swordUp;
+    public GameObject swordDown;
+    public GameObject swordLeft;
+    public GameObject swordRight;
 
     [SerializeField] List<GameObject> fireballs;
 
@@ -31,6 +31,11 @@ public class monster2script : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+
+        swordDown = GameObject.Find("mdown");
+        swordLeft = GameObject.Find("mleft");
+        swordRight = GameObject.Find("mright");
+        swordUp = GameObject.Find("mup");
 
         swordUp.SetActive(false);
         swordDown.SetActive(false);
