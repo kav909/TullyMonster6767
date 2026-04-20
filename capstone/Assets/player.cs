@@ -18,32 +18,37 @@ public class player : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject circle;
     Vector2 movement;
-    [SerializeField] GameObject punchUp;
-    [SerializeField] GameObject punchDown;
-    [SerializeField] GameObject punchLeft;
-    [SerializeField] GameObject punchRight;
+    public GameObject punchUp;
+    public GameObject punchDown;
+    public GameObject punchLeft;
+    public GameObject punchRight;
     string currentDir = "down";
 
     void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
-       // SceneManager.sceneLoaded += OnSceneLoaded;
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
-   // public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
-  //  {
-       // text = GameObject.FindGameObjectWithTag("SubTag").GetComponent<Text>();
-        //ani = GameObject.Find("player").GetComponent<Animator>();
-   // }
- //   private void OnDestroy()
-   // {
-       // SceneManager.sceneLoaded -= OnSceneLoaded;
-   // }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    {
+      
+        ani = GameObject.Find("player").GetComponent<Animator>();
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     void Start()
     {
 
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
+        punchDown = GameObject.Find("pldown");
+        punchLeft = GameObject.Find("plleft");
+        punchRight = GameObject.Find("plright");
+        punchUp = GameObject.Find("plup");
+
     }
 
     void Update()
