@@ -25,6 +25,8 @@ public class monster2script : MonoBehaviour
     bool inRange = false;
     [SerializeField] float distanceThreshold = 5f;
 
+    public int HP = 100;
+
     void Start()
     {
         soundManager = GameObject.Find("soundMain");
@@ -46,6 +48,10 @@ public class monster2script : MonoBehaviour
 
     void Update()
     {
+        if (HP < 1)
+        {
+            gameObject.SetActive(false);
+        }
         Vector2 direction = player.transform.position - transform.position;
 
         if (hasLineOfSight && inRange)
@@ -130,7 +136,14 @@ public class monster2script : MonoBehaviour
             }
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("playerdmg"))
+        {
+            HP -= 10;
+            //Destroy(collision.gameObject);
+        }
+    }
     private IEnumerator SwordAttack()
     {
         soundManager.GetComponent<soundmanger>().PlaySFX(5);

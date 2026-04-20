@@ -41,6 +41,7 @@ TagManager:
   - Character
   - InventoryTab
   - SubTag
+  - playerdmg
   layers:
   - Default
   - TransparentFX
