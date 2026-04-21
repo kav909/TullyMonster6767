@@ -7,6 +7,7 @@ using static UnityEditor.Progress;
 public class Equip : MonoBehaviour
 {
     [SerializeField] ItemStorage ItemStorage;
+    [SerializeField] ChangesScene changeScene;
     //[SerializeField] levelup levelup;
     public GameObject[] HeadItem = new GameObject[12];
     public GameObject[] FrontItem = new GameObject[12];
@@ -344,6 +345,7 @@ public class Equip : MonoBehaviour
                     //Debug.Log("the open index is " + findOpenWeaponIndex());
                     //Debug.Log("b");
                     WeaponItem[findOpenWeaponIndex()] = equipment;
+                    changeScene.isPickedUp = true;
                 }
             }
         }

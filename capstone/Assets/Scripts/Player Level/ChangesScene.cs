@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 using static UnityEngine.InputManagerEntry;
 public class ChangesScene : MonoBehaviour
 {
-    [SerializeField] UnityEngine.Transform target;
+    [SerializeField] GameObject subScene;
+    public bool isPickedUp;
     float chachUpTime = .55f;
     private Vector3 velocity = Vector3.zero;
     [SerializeField] float leftB;
@@ -17,6 +18,8 @@ public class ChangesScene : MonoBehaviour
     public int lastIndex;
     public static ChangesScene Instance;
     public bool atLevelBoard;
+    [SerializeField] AddEquipment AddEquipment;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -41,28 +44,38 @@ public class ChangesScene : MonoBehaviour
     }
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-        leftB = transform.position.x - 1.5f;
-        rightB = transform.position.x + 1.5f;
-        upB = transform.position.y + 0.5f;
-        bottomB = transform.position.y - 0.5f;
-        
         Equip = GameObject.FindGameObjectWithTag("InventoryTab");
         EquipmentPickUpRange = GameObject.FindGameObjectWithTag("PickUpEquipmentRange");
         atLevelBoard = false;
     }
     void Update()
     {
-        if (target.position.x <= leftB || target.position.x >= rightB || target.position.y >= upB || target.position.y <= bottomB)
-        {
-            //   Debug.Log("Camera Move");
-            Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, chachUpTime);
-            leftB = transform.position.x - 0f;
-            rightB = transform.position.x + 0f;
-            upB = transform.position.y + 0f;
-            bottomB = transform.position.y - 0f;
+        if(!atLevelBoard &&!isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
+            gameObject.transform.position = subScene.transform.position;
+            AddEquipment.ShowEquipment();
         }
+        else if(!atLevelBoard && isPickedUp){////////////////////////////&& AddEquipment.isPickedUp
+            AddEquipment.hideEquipment();
+        }
+        else if(atLevelBoard && !isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
+            AddEquipment.hideEquipment();
+        }
+        else{
+            AddEquipment.ShowEquipment();
+        }
+        /*if(!atLevelBoard){////////////////////////////&& !AddEquipment.isPickedUp
+            gameObject.transform.position = subScene.transform.position;
+            AddEquipment.ShowEquipment();
+        }
+        else if(!atLevelBoard ){////////////////////////////&& AddEquipment.isPickedUp
+            AddEquipment.hideEquipment();
+        }
+        else if(atLevelBoard){////////////////////////////&& !AddEquipment.isPickedUp
+            AddEquipment.hideEquipment();
+        }
+        else{
+            AddEquipment.ShowEquipment();
+        }*/
         }
     private void OnMouseDown()
     {

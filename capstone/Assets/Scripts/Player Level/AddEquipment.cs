@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class AddEquipment : MonoBehaviour
 {
     public bool isSelecting;
+    
     public int AddATK;
     public int AddDEF;
     public int AddSPD;
@@ -143,5 +144,11 @@ public class AddEquipment : MonoBehaviour
         levelup.unequipSPD(AddSPD);
         levelup.unequipMAG(AddMAG);
 
+    }
+    public void hideEquipment(){
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    public void ShowEquipment(){
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
