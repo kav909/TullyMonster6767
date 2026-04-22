@@ -11,7 +11,7 @@ public class player : MonoBehaviour
     Rigidbody2D rb;
     float footstepTimer = 0f;
     [SerializeField] float speed = 5f;
-    [SerializeField] int hp = 100;
+    public int hp = 100;
     [SerializeField] int damage = 10;
     [SerializeField] Animator ani;
     public GameObject soundManager;
@@ -23,6 +23,8 @@ public class player : MonoBehaviour
     public GameObject punchLeft;
     public GameObject punchRight;
     string currentDir = "down";
+    public int stamina = 100;
+    public int mana = 100;
 
     void Awake()
     {
@@ -108,7 +110,21 @@ public class player : MonoBehaviour
             StartCoroutine(PunchAttack());
         }
 
-        footstepTimer -= Time.deltaTime;
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 10)
+        {
+            if (rb.linearVelocityX < 15f && rb.linearVelocityY<15f) {
+                rb.linearVelocity = rb.linearVelocity * 10f;
+                stamina--;
+            }
+           
+           
+        }
+        else {
+            if(stamina<99)
+                stamina++;
+        }
+
+            footstepTimer -= Time.deltaTime;
         if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
         {
             soundManager.GetComponent<soundmanger>().PlaySFX(6);
