@@ -20,14 +20,25 @@ public class levelup : MonoBehaviour
     public float MaxEXP;
     [SerializeField] GameObject EXPBar;
     [SerializeField] float EXP;
+    public static levelup Instance;
+
+    private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Persists across unloads
+        } 
+        else {
+            Destroy(gameObject);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ATKNum = 5;
+       /* ATKNum = 5;
         DEFNum = 5;
         SPDNum = 5;
         MAGNum = 5;
-        FreePointNum = 5;
+        FreePointNum = 5;*/
         //EXPBar.transform.position += Vector3.left * 80f;
     }
 

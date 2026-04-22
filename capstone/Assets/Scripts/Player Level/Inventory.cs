@@ -114,6 +114,12 @@ public class Inventory : MonoBehaviour
             }
         }*/
     }
+    public void OnTriggerEnter2D(Collider2D equipment)
+    {
+        if(equipment.gameObject.tag == "Weapon"){
+            containEquipment = true;
+        }
+    }
     public void isEquiped(bool ISit)
     {
         containEquipment = ISit;

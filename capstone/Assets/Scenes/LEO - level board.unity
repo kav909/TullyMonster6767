@@ -2289,6 +2289,7 @@ GameObject:
   - component: {fileID: 354185519}
   - component: {fileID: 354185522}
   - component: {fileID: 354185521}
+  - component: {fileID: 354185523}
   m_Layer: 0
   m_Name: Shoe Slot
   m_TagString: ShoeItem
@@ -2429,6 +2430,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &354185523
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354185518}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &360556600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1027125106889221817, guid: e23f198d4da87c3499dd73b0bd8207ff,
@@ -3005,6 +3052,7 @@ GameObject:
   - component: {fileID: 435457698}
   - component: {fileID: 435457701}
   - component: {fileID: 435457700}
+  - component: {fileID: 435457702}
   m_Layer: 0
   m_Name: Weapon Slot
   m_TagString: WeaponItem
@@ -3145,6 +3193,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &435457702
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435457697}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &438096543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,6 +4019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemStorage: {fileID: 1288070259}
+  changeScene: {fileID: 0}
   HeadItem:
   - {fileID: 0}
   - {fileID: 0}
@@ -5661,11 +5756,11 @@ MonoBehaviour:
   DEFAdd: {fileID: 171608340}
   SPDAdd: {fileID: 1253535033}
   MAGAdd: {fileID: 451202360}
-  ATKNum: 1
-  DEFNum: 1
-  SPDNum: 1
-  MAGNum: 1
-  FreePointNum: 0
+  ATKNum: 5
+  DEFNum: 5
+  SPDNum: 5
+  MAGNum: 5
+  FreePointNum: 5
   ATKText: {fileID: 321849380}
   DEFText: {fileID: 620016615}
   SPDText: {fileID: 1198994370}
@@ -5797,6 +5892,7 @@ GameObject:
   - component: {fileID: 853230758}
   - component: {fileID: 853230761}
   - component: {fileID: 853230760}
+  - component: {fileID: 853230762}
   m_Layer: 0
   m_Name: Head Slot
   m_TagString: HeadItem
@@ -5937,6 +6033,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &853230762
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853230757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &868308561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5949,6 +6091,7 @@ GameObject:
   - component: {fileID: 868308562}
   - component: {fileID: 868308565}
   - component: {fileID: 868308564}
+  - component: {fileID: 868308566}
   m_Layer: 0
   m_Name: Body Slot
   m_TagString: BodyItem
@@ -6089,6 +6232,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &868308566
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868308561}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &903305478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8122061462641160872, guid: 025190e9df723a141b7b05e29688539a,
@@ -9603,6 +9792,7 @@ GameObject:
   - component: {fileID: 1463449709}
   - component: {fileID: 1463449712}
   - component: {fileID: 1463449711}
+  - component: {fileID: 1463449713}
   m_Layer: 0
   m_Name: Glove Slot
   m_TagString: GloveItem
@@ -9743,6 +9933,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &1463449713
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463449708}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1467477991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6865826832110157348, guid: dddb382d1ddee2a47be2554dc322d20d,
@@ -9761,6 +9997,7 @@ GameObject:
   - component: {fileID: 1500602390}
   - component: {fileID: 1500602393}
   - component: {fileID: 1500602392}
+  - component: {fileID: 1500602394}
   m_Layer: 0
   m_Name: Front Slot
   m_TagString: FrontItem
@@ -9901,6 +10138,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &1500602394
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500602389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1517561773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13161,6 +13444,7 @@ GameObject:
   - component: {fileID: 1861419070}
   - component: {fileID: 1861419073}
   - component: {fileID: 1861419072}
+  - component: {fileID: 1861419074}
   m_Layer: 0
   m_Name: Pants  Slot
   m_TagString: PantsItem
@@ -13301,6 +13585,52 @@ MonoBehaviour:
   InventoryTab: {fileID: 586401460}
   equip: {fileID: 586401465}
   containEquipment: 0
+--- !u!61 &1861419074
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861419069}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1865093318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6014026107172631967, guid: fa21ae55500f41240bdde116a4237e30,

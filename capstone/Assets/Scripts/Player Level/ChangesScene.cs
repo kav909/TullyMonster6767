@@ -50,11 +50,13 @@ public class ChangesScene : MonoBehaviour
     }
     void Update()
     {
+        
         if(!atLevelBoard &&!isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
             gameObject.transform.position = subScene.transform.position;
             AddEquipment.ShowEquipment();
         }
         else if(!atLevelBoard && isPickedUp){////////////////////////////&& AddEquipment.isPickedUp
+            gameObject.transform.position = subScene.transform.position;
             AddEquipment.hideEquipment();
         }
         else if(atLevelBoard && !isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
@@ -94,8 +96,13 @@ public class ChangesScene : MonoBehaviour
             lastIndex = 3;
             //Equip = GameObject.FindGameObjectWithTag("InventoryTab");
             //SceneManager.LoadScene("LEO - level board");
-            goToLevelBoard();
             gameObject.transform.position = new Vector2(-5.13f, 4f);
+            if(AddEquipment.isSelecting == false ){
+               // AddEquipment.transform.position = new Vector2(-10f, -20f);
+            }
+            
+            goToLevelBoard();
+            
             Camera.isAtLevelBoard = true;
             //
         }
@@ -105,8 +112,9 @@ public class ChangesScene : MonoBehaviour
             Equip.SetActive(false);
             atLevelBoard = false;
             //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync("LEO - level board");
             gameObject.transform.position = new Vector2(7.4613f, 4.261f);
+            SceneManager.UnloadSceneAsync("LEO - level board");
+            
         }
     }
 
