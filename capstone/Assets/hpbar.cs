@@ -6,9 +6,10 @@ public class hpbar : MonoBehaviour
     [SerializeField] GameObject hpba;
     [SerializeField] GameObject pplayer;
     public bool cc = true;
-    public int n = 90;
+    public float n = 90;
     public int value = 0;
     public int barType = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +52,7 @@ public class hpbar : MonoBehaviour
         }
     }
 
-    private void z(int hp) { 
+    private void z(float hp) { 
        // n= hp;
         float i = hp*.01f;
         if (hp == 0)
@@ -61,7 +62,7 @@ public class hpbar : MonoBehaviour
         hpba.GetComponent<Transform>().localScale = new Vector3(i-.005f, .8f, .9f);
     }
 
-    private void zz(int st)
+    private void zz(float st)
     {
         // n= hp;
         float i = st * .01f;

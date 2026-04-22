@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class player : MonoBehaviour
 {
@@ -23,9 +24,11 @@ public class player : MonoBehaviour
     public GameObject punchLeft;
     public GameObject punchRight;
     string currentDir = "down";
-    public int stamina = 100;
-    public int mana = 100;
-
+    public float stamina = 100;
+    public float mana = 100;
+    public bool isSprinting = false;
+    public float cooldown = 0f;
+    public bool sprintCooldown = false;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -111,22 +114,47 @@ public class player : MonoBehaviour
             mana -= 10;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && stamina > 10)
+        if (cooldown > 0f)
         {
-            if (rb.linearVelocityX < 15f && rb.linearVelocityY<15f) {
-                rb.linearVelocity = rb.linearVelocity * 10f;
-                stamina--;
-            }
-           
-           
+            cooldown -= Time.deltaTime;
         }
-        else {
-            if(stamina<99)
-                stamina++;
-                
+        else { 
+            sprintCooldown = false;
         }
 
-            footstepTimer -= Time.deltaTime;
+        if (Input.GetKeyUp(KeyCode.LeftShift) && isSprinting)
+        {
+            isSprinting = false;
+            cooldown = 2f;
+            sprintCooldown = true;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && movement != Vector2.zero && stamina > 0 && cooldown <= 0f)
+        {
+            isSprinting = true;
+            stamina -= 20f * Time.deltaTime;
+
+            if (stamina <= 0f)
+            {
+                isSprinting = false;
+                cooldown = 2f;
+                sprintCooldown = true;
+            }
+        }
+        else if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = false;
+        }
+
+        
+        if (cooldown <= 0f && stamina < 100f)
+            stamina += 10f * Time.deltaTime;
+
+        stamina = Mathf.Clamp(stamina, 0f, 100f);      
+        mana = Mathf.Min(mana + 5f * Time.deltaTime, 100f);
+
+
+        footstepTimer -= Time.deltaTime;
         if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
         {
             soundManager.GetComponent<soundmanger>().PlaySFX(6);
@@ -135,11 +163,12 @@ public class player : MonoBehaviour
         text.text = "HP: " + hp;
     }
 
+   
     private void FixedUpdate()
     {
-        rb.linearVelocity = movement.normalized * speed;
+        float currentSpeed = isSprinting ? speed * 2f : speed;
+        rb.linearVelocity = movement.normalized * currentSpeed;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("dmg"))
