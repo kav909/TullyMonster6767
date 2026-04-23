@@ -13,9 +13,12 @@ public class MonstershootsBlades : MonoBehaviour
     Rigidbody2D rb;
     Animator ani;
     float footstepTimer = 0f;
+    float attack1Timer = 0f;
+    float attack2Timer = 0f;
     [SerializeField] float speed = 3f;
     [SerializeField] float attackRange = 10f;
     bool hasLineOfSight;
+    bool z;
     float distance;
     bool inRange = false;
     [SerializeField] float distanceThreshold = 5f;
@@ -44,19 +47,37 @@ public class MonstershootsBlades : MonoBehaviour
         {
             MoveToPlayer(direction);
 
-            
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                ani.SetTrigger("attack");
-                UseWeapon();
-            }
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            /*  if (Input.GetKeyDown(KeyCode.Alpha1))
+              {
+                  ani.SetTrigger("attack");
+                  UseWeapon();
+              }
+
+              if (Input.GetKeyDown(KeyCode.Alpha2))
+              {
+                  rb.linearVelocity = Vector2.zero;
+                  ani.SetTrigger("attack2");
+                  StartCoroutine(UseSwipe());
+              }*/
+            attack1Timer -= Time.deltaTime;
+            if (attack1Timer <= 0f)
             {
-                rb.linearVelocity = Vector2.zero;
-                ani.SetTrigger("attack2");
-                StartCoroutine(UseSwipe());
+                attack1Timer = 5f;
+                if (z)
+                {
+                    z= false;
+                    ani.SetTrigger("attack");
+                    UseWeapon();
+                }
+                else {
+                    z = true;
+                    rb.linearVelocity = Vector2.zero;
+                    ani.SetTrigger("attack2");
+                    StartCoroutine(UseSwipe());
+                }                         
             }
+           
         }
         else
         {

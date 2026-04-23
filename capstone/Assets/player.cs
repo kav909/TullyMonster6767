@@ -62,6 +62,12 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
+        if (hp < 1)
+        {
+            //gameObject.SetActive(false);
+            //GameObject.Find("playercam").SetActive(true);
+        }
         movement.x = 0;
         movement.y = 0;
         if (Input.GetKey(KeyCode.A)) {

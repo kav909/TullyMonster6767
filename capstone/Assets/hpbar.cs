@@ -9,11 +9,12 @@ public class hpbar : MonoBehaviour
     public float n = 90;
     public int value = 0;
     public int barType = 0;
+    Color c; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        c = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -45,6 +46,13 @@ public class hpbar : MonoBehaviour
         {
             n = pplayer.GetComponent<player>().stamina;
             zz(n);
+            if (pplayer.GetComponent<player>().sprintCooldown)
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.softYellow;
+            }
+            else {
+                gameObject.GetComponent<SpriteRenderer>().color = c;
+            }
         }
         else {
             n = pplayer.GetComponent<player>().mana;

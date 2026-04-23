@@ -15,7 +15,8 @@ public class monster2script : MonoBehaviour
     public GameObject soundManager;
     Rigidbody2D rb;
     Animator ani;
-
+    bool z;
+    float attack1Timer = 0f;
     [SerializeField] float speed = 3f;
     [SerializeField] float attackRange = 10f;
     float footstepTimer = 0f;
@@ -59,7 +60,7 @@ public class monster2script : MonoBehaviour
             MoveToPlayer(direction);
 
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            /*if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 rb.linearVelocity = Vector2.zero;
                 ani.SetTrigger("attack");
@@ -70,6 +71,26 @@ public class monster2script : MonoBehaviour
             {
                 ani.SetTrigger("attack2");
                 FireAttack();
+            }*/
+
+            attack1Timer -= Time.deltaTime;
+            if (attack1Timer <= 0f)
+            {
+                attack1Timer = 5f;
+                if (z)
+                {
+                    z = false;
+                    rb.linearVelocity = Vector2.zero;
+                    ani.SetTrigger("attack");
+                    StartCoroutine(SwordAttack());
+                }
+                else
+                {
+                    z = true;
+                    rb.linearVelocity = Vector2.zero;
+                    ani.SetTrigger("attack2");
+                    FireAttack();
+                }
             }
         }
         
