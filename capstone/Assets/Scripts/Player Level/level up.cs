@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class levelup : MonoBehaviour
@@ -22,7 +24,7 @@ public class levelup : MonoBehaviour
     [SerializeField] float EXP;
     public static levelup Instance;
 
-    private void Awake() {
+    /*private void Awake() {
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject); // Persists across unloads
@@ -30,15 +32,31 @@ public class levelup : MonoBehaviour
         else {
             Destroy(gameObject);
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ////<<--- 
+    {
+
+        ATKAdd = GameObject.FindGameObjectWithTag("ATK");
+        DEFAdd = GameObject.FindGameObjectWithTag("DEF");
+        SPDAdd = GameObject.FindGameObjectWithTag("SPD");
+        MAGAdd = GameObject.FindGameObjectWithTag("MAG");
+        ATKText = GameObject.Find("ATK").GetComponent<Text>();
+        DEFText = GameObject.Find("DEF").GetComponent<Text>();
+        SPDText = GameObject.Find("SPD").GetComponent<Text>();
+        MAGText = GameObject.Find("MAG").GetComponent<Text>();
+        FreePointText = GameObject.Find("Free Point").GetComponent<Text>();
+        EXPBar = GameObject.FindGameObjectWithTag("EXPBar");
+    }*/
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       /* ATKNum = 5;
-        DEFNum = 5;
-        SPDNum = 5;
-        MAGNum = 5;
-        FreePointNum = 5;*/
+        /* ATKNum = 5;
+         DEFNum = 5;
+         SPDNum = 5;
+         MAGNum = 5;
+         FreePointNum = 5;*/
         //EXPBar.transform.position += Vector3.left * 80f;
     }
 

@@ -157,7 +157,7 @@ public class player : MonoBehaviour
         footstepTimer -= Time.deltaTime;
         if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
         {
-            soundManager.GetComponent<soundmanger>().PlaySFX(6);
+           // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
             footstepTimer = 0.75f;
         }
         text.text = "HP: " + hp;

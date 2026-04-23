@@ -42,6 +42,7 @@ TagManager:
   - InventoryTab
   - SubTag
   - playerdmg
+  - EXPBar
   layers:
   - Default
   - TransparentFX

@@ -96,8 +96,13 @@ public class ChangesScene : MonoBehaviour
             lastIndex = 3;
             //Equip = GameObject.FindGameObjectWithTag("InventoryTab");
             //SceneManager.LoadScene("LEO - level board");
+
+            if (isPickedUp)
+            {
+                AddEquipment.gameObject.transform.position = new Vector2(-5.13f, -17f);
+            }
             gameObject.transform.position = new Vector2(-5.13f, 4f);
-            if(AddEquipment.isSelecting == false ){
+            if (AddEquipment.isSelecting == false ){
                // AddEquipment.transform.position = new Vector2(-10f, -20f);
             }
             
@@ -112,7 +117,11 @@ public class ChangesScene : MonoBehaviour
             Equip.SetActive(false);
             atLevelBoard = false;
             //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);
-            gameObject.transform.position = new Vector2(7.4613f, 4.261f);
+            if (isPickedUp)
+            {
+                AddEquipment.gameObject.transform.position = new Vector2(-5.13f, -17f);
+            }
+            
             SceneManager.UnloadSceneAsync("LEO - level board");
             
         }

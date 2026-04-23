@@ -22,23 +22,24 @@ public class AddEquipment : MonoBehaviour
     [SerializeField] GameObject shoeSlot;
     public static AddEquipment Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        
-        /*if (Instance != null && Instance != this)
-        {
-            //Destroy(gameObject);
-            return;
-        }*/
+     void Awake()
+     {
 
-        Instance = this;
+         if (Instance != null && Instance != this)
+         {
+             //Destroy(gameObject);
+             return;
+         }
+
+    Instance = this;
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ///<<--- 
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        levelup = FindAnyObjectByType<levelup>();
+        levelup = FindFirstObjectByType<levelup>();
+
         weaponSlot = GameObject.FindGameObjectWithTag("WeaponItem");
         headSlot = GameObject.FindGameObjectWithTag("HeadItem");
         frontSlot = GameObject.FindGameObjectWithTag("FrontItem");
@@ -47,15 +48,14 @@ public class AddEquipment : MonoBehaviour
         gloveSlot = GameObject.FindGameObjectWithTag("GloveItem");
         shoeSlot = GameObject.FindGameObjectWithTag("ShoeItem");
 
-
+        Debug.Log("Scene references reloaded");
     }
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+   
+    
     void Start()
     {
         isSelecting = false;
+        
     }
 
     // Update is called once per frame
