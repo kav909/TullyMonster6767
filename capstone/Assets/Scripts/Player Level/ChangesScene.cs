@@ -50,7 +50,6 @@ public class ChangesScene : MonoBehaviour
     }
     void Update()
     {
-        
         if(!atLevelBoard &&!isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
             gameObject.transform.position = subScene.transform.position;
             AddEquipment.ShowEquipment();
@@ -97,14 +96,12 @@ public class ChangesScene : MonoBehaviour
             //Equip = GameObject.FindGameObjectWithTag("InventoryTab");
             //SceneManager.LoadScene("LEO - level board");
 
-            if (isPickedUp)
+            if (isPickedUp && !AddEquipment.isSelecting)
             {
+                Debug.Log("AAAAAS");
                 AddEquipment.gameObject.transform.position = new Vector2(-5.13f, -17f);
             }
-            gameObject.transform.position = new Vector2(-5.13f, 4f);
-            if (AddEquipment.isSelecting == false ){
-               // AddEquipment.transform.position = new Vector2(-10f, -20f);
-            }
+            gameObject.transform.position = new Vector2(-3.7f, 4.12f);
             
             goToLevelBoard();
             
@@ -117,7 +114,7 @@ public class ChangesScene : MonoBehaviour
             Equip.SetActive(false);
             atLevelBoard = false;
             //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);
-            if (isPickedUp)
+            if (isPickedUp && !AddEquipment.isSelecting)
             {
                 AddEquipment.gameObject.transform.position = new Vector2(-5.13f, -17f);
             }

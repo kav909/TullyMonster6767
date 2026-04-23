@@ -28,26 +28,22 @@ public class AddEquipment : MonoBehaviour
          if (Instance != null && Instance != this)
          {
              //Destroy(gameObject);
+             DontDestroyOnLoad(gameObject);
              return;
          }
+         else{
+            
+         }
 
-    Instance = this;
-        DontDestroyOnLoad(gameObject);
+        Instance = this;
+        
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        levelup = FindFirstObjectByType<levelup>();
 
-        weaponSlot = GameObject.FindGameObjectWithTag("WeaponItem");
-        headSlot = GameObject.FindGameObjectWithTag("HeadItem");
-        frontSlot = GameObject.FindGameObjectWithTag("FrontItem");
-        bodySlot = GameObject.FindGameObjectWithTag("BodyItem");
-        pantsSlot = GameObject.FindGameObjectWithTag("PantsItem");
-        gloveSlot = GameObject.FindGameObjectWithTag("GloveItem");
-        shoeSlot = GameObject.FindGameObjectWithTag("ShoeItem");
-
+     //   levelup = GameObject.Find("Manager").GetComponent<levelup>();
         Debug.Log("Scene references reloaded");
     }
    
@@ -56,15 +52,17 @@ public class AddEquipment : MonoBehaviour
     {
         isSelecting = false;
         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public void OnMouseDown()
     {
+        assign();
         Debug.Log("CHOOSEJDSJDSJ");
         if (gameObject.tag == "Weapon" && !weaponSlot.GetComponent<Inventory>().containEquipment)
         {
@@ -115,9 +113,8 @@ public class AddEquipment : MonoBehaviour
             applyStats();
             isSelecting = true;
         }
-        
-        
     }
+
     public bool getSelect()
     {
         return isSelecting;
@@ -150,5 +147,16 @@ public class AddEquipment : MonoBehaviour
     }
     public void ShowEquipment(){
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
+    }
+    public void assign(){
+        levelup = FindFirstObjectByType<levelup>();
+
+        weaponSlot = GameObject.FindGameObjectWithTag("WeaponItem");
+        headSlot = GameObject.FindGameObjectWithTag("HeadItem");
+        frontSlot = GameObject.FindGameObjectWithTag("FrontItem");
+        bodySlot = GameObject.FindGameObjectWithTag("BodyItem");
+        pantsSlot = GameObject.FindGameObjectWithTag("PantsItem");
+        gloveSlot = GameObject.FindGameObjectWithTag("GloveItem");
+        shoeSlot = GameObject.FindGameObjectWithTag("ShoeItem");
     }
 }

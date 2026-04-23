@@ -91,6 +91,7 @@ public class Interaction : MonoBehaviour
             {
                 if (ConversationTab.tag == "PickUpEquipment")
                 {
+                    Destroy(gameObject);
                     equip.printWeaponSlot();
                     equip.pickUpFindCatagory(lootEquipment);
                     equip.printWeaponSlot();

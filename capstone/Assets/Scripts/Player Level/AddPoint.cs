@@ -7,7 +7,7 @@ public class AddPoint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        levelup = FindFirstObjectByType<levelup>();
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class AddPoint : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        //Debug.Log(levelup.freePointCount());
+        Debug.Log(levelup.freePointCount());
         //Debug.Log(gameObject.tag);
         if(levelup.freePointCount() <= 0)
         {

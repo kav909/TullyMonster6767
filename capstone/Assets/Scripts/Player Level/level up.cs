@@ -24,7 +24,7 @@ public class levelup : MonoBehaviour
     [SerializeField] float EXP;
     public static levelup Instance;
 
-    /*private void Awake() {
+    private void Awake() {
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject); // Persists across unloads
@@ -47,7 +47,7 @@ public class levelup : MonoBehaviour
         MAGText = GameObject.Find("MAG").GetComponent<Text>();
         FreePointText = GameObject.Find("Free Point").GetComponent<Text>();
         EXPBar = GameObject.FindGameObjectWithTag("EXPBar");
-    }*/
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
