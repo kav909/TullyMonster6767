@@ -22,7 +22,7 @@ public class MonstershootsBlades : MonoBehaviour
     float distance;
     bool inRange = false;
     [SerializeField] float distanceThreshold = 5f;
-
+    [SerializeField] GameObject drops;
     public int HP = 100;
 
     void Start()
@@ -32,12 +32,16 @@ public class MonstershootsBlades : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         dmgfield.SetActive(false);
+        if(drops != null )
+            drops.SetActive(false);
     }
 
     void Update()
     {
         if (HP <1)
         {
+            if (drops != null)
+                drops.SetActive(true);
             gameObject.SetActive(false);
         }
 

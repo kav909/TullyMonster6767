@@ -20,6 +20,7 @@ public class ChangesScene : MonoBehaviour
     public bool atLevelBoard;
     [SerializeField] AddEquipment AddEquipment;
 
+    public bool kavBool;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -110,6 +111,7 @@ public class ChangesScene : MonoBehaviour
         }
         else
         {
+            kavBool = false;
             Camera.isAtLevelBoard = false;
             Equip.SetActive(false);
             atLevelBoard = false;
@@ -132,6 +134,7 @@ public class ChangesScene : MonoBehaviour
         SceneManager.LoadScene("LEO - level board", LoadSceneMode.Additive);
         atLevelBoard = true;
         Debug.Log("sdfdfsfajklds)");
+        kavBool = true;
     }
 
 }
