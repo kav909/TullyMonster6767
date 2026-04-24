@@ -29,6 +29,8 @@ public class player : MonoBehaviour
     public bool isSprinting = false;
     public float cooldown = 0f;
     public bool sprintCooldown = false;
+    public GameObject playercanvas;
+    public bool leoChangeScene;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -58,11 +60,23 @@ public class player : MonoBehaviour
         punchDown.SetActive(false);
         punchLeft.SetActive(false);
         punchRight.SetActive(false);
+
+        playercanvas = GameObject.Find("playercanvas");
+
+
+
+
     }
 
     void Update()
     {
-
+        if (GameObject.Find("Change Scene") != null)
+        {
+            leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
+        }
+        else {
+            leoChangeScene= false;  
+        }
         if (hp < 1)
         {
             //gameObject.SetActive(false);
@@ -70,103 +84,118 @@ public class player : MonoBehaviour
         }
         movement.x = 0;
         movement.y = 0;
-        if (Input.GetKey(KeyCode.A)) {
-            movement.x = -1;
-            GetComponent<SpriteRenderer>().flipX = true;
-            ani.SetBool("up", false);
-            ani.SetBool("side", true);
-            ani.SetBool("down", false);
-            currentDir = "left";
-        }
 
-        if (Input.GetKey(KeyCode.D))
+        if (!leoChangeScene)
         {
-           movement.x = 1;
-           
-          GetComponent<SpriteRenderer>().flipX = false;
-            ani.SetBool("up", false);
-            ani.SetBool("side", true);
-            ani.SetBool("down", false);
-            currentDir = "right";
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement.y = 1;
-            ani.SetBool("up", true);
-            ani.SetBool("side", false);
-            ani.SetBool("down", false);
-            currentDir = "up";
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movement.y = -1;
-            ani.SetBool("up", false);
-            ani.SetBool("side", false);
-            ani.SetBool("down", true);
-            currentDir = "down";
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                movement.x = -1;
+                GetComponent<SpriteRenderer>().flipX = true;
+                ani.SetBool("up", false);
+                ani.SetBool("side", true);
+                ani.SetBool("down", false);
+                currentDir = "left";
+            }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3)&& mana>20) {
-            ani.SetTrigger("attack");
-            soundManager.GetComponent<soundmanger>().PlaySFX(8);
-            mana -= 20;
-            StartCoroutine(useArrow());
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4)&& mana >10)
-        {
-            ani.SetTrigger("attack2");
-           
-            StartCoroutine(PunchAttack());
-            mana -= 10;
-        }
+            if (Input.GetKey(KeyCode.D))
+            {
+                movement.x = 1;
 
-        if (cooldown > 0f)
-        {
-            cooldown -= Time.deltaTime;
-        }
-        else { 
-            sprintCooldown = false;
-        }
+                GetComponent<SpriteRenderer>().flipX = false;
+                ani.SetBool("up", false);
+                ani.SetBool("side", true);
+                ani.SetBool("down", false);
+                currentDir = "right";
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                movement.y = 1;
+                ani.SetBool("up", true);
+                ani.SetBool("side", false);
+                ani.SetBool("down", false);
+                currentDir = "up";
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                movement.y = -1;
+                ani.SetBool("up", false);
+                ani.SetBool("side", false);
+                ani.SetBool("down", true);
+                currentDir = "down";
+            }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) && isSprinting)
-        {
-            isSprinting = false;
-            cooldown = 2f;
-            sprintCooldown = true;
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && mana > 20)
+            {
+                ani.SetTrigger("attack");
+                soundManager.GetComponent<soundmanger>().PlaySFX(8);
+                mana -= 20;
+                StartCoroutine(useArrow());
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4) && mana > 10)
+            {
+                ani.SetTrigger("attack2");
 
-        if (Input.GetKey(KeyCode.LeftShift) && movement != Vector2.zero && stamina > 0 && cooldown <= 0f)
-        {
-            isSprinting = true;
-            stamina -= 20f * Time.deltaTime;
+                StartCoroutine(PunchAttack());
+                mana -= 10;
+            }
 
-            if (stamina <= 0f)
+            if (cooldown > 0f)
+            {
+                cooldown -= Time.deltaTime;
+            }
+            else
+            {
+                sprintCooldown = false;
+            }
+
+            if (Input.GetKeyUp(KeyCode.LeftShift) && isSprinting)
             {
                 isSprinting = false;
                 cooldown = 2f;
                 sprintCooldown = true;
             }
+
+            if (Input.GetKey(KeyCode.LeftShift) && movement != Vector2.zero && stamina > 0 && cooldown <= 0f)
+            {
+                isSprinting = true;
+                stamina -= 20f * Time.deltaTime;
+
+                if (stamina <= 0f)
+                {
+                    isSprinting = false;
+                    cooldown = 2f;
+                    sprintCooldown = true;
+                }
+            }
+            else if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                isSprinting = false;
+            }
+
+
+            if (cooldown <= 0f && stamina < 100f)
+                stamina += 10f * Time.deltaTime;
+
+            stamina = Mathf.Clamp(stamina, 0f, 100f);
+            mana = Mathf.Min(mana + 5f * Time.deltaTime, 100f);
+
+
+            footstepTimer -= Time.deltaTime;
+            if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
+            {
+                // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
+                footstepTimer = 0.75f;
+            }
+            text.text = "HP: " + hp;
         }
-        else if (!Input.GetKey(KeyCode.LeftShift))
+
+        if (leoChangeScene)
         {
-            isSprinting = false;
+            playercanvas.SetActive(false);
         }
-
-        
-        if (cooldown <= 0f && stamina < 100f)
-            stamina += 10f * Time.deltaTime;
-
-        stamina = Mathf.Clamp(stamina, 0f, 100f);      
-        mana = Mathf.Min(mana + 5f * Time.deltaTime, 100f);
-
-
-        footstepTimer -= Time.deltaTime;
-        if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
-        {
-           // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
-            footstepTimer = 0.75f;
+        else {
+            playercanvas.SetActive(true);
         }
-        text.text = "HP: " + hp;
     }
 
    

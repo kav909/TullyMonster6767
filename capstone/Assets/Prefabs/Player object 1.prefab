@@ -1357,13 +1357,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07, y: 0.089999996}
-      - {x: -0.08, y: 0.07}
-      - {x: -0.08, y: -0.14}
-      - {x: -0.07, y: -0.16}
-      - {x: 0.08, y: -0.16}
-      - {x: 0.08, y: 0.06}
-      - {x: 0.01, y: 0.089999996}
+    - - {x: -0.048320618, y: 0.0603993}
+      - {x: -0.049565468, y: 0.037480917}
+      - {x: -0.040511508, y: -0.13524234}
+      - {x: -0.028132677, y: -0.1395421}
+      - {x: 0.038132682, y: -0.13906634}
+      - {x: 0.049551047, y: 0.0300268}
+      - {x: 0.025700241, y: 0.05955103}
   m_UseDelaunayMesh: 0
 --- !u!114 &2478042658897565474
 MonoBehaviour:
@@ -1394,6 +1394,8 @@ MonoBehaviour:
   isSprinting: 0
   cooldown: 0
   sprintCooldown: 0
+  playercanvas: {fileID: 0}
+  leoChangeScene: 0
 --- !u!1001 &5281878122083912572
 PrefabInstance:
   m_ObjectHideFlags: 0
