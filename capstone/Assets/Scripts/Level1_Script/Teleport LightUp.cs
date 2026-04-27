@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TeleportLightUp : MonoBehaviour
 {
+    [SerializeField] ItemStorage itemStorage;
+    [SerializeField] Equip equip;
     [SerializeField] GameObject Light1;
     [SerializeField] GameObject Light2;
     [SerializeField] GameObject Light3;
@@ -20,6 +22,10 @@ public class TeleportLightUp : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        itemStorage = FindAnyObjectByType<ItemStorage>();
+        equip = FindAnyObjectByType<Equip>();
+        itemStorage.transform.position = new Vector2(transform.position.x, transform.position.y - 30f);
+        equip.transform.position = new Vector2(transform.position.x, transform.position.y - 30f);
         isin = false;
         timeWaited = 0f;
         LightSpeed = 1;
@@ -59,7 +65,7 @@ public class TeleportLightUp : MonoBehaviour
                 timeWaited = 0f;
                 if(SceneManager.GetActiveScene().buildIndex == 3){
                     SceneManager.LoadScene(7);
-                    player.transform.position = new Vector2(-5.3f, -28.5f);
+                    player.transform.position = new Vector2(-4.8f, -27f);
                 }
                 if(SceneManager.GetActiveScene().buildIndex == 7){
                     SceneManager.LoadScene(8);

@@ -47,6 +47,7 @@ public class ChangesScene : MonoBehaviour
     {
         Equip = GameObject.FindGameObjectWithTag("InventoryTab");
         EquipmentPickUpRange = GameObject.FindGameObjectWithTag("PickUpEquipmentRange");
+        Camera = FindAnyObjectByType<CameraMove>();
         atLevelBoard = false;
     }
     void Update()
@@ -139,56 +140,3 @@ public class ChangesScene : MonoBehaviour
 
 }
 
-/*
-public class ChangesScene : MonoBehaviour
-{
-    [SerializeField] Equip Equip;
-    public GameObject[] subWeaponItems;
-    //SceneManagement sceneManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Equip = FindAnyObjectByType<Equip>();
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-   /* private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        Equip = FindAnyObjectByType<Equip>();
-        subWeaponItems = GameObject.FindGameObjectsWithTag("goToLevelBoard");
-
-    }
-    void Update()
-    {
-        
-    }
-    private void OnMouseDown(){
-        if(SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            subWeaponItems = Equip.GetWeaponArray();
-            SceneManager.LoadScene(5);
-        }
-        
-        
-    }
-    public GameObject[] GetsubWeaponArray()
-    {
-        return subWeaponItems;
-    }
-}
-*/

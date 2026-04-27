@@ -43765,6 +43765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d250f0a39a04046bde292382fe6fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemStorage: {fileID: 0}
   Light1: {fileID: 326059645}
   Light2: {fileID: 280344129}
   Light3: {fileID: 233547946}
