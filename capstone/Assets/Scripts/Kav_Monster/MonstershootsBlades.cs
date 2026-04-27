@@ -32,17 +32,18 @@ public class MonstershootsBlades : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         dmgfield.SetActive(false);
-        if(drops != null )
-            drops.SetActive(false);
+        /*if(drops != null )
+            drops.SetActive(false);*/
     }
 
     void Update()
     {
         if (HP <1)
         {
-            if (drops != null)
-                drops.SetActive(true);
+            /*if (drops != null)
+                drops.SetActive(true);*/
             gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         Vector2 direction = player.transform.position - transform.position;
