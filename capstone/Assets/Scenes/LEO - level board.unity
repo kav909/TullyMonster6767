@@ -11278,6 +11278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: dragon player
       objectReference: {fileID: 0}
+    - target: {fileID: 6322209060245171197, guid: 9a90e398ee9d05241b8d3a7a01e9f846,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7939815001594373695, guid: 9a90e398ee9d05241b8d3a7a01e9f846,
         type: 3}
       propertyPath: m_Enabled
