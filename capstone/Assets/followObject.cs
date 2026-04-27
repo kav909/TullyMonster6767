@@ -12,6 +12,7 @@ public class followObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = g.transform.position;
+        if (g != null)           
+            transform.position = g.transform.position;
     }
 }

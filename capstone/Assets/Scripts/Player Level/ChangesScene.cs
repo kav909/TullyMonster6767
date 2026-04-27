@@ -113,6 +113,7 @@ public class ChangesScene : MonoBehaviour
         else
         {
             kavBool = false;
+            //GameObject.Find("Player object 1").SetActive(true);
             Camera.isAtLevelBoard = false;
             Equip.SetActive(false);
             atLevelBoard = false;
@@ -136,6 +137,7 @@ public class ChangesScene : MonoBehaviour
         atLevelBoard = true;
         Debug.Log("sdfdfsfajklds)");
         kavBool = true;
+        //GameObject.Find("Player object 1").SetActive(false);
     }
 
 }
