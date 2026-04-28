@@ -23,7 +23,7 @@ public class TeleportLightUp : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameObject.SetActive(false); <<--------------
+        gameObject.SetActive(false); //<<--------------
         itemStorage = FindAnyObjectByType<ItemStorage>();
         equip = FindAnyObjectByType<Equip>();
         itemStorage.transform.position = new Vector2(transform.position.x, transform.position.y - 30f);

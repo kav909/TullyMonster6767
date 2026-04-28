@@ -43,7 +43,7 @@ public class MonstershootsBlades : MonoBehaviour
         {
             /*if (drops != null)
                 drops.SetActive(true);*/
-            teleportLightUp.monsterIsDead = true;
+            teleportLightUp.gameObject.SetActive(true);
             gameObject.SetActive(false);
             Destroy(gameObject);
         }
