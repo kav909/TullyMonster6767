@@ -13,7 +13,7 @@ public class ChangesScene : MonoBehaviour
     [SerializeField] float bottomB;
     [SerializeField] GameObject Equip;
     [SerializeField] GameObject EquipmentPickUpRange;
-    [SerializeField] CameraMove Camera;
+    //[SerializeField] CameraMove Camera;
     public GameObject[] subWeaponItems;
     public int lastIndex;
     public static ChangesScene Instance;
@@ -47,7 +47,8 @@ public class ChangesScene : MonoBehaviour
     {
         Equip = GameObject.FindGameObjectWithTag("InventoryTab");
         EquipmentPickUpRange = GameObject.FindGameObjectWithTag("PickUpEquipmentRange");
-        Camera = FindAnyObjectByType<CameraMove>();
+       // Camera = FindAnyObjectByType<player>().GetComponent<CameraMove>();
+      
         atLevelBoard = false;
     }
     void Update()
@@ -107,14 +108,14 @@ public class ChangesScene : MonoBehaviour
             
             goToLevelBoard();
             
-            Camera.isAtLevelBoard = true;
+            //Camera.isAtLevelBoard = true;
             //
         }
         else
         {
             kavBool = false;
             //GameObject.Find("Player object 1").SetActive(true);
-            Camera.isAtLevelBoard = false;
+            //Camera.isAtLevelBoard = false;
             Equip.SetActive(false);
             atLevelBoard = false;
             //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);

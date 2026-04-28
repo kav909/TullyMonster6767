@@ -19,9 +19,11 @@ public class TeleportLightUp : MonoBehaviour
     public float neededWaitTime = 1.3f;
     public float timeWaited;
     bool isin;
+    public bool monsterIsDead;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //gameObject.SetActive(false); <<--------------
         itemStorage = FindAnyObjectByType<ItemStorage>();
         equip = FindAnyObjectByType<Equip>();
         itemStorage.transform.position = new Vector2(transform.position.x, transform.position.y - 30f);
@@ -52,6 +54,11 @@ public class TeleportLightUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (monsterIsDead)
+        {
+            Debug.Log(monsterIsDead);
+            gameObject.SetActive(true);//<---------------------------
+        }
         UnityEngine.Color color = sr1.color;
         color.a = Mathf.MoveTowards(color.a, TargetShade, LightSpeed * Time.deltaTime);
         sr1.color = color;

@@ -7,7 +7,7 @@ public class MonstershootsBlades : MonoBehaviour
     [SerializeField] GameObject mob;
     [SerializeField] GameObject dmgfield;
     [SerializeField] List<GameObject> blades;
-
+    [SerializeField] TeleportLightUp teleportLightUp;
     public GameObject player;
     public GameObject soundManager;
     Rigidbody2D rb;
@@ -24,6 +24,7 @@ public class MonstershootsBlades : MonoBehaviour
     [SerializeField] float distanceThreshold = 5f;
     [SerializeField] GameObject drops;
     public int HP = 100;
+
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class MonstershootsBlades : MonoBehaviour
         {
             /*if (drops != null)
                 drops.SetActive(true);*/
+            teleportLightUp.monsterIsDead = true;
             gameObject.SetActive(false);
             Destroy(gameObject);
         }
