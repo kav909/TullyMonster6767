@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -217,10 +217,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mob: {fileID: 3227969008470891565}
+  dmgfield: {fileID: 0}
   blades:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  teleportLightUp: {fileID: 0}
   player: {fileID: 0}
+  soundManager: {fileID: 0}
+  speed: 3
+  attackRange: 10
+  distanceThreshold: 5
+  drops: {fileID: 0}
+  HP: 100
