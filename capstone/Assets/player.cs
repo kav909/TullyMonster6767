@@ -1,9 +1,10 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class player : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class player : MonoBehaviour
 
     Rigidbody2D rb;
     float footstepTimer = 0f;
-    [SerializeField] float speed = 5f;
-    public int hp = 100;
-    [SerializeField] int damage = 10;
+    float speed = 5f;
+
+
     [SerializeField] Animator ani;
     public GameObject soundManager;
     [SerializeField] GameObject arrow;
@@ -24,14 +25,17 @@ public class player : MonoBehaviour
     public GameObject punchLeft;
     public GameObject punchRight;
     string currentDir = "down";
-    public float stamina = 100;
-    public float mana = 100;
+   
     public bool isSprinting = false;
     public float cooldown = 0f;
     public bool sprintCooldown = false;
     public GameObject playercanvas;
     public bool leoChangeScene;
 
+    public int hp;
+    public int damage;
+    public float stamina;
+    public float mana;
     float attackBowTimer = 0f;
     void Awake()
     {
@@ -65,6 +69,22 @@ public class player : MonoBehaviour
 
         playercanvas = GameObject.Find("playercanvas");
 
+        GameObject levelupObj = GameObject.Find("levelup");
+        if (levelupObj != null)
+        {
+            levelup stats = levelupObj.GetComponent<levelup>();
+            hp = stats.GetMaxHP();
+            mana = stats.GetMaxMana();
+            stamina = stats.GetMaxStamina();
+            damage = stats.GetDamage();
+        }
+        else
+        {
+            hp = 100;
+            mana = 50;
+            stamina = 20;
+            damage = 10;
+        }
 
 
 
@@ -72,6 +92,17 @@ public class player : MonoBehaviour
 
     void Update()
     {
+        GameObject levelupObj = GameObject.Find("levelup");
+        levelup stats = null;
+        if (levelupObj != null)
+            stats = levelupObj.GetComponent<levelup>();
+
+        float maxHP = stats != null ? stats.GetMaxHP() : 100f;
+        float maxMana = stats != null ? stats.GetMaxMana() : 50f;
+        float maxStamina = stats != null ? stats.GetMaxStamina() : 20f;
+        damage = stats != null ? stats.GetDamage() : 10;
+
+
         if (GameObject.Find("Change Scene") != null)
         {
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
@@ -89,6 +120,9 @@ public class player : MonoBehaviour
 
         if (!leoChangeScene)
         {
+           
+
+
             if (Input.GetKey(KeyCode.A))
             {
                 movement.x = -1;
@@ -175,11 +209,15 @@ public class player : MonoBehaviour
             }
 
 
-            if (cooldown <= 0f && stamina < 100f)
-                stamina += 10f * Time.deltaTime;
+            if (cooldown <= 0f && stamina < maxStamina)
+                stamina += maxStamina * 0.1f * Time.deltaTime;
 
-            stamina = Mathf.Clamp(stamina, 0f, 100f);
-            mana = Mathf.Min(mana + 5f * Time.deltaTime, 100f);
+            stamina = Mathf.Clamp(stamina, 0f, maxStamina);
+
+            mana = Mathf.Min(mana + maxMana * 0.05f * Time.deltaTime, maxMana);
+            text.text = "HP: " + hp + "/" + (int)maxHP +
+            "\nMana: " + (int)mana + "/" + (int)maxMana +
+            "\nStamina: " + (int)stamina + "/" + (int)maxStamina;
 
 
             footstepTimer -= Time.deltaTime;
@@ -188,7 +226,7 @@ public class player : MonoBehaviour
                 // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
                 footstepTimer = 0.75f;
             }
-            text.text = "HP: " + hp;
+            
         }
 
         if (leoChangeScene)

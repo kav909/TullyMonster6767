@@ -9,11 +9,11 @@ public class levelup : MonoBehaviour
     [SerializeField] GameObject DEFAdd;
     [SerializeField] GameObject SPDAdd;
     [SerializeField] GameObject MAGAdd;
-    [SerializeField] int ATKNum;
-    [SerializeField] int DEFNum;
-    [SerializeField] int SPDNum;
-    [SerializeField] int MAGNum;
-    [SerializeField] int FreePointNum;
+    public int ATKNum;
+    public int DEFNum;
+    public int SPDNum;
+    public int MAGNum;
+    public int FreePointNum;
     [SerializeField] Text ATKText;
     [SerializeField] Text DEFText;
     [SerializeField] Text SPDText;
@@ -52,11 +52,11 @@ public class levelup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        /* ATKNum = 5;
-         DEFNum = 5;
-         SPDNum = 5;
-         MAGNum = 5;
-         FreePointNum = 5;*/
+        ATKNum = 5;
+        DEFNum = 5;
+        SPDNum = 5;
+        MAGNum = 5;
+        FreePointNum = 5;
         //EXPBar.transform.position += Vector3.left * 80f;
     }
 
@@ -74,21 +74,66 @@ public class levelup : MonoBehaviour
         MAGText.text = "" + MAGNum;
         FreePointText.text = "" + FreePointNum;
     }
+
+    private void RefillPlayer()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player");
+        if (playerObj != null)
+        {
+            player p = playerObj.GetComponent<player>();
+            p.hp = GetMaxHP();
+            p.mana = GetMaxMana();
+            p.stamina = GetMaxStamina();
+        }
+    }
+    public void AddEXP(float amount)
+    {
+        EXP += amount;
+        if (EXP >= MaxEXP)
+        {
+            EXP -= MaxEXP;
+            FreePointNum++;
+            RefillPlayer();
+        }
+    }
+    public int GetMaxHP()
+    {
+        return DEFNum * 20;
+    }
+
+    public int GetMaxMana()
+    {
+        return MAGNum * 10;
+    }
+
+    public float GetMaxStamina()
+    {
+        return SPDNum * 4f;
+    }
+
+    public int GetDamage()
+    {
+        return ATKNum * 2;
+    }
     public void ATKAdds()
     {
         ATKNum++;
+        RefillPlayer();
     }
     public void DEFAdds()
     {
         DEFNum++;
+        RefillPlayer();
     }
     public void SPDAdds()
     {
         SPDNum++;
+        RefillPlayer();
     }
     public void MAGAdds()
     {
         MAGNum++;
+        RefillPlayer();
     }
     public void useFreePoint()
     {
@@ -101,18 +146,22 @@ public class levelup : MonoBehaviour
     public void equipATK(int point)
     {
         ATKNum += point;
+        RefillPlayer();
     }
     public void equipDEF(int point)
     {
         DEFNum += point;
+        RefillPlayer();
     }
     public void equipSPD(int point)
     {
         SPDNum += point;
+        RefillPlayer();
     }
     public void equipMAG(int point)
     {
         MAGNum += point;
+        RefillPlayer();
     }
     public void unequipATK(int point)
     {
