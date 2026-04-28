@@ -34,4 +34,7 @@ public class TextStorage : MonoBehaviour
     {
         return "\r\n                       WEST  -----------------------  EAST\r\n                         <------                             ------>";
     }
+    public string Shop(){
+        return "A journey cannot go on smoothly without proper preparation\nWould you like to enter shop?\nPress \"E\" to enter";
+    }
 }

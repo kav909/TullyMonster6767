@@ -79,6 +79,13 @@ public class Interaction : MonoBehaviour
                     LockedDoor.OpenTheDoor();
                 }
             }
+            if (ConversationTab.tag == "NPC Shop")
+            {
+                textWindow.SetActive(true);
+                StateText.text = storage.Shop();
+                StateText.enabled = true;
+                talking = true;
+            }
             if (ConversationTab.tag == "Chest1")
             {
                 Chest.OpenChest("Chest1");
@@ -107,6 +114,11 @@ public class Interaction : MonoBehaviour
             StateText.text = storage.ReciveKey();
             haveKey = true;
             LockedDoor.unLock();
+        }
+        if (talking && Input.GetKeyDown(KeyCode.E))
+        {
+            //Put enter shop code here
+            goToShop();
         }
     }
   
@@ -140,5 +152,8 @@ public class Interaction : MonoBehaviour
     public bool getInteractable()
     {
         return interactable;
+    }
+    public void goToShop(){
+        SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
     }
 }

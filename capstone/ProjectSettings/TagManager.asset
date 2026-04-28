@@ -43,6 +43,7 @@ TagManager:
   - SubTag
   - playerdmg
   - EXPBar
+  - NPC Shop
   layers:
   - Default
   - TransparentFX
