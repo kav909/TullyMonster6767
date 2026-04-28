@@ -31,6 +31,8 @@ public class player : MonoBehaviour
     public bool sprintCooldown = false;
     public GameObject playercanvas;
     public bool leoChangeScene;
+
+    float attackBowTimer = 0f;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);

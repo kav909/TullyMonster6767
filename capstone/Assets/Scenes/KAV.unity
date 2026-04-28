@@ -496,7 +496,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_sharedMaterial: {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1356,7 +1357,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_sharedMaterial: {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1493,7 +1495,8 @@ MonoBehaviour:
   m_fontAsset: {fileID: 11400000, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_sharedMaterial: {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc,
     type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 1252294936854245999, guid: bfcc8457f22f0d54abf2a2c3c90709cc, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1746,7 +1749,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1899,7 +1902,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2736,6 +2739,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 536787205034910524, guid: 479e27850ebf8564b8ef6af1cfc75dd3,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 2182955305107693403, guid: 479e27850ebf8564b8ef6af1cfc75dd3,
         type: 3}
       propertyPath: player
