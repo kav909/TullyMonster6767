@@ -24,6 +24,7 @@ public class player : MonoBehaviour
     public GameObject punchDown;
     public GameObject punchLeft;
     public GameObject punchRight;
+    public GameObject DarkWolf_2d_Grafics;
     string currentDir = "down";
    
     public bool isSprinting = false;
@@ -31,7 +32,7 @@ public class player : MonoBehaviour
     public bool sprintCooldown = false;
     public GameObject playercanvas;
     public bool leoChangeScene;
-
+    public GameObject magiccirclesigilcircle_0;
     public int hp;
     public int damage;
     public float stamina;
@@ -53,6 +54,7 @@ public class player : MonoBehaviour
     }
     void Start()
     {
+        magiccirclesigilcircle_0 = GameObject.Find("magic-circle-sigil-circle_0");
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
@@ -61,6 +63,7 @@ public class player : MonoBehaviour
         punchLeft = GameObject.Find("plleft");
         punchRight = GameObject.Find("plright");
         punchUp = GameObject.Find("plup");
+        DarkWolf_2d_Grafics = GameObject.Find("DarkWolf_2d_Grafics");
 
         punchUp.SetActive(false);
         punchDown.SetActive(false);
@@ -103,6 +106,7 @@ public class player : MonoBehaviour
         damage = stats != null ? stats.GetDamage() : 10;
 
 
+        magiccirclesigilcircle_0.transform.rotation =  Quaternion.Euler(45f,0f,transform.rotation.z+1f* Time.deltaTime);
         if (GameObject.Find("Change Scene") != null)
         {
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
@@ -159,7 +163,29 @@ public class player : MonoBehaviour
                 ani.SetBool("down", true);
                 currentDir = "down";
             }
+            if (Input.GetKeyDown(KeyCode.Alpha5) && mana > 20)
+            {
+               
+                float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
 
+                GameObject a = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y-1f), Quaternion.identity);
+                a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
+
+                GameObject b = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y + 1f), Quaternion.identity);
+                b.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
+
+
+                a.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+                b.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+
+
+                //Vector2 pos = a.transform.position;
+                Destroy(a,1.5f);
+                Destroy(b,1.5f);
+                mana -= 50;
+
+
+            }
             if (Input.GetKeyDown(KeyCode.Alpha3) && mana > 20)
             {
                 ani.SetTrigger("attack");
