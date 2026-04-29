@@ -10,6 +10,7 @@ public class AddEquipment : MonoBehaviour
     public int AddDEF;
     public int AddSPD;
     public int AddMAG;
+    [SerializeField] int price;
     [SerializeField] levelup levelup;
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Equip Equip;
