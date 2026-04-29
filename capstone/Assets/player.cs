@@ -32,7 +32,7 @@ public class player : MonoBehaviour
     public bool sprintCooldown = false;
     public GameObject playercanvas;
     public bool leoChangeScene;
-
+    public GameObject magiccirclesigilcircle_0;
     public int hp;
     public int damage;
     public float stamina;
@@ -54,6 +54,7 @@ public class player : MonoBehaviour
     }
     void Start()
     {
+        magiccirclesigilcircle_0 = GameObject.Find("magic-circle-sigil-circle_0");
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
@@ -105,6 +106,7 @@ public class player : MonoBehaviour
         damage = stats != null ? stats.GetDamage() : 10;
 
 
+        magiccirclesigilcircle_0.transform.rotation =  Quaternion.Euler(45f,0f,transform.rotation.z+1f* Time.deltaTime);
         if (GameObject.Find("Change Scene") != null)
         {
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
@@ -178,8 +180,9 @@ public class player : MonoBehaviour
 
 
                 //Vector2 pos = a.transform.position;
-                Destroy(a,2f);
-                Destroy(b, 2f);
+                Destroy(a,1.5f);
+                Destroy(b,1.5f);
+                mana -= 50;
 
 
             }
