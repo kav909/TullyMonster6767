@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,12 +33,13 @@ public class player : MonoBehaviour
     public bool sprintCooldown = false;
     public GameObject playercanvas;
     public bool leoChangeScene;
-    public GameObject magiccirclesigilcircle_0;
+    public GameObject mgmgmgmgmg;
     public int hp;
     public int damage;
     public float stamina;
     public float mana;
-    float attackBowTimer = 0f;
+    float attack3Timer = 0f;
+    float angleee = 0;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -54,7 +56,7 @@ public class player : MonoBehaviour
     }
     void Start()
     {
-        magiccirclesigilcircle_0 = GameObject.Find("magic-circle-sigil-circle_0");
+        mgmgmgmgmg = GameObject.Find("mgmgmgmgmg");
         rb = GetComponent<Rigidbody2D>();
         text = GameObject.Find("playertext").GetComponent<Text>();
         soundManager = GameObject.Find("soundMain");
@@ -71,7 +73,7 @@ public class player : MonoBehaviour
         punchRight.SetActive(false);
 
         playercanvas = GameObject.Find("playercanvas");
-
+        mgmgmgmgmg.GetComponent<SpriteRenderer>().enabled = false;
         GameObject levelupObj = GameObject.Find("levelup");
         if (levelupObj != null)
         {
@@ -92,7 +94,7 @@ public class player : MonoBehaviour
 
 
     }
-
+   
     void Update()
     {
         GameObject levelupObj = GameObject.Find("levelup");
@@ -106,7 +108,7 @@ public class player : MonoBehaviour
         damage = stats != null ? stats.GetDamage() : 10;
 
 
-        magiccirclesigilcircle_0.transform.rotation =  Quaternion.Euler(45f,0f,transform.rotation.z+1f* Time.deltaTime);
+        
         if (GameObject.Find("Change Scene") != null)
         {
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
@@ -163,27 +165,11 @@ public class player : MonoBehaviour
                 ani.SetBool("down", true);
                 currentDir = "down";
             }
-            if (Input.GetKeyDown(KeyCode.Alpha5) && mana > 20)
+            if (Input.GetKeyDown(KeyCode.Alpha5) )
             {
+                StartCoroutine(Useattack3());
+
                
-                float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
-
-                GameObject a = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y-1f), Quaternion.identity);
-                a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
-
-                GameObject b = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y + 1f), Quaternion.identity);
-                b.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
-
-
-                a.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-                b.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-
-
-                //Vector2 pos = a.transform.position;
-                Destroy(a,1.5f);
-                Destroy(b,1.5f);
-                mana -= 50;
-
 
             }
             if (Input.GetKeyDown(KeyCode.Alpha3) && mana > 20)
@@ -252,6 +238,7 @@ public class player : MonoBehaviour
                 // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
                 footstepTimer = 0.75f;
             }
+            attack3Timer += Time.deltaTime;
             
         }
 
@@ -262,11 +249,52 @@ public class player : MonoBehaviour
         else {
             playercanvas.SetActive(true);
         }
+
+       
+    }
+    private IEnumerator Useattack3()
+    {
+        soundManager.GetComponent<soundmanger>().PlaySFX(9);
+        mgmgmgmgmg.GetComponent<SpriteRenderer>().enabled = true;
+        float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
+
+        GameObject a = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y - 1.75f), Quaternion.identity);
+
+        GameObject b = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y + 1f), Quaternion.identity);
+
+
+
+        a.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+        b.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+        float sacllle = 5;
+        /*  while (sacllle > 1.6) {
+              a.GetComponent<Transform>().localScale = new Vector3(sacllle, sacllle, sacllle);
+              b.GetComponent<Transform>().localScale = new Vector3(sacllle, sacllle, sacllle);
+              sacllle -= .1f;
+          }*/
+
+       
+        yield return new WaitForSeconds(0.5f);
+        a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
+        b.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
+
+
+        //Vector2 pos = a.transform.position;
+        Destroy(a, .5f);
+        Destroy(b, .5f);
+        mgmgmgmgmg.GetComponent<SpriteRenderer>().enabled = false;
+        mana -= 5;
     }
 
+    
    
     private void FixedUpdate()
     {
+        if (attack3Timer > .01f) {
+            mgmgmgmgmg.transform.rotation = Quaternion.Euler(45f, 0f,  angleee++ );
+            attack3Timer = 0f;
+        }
+        
         float currentSpeed = isSprinting ? speed * 2f : speed;
         rb.linearVelocity = movement.normalized * currentSpeed;
     }
