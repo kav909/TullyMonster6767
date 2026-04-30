@@ -9,6 +9,7 @@ public class Shopplace : MonoBehaviour
 {
     [SerializeField] ItemStorage ItemStorage;
     [SerializeField] PriceManager manager;
+    public List<GameObject> itemList;
     float xPosition = -7;
     float yPosition = 2;
     int currentNum = 0;

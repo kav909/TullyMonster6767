@@ -27,4 +27,5 @@ public class PriceManager : MonoBehaviour
         }
         priceList.Clear();
     }
+
 }

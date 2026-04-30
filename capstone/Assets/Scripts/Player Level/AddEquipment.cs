@@ -63,6 +63,9 @@ public class AddEquipment : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        if(SceneManager.GetActiveScene().name == "Shop"){
+            return;
+        }
         assign();
         Debug.Log("CHOOSEJDSJDSJ");
         if (gameObject.tag == "Weapon" && !weaponSlot.GetComponent<Inventory>().containEquipment)
