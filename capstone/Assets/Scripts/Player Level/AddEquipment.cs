@@ -160,4 +160,8 @@ public class AddEquipment : MonoBehaviour
         gloveSlot = GameObject.FindGameObjectWithTag("GloveItem");
         shoeSlot = GameObject.FindGameObjectWithTag("ShoeItem");
     }
+    public int getPrice()
+    {
+        return price;
+    }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
+    [SerializeField] GoBackFromShop goBackFromShop;
     [SerializeField] Equip equip;
     [SerializeField] GameObject lootEquipment;
     [SerializeField] GameObject ConversationTab;
@@ -117,8 +118,7 @@ public class Interaction : MonoBehaviour
         }
         if (talking && Input.GetKeyDown(KeyCode.E))
         {
-            //Put enter shop code here
-            goToShop();
+            goBackFromShop.goToShop();
         }
     }
   
@@ -153,7 +153,5 @@ public class Interaction : MonoBehaviour
     {
         return interactable;
     }
-    public void goToShop(){
-        SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
-    }
+    
 }
