@@ -47,7 +47,7 @@ public class GoBackFromShop : MonoBehaviour
     }
     public void goToShop()
     {
-        gameObject.transform.position = new Vector2(-6.993f, 4.2101f);
+        gameObject.transform.position = new Vector2(-6.83f, 203.19f);
         SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
     }
 }

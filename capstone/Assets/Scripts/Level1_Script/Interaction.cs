@@ -118,6 +118,8 @@ public class Interaction : MonoBehaviour
         }
         if (talking && Input.GetKeyDown(KeyCode.E))
         {
+            //Scene targetScene = SceneManager.GetSceneByName("Shop");
+            //SceneManager.SetActiveScene(targetScene);
             goBackFromShop.goToShop();
         }
     }

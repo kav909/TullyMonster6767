@@ -1,10 +1,33 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PriceManager : MonoBehaviour
 {
     public bool isRefresh;
     public List<GameObject> priceList = new List<GameObject>();
+    public static PriceManager Instance;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            //Destroy(gameObject); // destroy duplicate
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+       
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

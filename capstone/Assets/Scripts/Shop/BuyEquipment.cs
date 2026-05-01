@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuyEquipment : MonoBehaviour
 {
@@ -7,10 +8,34 @@ public class BuyEquipment : MonoBehaviour
     [SerializeField] PriceManager manager;
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Shopplace Shopplace;
+    public static BuyEquipment Instance;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            //Destroy(gameObject); // destroy duplicate
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
+        Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
+        Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
     }
 
     // Update is called once per frame

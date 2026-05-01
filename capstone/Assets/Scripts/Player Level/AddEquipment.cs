@@ -64,6 +64,7 @@ public class AddEquipment : MonoBehaviour
     public void OnMouseDown()
     {
         if(SceneManager.GetActiveScene().name == "Shop"){
+            Debug.Log("In Shop");
             return;
         }
         assign();

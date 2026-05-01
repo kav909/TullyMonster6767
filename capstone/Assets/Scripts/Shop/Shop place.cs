@@ -10,11 +10,10 @@ public class Shopplace : MonoBehaviour
     [SerializeField] ItemStorage ItemStorage;
     [SerializeField] PriceManager manager;
     public List<GameObject> itemList;
-    float xPosition = -7;
-    float yPosition = 2;
+    public float xPosition;
+    public float yPosition;
     int currentNum = 0;
     public static Shopplace Instance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -52,8 +51,8 @@ public class Shopplace : MonoBehaviour
     public void OnMouseDown(){
         manager.isRefresh = true;
         refresh();
-        xPosition = -7f;
-        yPosition = 2f;
+        xPosition = -7f; //-7
+        yPosition = 201f;  //2
         currentNum = 0;
         if(gameObject.tag == "WeaponItem"){
             showWeapon();
