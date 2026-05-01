@@ -50,6 +50,7 @@ public class Shopplace : MonoBehaviour
         
     }
     public void OnMouseDown(){
+        manager.isRefresh = true;
         refresh();
         xPosition = -7f;
         yPosition = 2f;
@@ -85,158 +86,213 @@ public class Shopplace : MonoBehaviour
     }
     public void showWeapon(){
         for(int i = 0; i < ItemStorage.WeaponSlot.Length; i++){
-            ItemStorage.WeaponSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.WeaponSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.WeaponSlot[i] != null)
+            {
+                ItemStorage.WeaponSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.WeaponSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showHead(){
         for(int i = 0; i < ItemStorage.HeadSlot.Length; i++){
-            ItemStorage.HeadSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.HeadSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.HeadSlot[i] != null)
+            {
+                ItemStorage.HeadSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.HeadSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showFront(){
         for(int i = 0; i < ItemStorage.FrontSlot.Length; i++){
-            ItemStorage.FrontSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.FrontSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.FrontSlot[i] != null)
+            {
+                ItemStorage.FrontSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.FrontSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showBody(){
         for(int i = 0; i < ItemStorage.BodySlot.Length; i++){
-            ItemStorage.BodySlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.BodySlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.BodySlot[i] != null)
+            {
+                ItemStorage.BodySlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.BodySlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showGlove(){
         for(int i = 0; i < ItemStorage.GloveSlot.Length; i++){
-            ItemStorage.GloveSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.GloveSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.GloveSlot[i] != null)
+            {
+                ItemStorage.GloveSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.GloveSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showPants(){
         for(int i = 0; i < ItemStorage.PantsSlot.Length; i++){
-            ItemStorage.PantsSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.PantsSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.PantsSlot[i] != null)
+            {
+                ItemStorage.PantsSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.PantsSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void showShoe(){
         for(int i = 0; i < ItemStorage.ShoeSlot.Length; i++){
-            ItemStorage.ShoeSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
-            GameObject textObj = new GameObject("MyText");
-            textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
-            TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
-            text.text = "Price: " + ItemStorage.ShoeSlot[i].GetComponent<AddEquipment>().getPrice();
-            text.fontSize = 0.4f;
-            textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
-            manager.addPrice(textObj);
-            xPosition += 3.5f;
-            currentNum++;
-            if(currentNum >= 5){
-                currentNum = 0;
-                xPosition = -7f;
-                yPosition -= 2f;
+            if (ItemStorage.ShoeSlot[i] != null)
+            {
+                ItemStorage.ShoeSlot[i].gameObject.transform.position = new Vector2(xPosition, yPosition);
+                GameObject textObj = new GameObject("MyText");
+                textObj.transform.SetParent(GameObject.Find("ShopCanvas").transform);
+                TextMeshProUGUI text = textObj.AddComponent<TextMeshProUGUI>();
+                text.text = "Price: " + ItemStorage.ShoeSlot[i].GetComponent<AddEquipment>().getPrice();
+                text.fontSize = 0.4f;
+                textObj.transform.position = new Vector2(xPosition + 100.4f, yPosition - 24.75f);
+                manager.addPrice(textObj);
+                xPosition += 3.5f;
+                currentNum++;
+                if (currentNum >= 5)
+                {
+                    currentNum = 0;
+                    xPosition = -7f;
+                    yPosition -= 2f;
+                }
             }
         }
     }
     public void refresh(){
         for(int i = 0; i < ItemStorage.WeaponSlot.Length; i++){
-            ItemStorage.WeaponSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.WeaponSlot[i] != null)
+            {
+                ItemStorage.WeaponSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }       
         for(int i = 0; i < ItemStorage.HeadSlot.Length; i++){
-            ItemStorage.HeadSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.HeadSlot[i] != null)
+            {
+                ItemStorage.HeadSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }  
         for(int i = 0; i < ItemStorage.FrontSlot.Length; i++){
-            ItemStorage.FrontSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.FrontSlot[i] != null)
+            {
+                ItemStorage.FrontSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }  
         for(int i = 0; i < ItemStorage.BodySlot.Length; i++){
-            ItemStorage.BodySlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.BodySlot[i] != null)
+            {
+                ItemStorage.BodySlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }  
         for(int i = 0; i < ItemStorage.GloveSlot.Length; i++){
-            ItemStorage.GloveSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.GloveSlot[i] != null)
+            {
+                ItemStorage.GloveSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }  
         for(int i = 0; i < ItemStorage.PantsSlot.Length; i++){
-            ItemStorage.PantsSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.PantsSlot[i] != null)
+            {
+                ItemStorage.PantsSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
+            
         }  
         for(int i = 0; i < ItemStorage.ShoeSlot.Length; i++){
-            ItemStorage.ShoeSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            if (ItemStorage.ShoeSlot[i] != null)
+            {
+                ItemStorage.ShoeSlot[i].gameObject.transform.position = new Vector2(0f, -60f);
+            }
         }
         manager.removePrice();
     }

@@ -323,8 +323,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &15703754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,8 +530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &69017111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,8 +737,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &74307688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -941,8 +944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &84173380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1147,8 +1151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &103101635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1353,8 +1358,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &206860855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1559,8 +1565,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &244973405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,8 +1772,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &285319353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,8 +2080,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &333833665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2278,8 +2287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &338592574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,8 +2645,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &473575716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,8 +3494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &518236991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,8 +3877,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &576325636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4071,8 +4084,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &588791356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4277,8 +4291,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &668300247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4483,8 +4498,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &681808157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4689,8 +4705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &687440444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,8 +5000,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &720689955
 GameObject:
   m_ObjectHideFlags: 0
@@ -5498,8 +5516,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &829363961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5704,8 +5723,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &834411188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5910,8 +5930,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &880601263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,8 +6313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &946930044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,8 +6960,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1103340918
 GameObject:
   m_ObjectHideFlags: 0
@@ -6984,6 +7007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d138092973620418b370ebf17d589d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRefresh: 0
   priceList: []
 --- !u!1 &1161409715
 GameObject:
@@ -7340,8 +7364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1231536612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7546,8 +7571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1284052993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7752,8 +7778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1373068761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7958,8 +7985,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1381102843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8164,8 +8192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1418096824
 GameObject:
   m_ObjectHideFlags: 0
@@ -8521,8 +8550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1506150791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8727,8 +8757,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1514911864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8933,8 +8964,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1531559399
 GameObject:
   m_ObjectHideFlags: 0
@@ -9321,8 +9353,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1608603735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9527,8 +9560,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1664802722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9733,8 +9767,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1674812138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9939,8 +9974,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1690406939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10145,8 +10181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1691154364
 GameObject:
   m_ObjectHideFlags: 0
@@ -10502,8 +10539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1729059143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10708,8 +10746,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1751946068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10914,8 +10953,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1762341961
 GameObject:
   m_ObjectHideFlags: 0
@@ -11208,8 +11248,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1839382265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11414,8 +11455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1892546977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11620,8 +11662,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &1899668449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11826,8 +11869,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1902677176
 GameObject:
   m_ObjectHideFlags: 0
@@ -12075,8 +12119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &1999815783
 GameObject:
   m_ObjectHideFlags: 0
@@ -12369,8 +12414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1 &2033162954
 GameObject:
   m_ObjectHideFlags: 0
@@ -12941,8 +12987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1001 &2142273621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13147,8 +13194,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Equip: {fileID: 720689956}
-  manager: {fileID: 0}
-  itemStorage: {fileID: 0}
+  manager: {fileID: 1103340920}
+  itemStorage: {fileID: 963859657}
+  Shopplace: {fileID: 1418096828}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
