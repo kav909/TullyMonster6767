@@ -42,6 +42,14 @@ public class player : MonoBehaviour
     public int maxHp = 100;
     public float maxStamina = 100f;
     public float maxMana = 100f;
+
+
+    public float cooldownArrow = 0f;
+    public float cooldownPunch = 0f;
+    public float cooldownWolf = 0f;
+    [SerializeField] float maxCooldownArrow = 3f;
+    [SerializeField] float maxCooldownPunch = 0.8f;
+    [SerializeField] float maxCooldownWolf = 5f;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -57,7 +65,7 @@ public class player : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         mgmgmgmgmg = GameObject.Find("mgmgmgmgmg");
@@ -82,6 +90,7 @@ public class player : MonoBehaviour
        
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (GameObject.Find("Change Scene") != null)
@@ -129,22 +138,33 @@ public class player : MonoBehaviour
                 currentDir = "down";
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha5))
-                StartCoroutine(Useattack3());
-
-            if (Input.GetKeyDown(KeyCode.Alpha3) && mana > 20)
+            if (Input.GetKeyDown(KeyCode.Alpha2) && mana > 20 && cooldownArrow <= 0f)
             {
                 ani.SetTrigger("attack");
                 soundManager.GetComponent<soundmanger>().PlaySFX(8);
                 mana -= 20;
+                cooldownArrow = maxCooldownArrow;
                 StartCoroutine(useArrow());
             }
-            if (Input.GetKeyDown(KeyCode.Alpha4) && mana > 10)
+            if (Input.GetKeyDown(KeyCode.Alpha1) && mana > 10 && cooldownPunch <= 0f)
             {
                 ani.SetTrigger("attack2");
                 StartCoroutine(PunchAttack());
                 mana -= 10;
+                cooldownPunch = maxCooldownPunch;
             }
+            if (Input.GetKeyDown(KeyCode.Alpha3) && cooldownWolf <= 0f)
+            {
+                StartCoroutine(Useattack3());
+                cooldownWolf = maxCooldownWolf;
+            }
+
+            if (cooldownArrow > 0f)
+                cooldownArrow -= Time.deltaTime;
+            if (cooldownPunch > 0f) 
+                cooldownPunch -= Time.deltaTime;
+            if (cooldownWolf > 0f) 
+                cooldownWolf -= Time.deltaTime;
 
             if (cooldown > 0f)
                 cooldown -= Time.deltaTime;
