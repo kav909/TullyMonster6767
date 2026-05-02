@@ -17,40 +17,44 @@ public class hpbar : MonoBehaviour
 
     void Update()
     {
-        GameObject levelupObj = GameObject.Find("levelup");
-        levelup stats = null;
-        if (levelupObj != null)
-            stats = levelupObj.GetComponent<levelup>();
+        player p = pplayer.GetComponent<player>();
 
-        if (barType == 0) 
+        if (barType == 0)
         {
-            float maxHP = stats != null ? stats.GetMaxHP() : 100f;
+            float max;
             if (value == 0)
-                n = pplayer.GetComponent<player>().hp;
+            {
+                n = p.hp;
+                max = p.maxHp;
+            }
             else if (value == 1)
-                n = pplayer.GetComponent<MonstershootsBlades>().HP;
+            {
+                MonstershootsBlades mob = pplayer.GetComponent<MonstershootsBlades>();
+                n = mob.HP;
+                max = mob.maxHP;
+            }
             else
-                n = pplayer.GetComponent<monster2script>().HP;
+            {
+                monster2script mob = pplayer.GetComponent<monster2script>();
+                n = mob.HP;
+                max = mob.maxHP;
+            }
 
-            if (cc) 
-                z(n, maxHP);
+            if (cc) z(n, max);
         }
-        else if (barType == 1) 
+        else if (barType == 1)
         {
-            float maxStamina = stats != null ? stats.GetMaxStamina() : 20f;
-            n = pplayer.GetComponent<player>().stamina;
-            zz(n, maxStamina);
-
-            if (pplayer.GetComponent<player>().sprintCooldown)
+            n = p.stamina;
+            zz(n, p.maxStamina);
+            if (p.sprintCooldown)
                 gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
             else
                 gameObject.GetComponent<SpriteRenderer>().color = c;
         }
-        else 
+        else
         {
-            float maxMana = stats != null ? stats.GetMaxMana() : 50f;
-            n = pplayer.GetComponent<player>().mana;
-            zz(n, maxMana);
+            n = p.mana;
+            zz(n, p.maxMana);
         }
     }
 

@@ -1,11 +1,8 @@
 using System.Collections;
 using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class player : MonoBehaviour
 {
@@ -13,8 +10,7 @@ public class player : MonoBehaviour
 
     Rigidbody2D rb;
     float footstepTimer = 0f;
-    float speed = 5f;
-
+    [SerializeField] float speed = 5f;
 
     [SerializeField] Animator ani;
     public GameObject soundManager;
@@ -27,33 +23,41 @@ public class player : MonoBehaviour
     public GameObject punchRight;
     public GameObject DarkWolf_2d_Grafics;
     string currentDir = "down";
-   
+
     public bool isSprinting = false;
     public float cooldown = 0f;
     public bool sprintCooldown = false;
+   
+
+    public int hp = 100;
+    public int damage = 10;
+    public float stamina = 100f;
+    public float mana = 100f;
+
+    float attack3Timer = 0f;
+    float angleee = 0;
     public GameObject playercanvas;
     public bool leoChangeScene;
     public GameObject mgmgmgmgmg;
-    public int hp;
-    public int damage;
-    public float stamina;
-    public float mana;
-    float attack3Timer = 0f;
-    float angleee = 0;
+    public int maxHp = 100;
+    public float maxStamina = 100f;
+    public float maxMana = 100f;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)   ////<<--- 
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
         ani = GameObject.Find("player").GetComponent<Animator>();
     }
+
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
     void Start()
     {
         mgmgmgmgmg = GameObject.Find("mgmgmgmgmg");
@@ -74,61 +78,22 @@ public class player : MonoBehaviour
 
         playercanvas = GameObject.Find("playercanvas");
         mgmgmgmgmg.GetComponent<SpriteRenderer>().enabled = false;
-        GameObject levelupObj = GameObject.Find("levelup");
-        if (levelupObj != null)
-        {
-            levelup stats = levelupObj.GetComponent<levelup>();
-            hp = stats.GetMaxHP();
-            mana = stats.GetMaxMana();
-            stamina = stats.GetMaxStamina();
-            damage = stats.GetDamage();
-        }
-        else
-        {
-            hp = 100;
-            mana = 50;
-            stamina = 20;
-            damage = 10;
-        }
 
-
-
+       
     }
-   
+
     void Update()
     {
-        GameObject levelupObj = GameObject.Find("levelup");
-        levelup stats = null;
-        if (levelupObj != null)
-            stats = levelupObj.GetComponent<levelup>();
-
-        float maxHP = stats != null ? stats.GetMaxHP() : 100f;
-        float maxMana = stats != null ? stats.GetMaxMana() : 50f;
-        float maxStamina = stats != null ? stats.GetMaxStamina() : 20f;
-        damage = stats != null ? stats.GetDamage() : 10;
-
-
-        
         if (GameObject.Find("Change Scene") != null)
-        {
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
-        }
-        else {
-            leoChangeScene= false;  
-        }
-        if (hp < 1)
-        {
-            //gameObject.SetActive(false);
-            //GameObject.Find("playercam").SetActive(true);
-        }
+        else
+            leoChangeScene = false;
+
         movement.x = 0;
         movement.y = 0;
 
         if (!leoChangeScene)
         {
-           
-
-
             if (Input.GetKey(KeyCode.A))
             {
                 movement.x = -1;
@@ -138,11 +103,9 @@ public class player : MonoBehaviour
                 ani.SetBool("down", false);
                 currentDir = "left";
             }
-
             if (Input.GetKey(KeyCode.D))
             {
                 movement.x = 1;
-
                 GetComponent<SpriteRenderer>().flipX = false;
                 ani.SetBool("up", false);
                 ani.SetBool("side", true);
@@ -165,13 +128,10 @@ public class player : MonoBehaviour
                 ani.SetBool("down", true);
                 currentDir = "down";
             }
-            if (Input.GetKeyDown(KeyCode.Alpha5) )
-            {
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
                 StartCoroutine(Useattack3());
 
-               
-
-            }
             if (Input.GetKeyDown(KeyCode.Alpha3) && mana > 20)
             {
                 ani.SetTrigger("attack");
@@ -182,19 +142,14 @@ public class player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha4) && mana > 10)
             {
                 ani.SetTrigger("attack2");
-
                 StartCoroutine(PunchAttack());
                 mana -= 10;
             }
 
             if (cooldown > 0f)
-            {
                 cooldown -= Time.deltaTime;
-            }
             else
-            {
                 sprintCooldown = false;
-            }
 
             if (Input.GetKeyUp(KeyCode.LeftShift) && isSprinting)
             {
@@ -207,7 +162,6 @@ public class player : MonoBehaviour
             {
                 isSprinting = true;
                 stamina -= 20f * Time.deltaTime;
-
                 if (stamina <= 0f)
                 {
                     isSprinting = false;
@@ -216,42 +170,29 @@ public class player : MonoBehaviour
                 }
             }
             else if (!Input.GetKey(KeyCode.LeftShift))
-            {
                 isSprinting = false;
-            }
-
 
             if (cooldown <= 0f && stamina < maxStamina)
                 stamina += maxStamina * 0.1f * Time.deltaTime;
 
             stamina = Mathf.Clamp(stamina, 0f, maxStamina);
-
             mana = Mathf.Min(mana + maxMana * 0.05f * Time.deltaTime, maxMana);
-            text.text = "HP: " + hp + "/" + (int)maxHP +
-            "\nMana: " + (int)mana + "/" + (int)maxMana +
-            "\nStamina: " + (int)stamina + "/" + (int)maxStamina;
 
+            text.text = "HP: " + hp + "\nMana: " + (int)mana + "\nStamina: " + (int)stamina;
 
             footstepTimer -= Time.deltaTime;
             if (rb.linearVelocity.magnitude > 0.1f && footstepTimer <= 0f)
             {
-                // soundManager.GetComponent<soundmanger>().PlaySFX(6); 《----------------------
+                // soundManager.GetComponent<soundmanger>().PlaySFX(6);
                 footstepTimer = 0.75f;
             }
+
             attack3Timer += Time.deltaTime;
-            
         }
 
-        if (leoChangeScene)
-        {
-            playercanvas.SetActive(false);
-        }
-        else {
-            playercanvas.SetActive(true);
-        }
-
-       
+        playercanvas.SetActive(!leoChangeScene);
     }
+
     private IEnumerator Useattack3()
     {
         soundManager.GetComponent<soundmanger>().PlaySFX(9);
@@ -259,68 +200,50 @@ public class player : MonoBehaviour
         float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
 
         GameObject a = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y - 1.75f), Quaternion.identity);
-
         GameObject b = Instantiate(DarkWolf_2d_Grafics, new Vector2(transform.position.x, transform.position.y + 1f), Quaternion.identity);
-
-
 
         a.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
         b.GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-        float sacllle = 5;
-        /*  while (sacllle > 1.6) {
-              a.GetComponent<Transform>().localScale = new Vector3(sacllle, sacllle, sacllle);
-              b.GetComponent<Transform>().localScale = new Vector3(sacllle, sacllle, sacllle);
-              sacllle -= .1f;
-          }*/
 
-       
         yield return new WaitForSeconds(0.5f);
         a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
         b.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 0f).normalized * 10f;
 
-
-        //Vector2 pos = a.transform.position;
         Destroy(a, .5f);
         Destroy(b, .5f);
         mgmgmgmgmg.GetComponent<SpriteRenderer>().enabled = false;
         mana -= 5;
     }
 
-    
-   
     private void FixedUpdate()
     {
-        if (attack3Timer > .01f) {
-            mgmgmgmgmg.transform.rotation = Quaternion.Euler(45f, 0f,  angleee++ );
+        if (attack3Timer > .01f)
+        {
+            mgmgmgmgmg.transform.rotation = Quaternion.Euler(45f, 0f, angleee++);
             attack3Timer = 0f;
         }
-        
+
         float currentSpeed = isSprinting ? speed * 2f : speed;
         rb.linearVelocity = movement.normalized * currentSpeed;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("dmg"))
-        {
             hp -= damage;
-            //Destroy(collision.gameObject);
-        }
     }
 
     private IEnumerator useArrow()
     {
         float dir = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
-
         GameObject a = Instantiate(arrow, transform.position, Quaternion.identity);
         a.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(dir, 1f).normalized * 10f;
-        a.transform.rotation = Quaternion.Euler(0, 0, dir > 0 ? -135f : -45f); 
+        a.transform.rotation = Quaternion.Euler(0, 0, dir > 0 ? -135f : -45f);
         yield return new WaitForSeconds(0.5f);
-
         Vector2 pos = a.transform.position;
         Destroy(a);
         circle.transform.position = new Vector2(pos.x, pos.y - 5.5f);
         circle.SetActive(true);
-
         for (int i = 0; i < 10; i++)
         {
             float randX = Random.Range(-1f, 1f);
@@ -328,11 +251,12 @@ public class player : MonoBehaviour
             a2.transform.rotation = Quaternion.Euler(0, 0, 90f);
             a2.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -1f).normalized * 10f;
             Destroy(a2, .5f);
-            yield return new WaitForSeconds(0.1f); 
+            yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(.5f);
         circle.SetActive(false);
     }
+
     private IEnumerator PunchAttack()
     {
         soundManager.GetComponent<soundmanger>().PlaySFX(7);
@@ -354,12 +278,11 @@ public class player : MonoBehaviour
 
         if (currentDir == "up") 
             punchUp.SetActive(true);
-        if (currentDir == "down")
+        if (currentDir == "down") 
             punchDown.SetActive(true);
-        if (currentDir == "left")
+        if (currentDir == "left") 
             punchLeft.SetActive(true);
         if (currentDir == "right") 
             punchRight.SetActive(true);
     }
-
 }

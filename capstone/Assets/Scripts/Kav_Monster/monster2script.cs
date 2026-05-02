@@ -27,6 +27,7 @@ public class monster2script : MonoBehaviour
     [SerializeField] float distanceThreshold = 5f;
 
     public int HP = 100;
+    public float maxHP;
 
     void Start()
     {
@@ -44,7 +45,8 @@ public class monster2script : MonoBehaviour
         swordDown.SetActive(false);
         swordLeft.SetActive(false);
         swordRight.SetActive(false);
-        
+        maxHP = HP;
+
     }
 
     void Update()

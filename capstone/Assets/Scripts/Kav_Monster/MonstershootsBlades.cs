@@ -24,7 +24,7 @@ public class MonstershootsBlades : MonoBehaviour
     [SerializeField] float distanceThreshold = 5f;
     [SerializeField] GameObject drops;
     public int HP = 100;
-
+    public float maxHP;
 
     void Start()
     {
@@ -35,6 +35,8 @@ public class MonstershootsBlades : MonoBehaviour
         dmgfield.SetActive(false);
         /*if(drops != null )
             drops.SetActive(false);*/
+
+        maxHP = HP;
     }
 
     void Update()

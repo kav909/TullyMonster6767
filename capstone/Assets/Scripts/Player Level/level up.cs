@@ -63,7 +63,10 @@ public class levelup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float EXPPercent = (EXP/MaxEXP);
+        if (EXPBar == null) return;
+        if (ATKText == null || DEFText == null || SPDText == null || MAGText == null || FreePointText == null) return;
+
+        float EXPPercent = (EXP / MaxEXP);
         Vector3 currentScale = EXPBar.transform.localScale;
         currentScale.x = 3.5f * EXPPercent;
         EXPBar.transform.localScale = currentScale;
@@ -75,27 +78,7 @@ public class levelup : MonoBehaviour
         FreePointText.text = "" + FreePointNum;
     }
 
-    private void RefillPlayer()
-    {
-        GameObject playerObj = GameObject.FindWithTag("Player");
-        if (playerObj != null)
-        {
-            player p = playerObj.GetComponent<player>();
-            p.hp = GetMaxHP();
-            p.mana = GetMaxMana();
-            p.stamina = GetMaxStamina();
-        }
-    }
-    public void AddEXP(float amount)
-    {
-        EXP += amount;
-        if (EXP >= MaxEXP)
-        {
-            EXP -= MaxEXP;
-            FreePointNum++;
-            RefillPlayer();
-        }
-    }
+
     public int GetMaxHP()
     {
         return DEFNum * 20;
@@ -118,22 +101,22 @@ public class levelup : MonoBehaviour
     public void ATKAdds()
     {
         ATKNum++;
-        RefillPlayer();
+        
     }
     public void DEFAdds()
     {
         DEFNum++;
-        RefillPlayer();
+       
     }
     public void SPDAdds()
     {
         SPDNum++;
-        RefillPlayer();
+        
     }
     public void MAGAdds()
     {
         MAGNum++;
-        RefillPlayer();
+        
     }
     public void useFreePoint()
     {
@@ -146,22 +129,22 @@ public class levelup : MonoBehaviour
     public void equipATK(int point)
     {
         ATKNum += point;
-        RefillPlayer();
+       
     }
     public void equipDEF(int point)
     {
         DEFNum += point;
-        RefillPlayer();
+       
     }
     public void equipSPD(int point)
     {
         SPDNum += point;
-        RefillPlayer();
+       
     }
     public void equipMAG(int point)
     {
         MAGNum += point;
-        RefillPlayer();
+       
     }
     public void unequipATK(int point)
     {
