@@ -5,6 +5,7 @@ public class GoBackFromShop : MonoBehaviour
 {
     [SerializeField] Shopplace shopplace;
     public static GoBackFromShop Instance;
+    public bool isInShop;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -40,6 +41,7 @@ public class GoBackFromShop : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        isInShop = false;
         Debug.Log("sdfsdf");
         shopplace.refresh();
         SceneManager.UnloadSceneAsync("Shop");
@@ -49,5 +51,8 @@ public class GoBackFromShop : MonoBehaviour
     {
         gameObject.transform.position = new Vector2(-6.83f, 203.19f);
         SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
+    }
+    public void isIntheShop(){
+        isInShop = true;
     }
 }

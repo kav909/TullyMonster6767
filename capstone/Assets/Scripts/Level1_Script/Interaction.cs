@@ -21,6 +21,7 @@ public class Interaction : MonoBehaviour
     public bool haveKey;
     public bool talking;
     public bool hasPickUpEquip;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -118,6 +119,7 @@ public class Interaction : MonoBehaviour
         }
         if (talking && Input.GetKeyDown(KeyCode.E))
         {
+            goBackFromShop.isIntheShop();
             //Scene targetScene = SceneManager.GetSceneByName("Shop");
             //SceneManager.SetActiveScene(targetScene);
             goBackFromShop.goToShop();

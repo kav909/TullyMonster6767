@@ -59,7 +59,7 @@ public class AddEquipment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Equip = GameObject.FindFirstObjectByType<Equip>();
     }
     public void OnMouseDown()
     {
