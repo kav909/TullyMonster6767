@@ -112,6 +112,7 @@ public class Equip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ItemStorage = FindAnyObjectByType<ItemStorage>();
         if (Input.GetKeyDown(KeyCode.T))
         {
             printWeaponSlot();

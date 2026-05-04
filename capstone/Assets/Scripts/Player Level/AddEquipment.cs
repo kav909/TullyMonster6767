@@ -21,6 +21,7 @@ public class AddEquipment : MonoBehaviour
     [SerializeField] GameObject pantsSlot;
     [SerializeField] GameObject gloveSlot;
     [SerializeField] GameObject shoeSlot;
+    [SerializeField] Interaction interaction;
     public static AddEquipment Instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      void Awake()
@@ -59,11 +60,14 @@ public class AddEquipment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Equip = GameObject.FindFirstObjectByType<Equip>();
+        // assign();
+        interaction = GameObject.Find("Statue Range").GetComponent<Interaction>();
+         Equip = GameObject.FindFirstObjectByType<Equip>();
     }
     public void OnMouseDown()
     {
-        if(SceneManager.GetActiveScene().name == "Shop"){
+        if(interaction.isInShop)
+        {
             Debug.Log("In Shop");
             return;
         }

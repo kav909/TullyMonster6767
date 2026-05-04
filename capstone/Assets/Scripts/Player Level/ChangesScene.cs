@@ -53,6 +53,7 @@ public class ChangesScene : MonoBehaviour
     }
     void Update()
     {
+        subScene = GameObject.FindGameObjectWithTag("SubScene");
         if(!atLevelBoard &&!isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
             gameObject.transform.position = subScene.transform.position;
             AddEquipment.ShowEquipment();

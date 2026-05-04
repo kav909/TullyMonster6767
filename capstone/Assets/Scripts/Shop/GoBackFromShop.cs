@@ -5,7 +5,7 @@ public class GoBackFromShop : MonoBehaviour
 {
     [SerializeField] Shopplace shopplace;
     public static GoBackFromShop Instance;
-    public bool isInShop;
+    [SerializeField] Interaction interaction;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -37,12 +37,12 @@ public class GoBackFromShop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
     }
     private void OnMouseDown()
     {
-        isInShop = false;
         Debug.Log("sdfsdf");
+        interaction.isInShop = false;
         shopplace.refresh();
         SceneManager.UnloadSceneAsync("Shop");
 
@@ -51,8 +51,5 @@ public class GoBackFromShop : MonoBehaviour
     {
         gameObject.transform.position = new Vector2(-6.83f, 203.19f);
         SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
-    }
-    public void isIntheShop(){
-        isInShop = true;
     }
 }

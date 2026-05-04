@@ -21,7 +21,7 @@ public class Interaction : MonoBehaviour
     public bool haveKey;
     public bool talking;
     public bool hasPickUpEquip;
-
+    public bool isInShop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -39,6 +39,7 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        equip = FindAnyObjectByType<Equip>();
         if (interactable && Input.GetKeyDown(KeyCode.T))
         {
             Debug.Log(ConversationTab.tag);
@@ -119,7 +120,7 @@ public class Interaction : MonoBehaviour
         }
         if (talking && Input.GetKeyDown(KeyCode.E))
         {
-            goBackFromShop.isIntheShop();
+            isInShop = true;
             //Scene targetScene = SceneManager.GetSceneByName("Shop");
             //SceneManager.SetActiveScene(targetScene);
             goBackFromShop.goToShop();

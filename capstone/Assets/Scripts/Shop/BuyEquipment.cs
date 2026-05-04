@@ -8,6 +8,7 @@ public class BuyEquipment : MonoBehaviour
     [SerializeField] PriceManager manager;
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Shopplace Shopplace;
+    [SerializeField] Interaction interaction;
     public static BuyEquipment Instance;
     private void Awake()
     {
@@ -41,10 +42,18 @@ public class BuyEquipment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        interaction = GameObject.Find("Statue Range").GetComponent<Interaction>();
+        Equip = FindAnyObjectByType<Equip>();
+        manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
+        Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
     }
     public void OnMouseDown()
     {
+        if (interaction.isInShop == false)
+        {
+            Debug.Log("Not in Shop!");
+            return;
+        }
         int numOfNull = 0;
         for (int i = 0; i < manager.priceList.Count; i++)
         {

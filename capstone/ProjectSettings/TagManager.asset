@@ -44,6 +44,8 @@ TagManager:
   - playerdmg
   - EXPBar
   - NPC Shop
+  - SubScene
+  - ShopRange
   layers:
   - Default
   - TransparentFX
