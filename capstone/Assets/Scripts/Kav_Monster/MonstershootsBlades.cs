@@ -45,6 +45,7 @@ public class MonstershootsBlades : MonoBehaviour
         {
             /*if (drops != null)
                 drops.SetActive(true);*/
+            player.GetComponent<player>().hp = 100;
             teleportLightUp.gameObject.SetActive(true);
             gameObject.SetActive(false);
             Destroy(gameObject);

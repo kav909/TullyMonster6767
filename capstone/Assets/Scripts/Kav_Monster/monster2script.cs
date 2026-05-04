@@ -53,6 +53,7 @@ public class monster2script : MonoBehaviour
     {
         if (HP < 1)
         {
+            player.GetComponent<player>().hp = 100;
             gameObject.SetActive(false);
         }
         Vector2 direction = player.transform.position - transform.position;
