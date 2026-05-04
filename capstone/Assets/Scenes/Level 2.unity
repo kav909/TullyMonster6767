@@ -957,7 +957,7 @@ GameObject:
   - component: {fileID: 37985691}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3488,7 +3488,7 @@ GameObject:
   - component: {fileID: 177594385}
   m_Layer: 0
   m_Name: Snow Tree
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4204,7 +4204,7 @@ GameObject:
   - component: {fileID: 244419242}
   m_Layer: 0
   m_Name: Tree (2)
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4660,6 +4660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Props - Pot 03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577585254963922480, guid: f3cc2373308c11848977b28d974a9de0,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
       objectReference: {fileID: 0}
     - target: {fileID: 2577585254963922481, guid: f3cc2373308c11848977b28d974a9de0,
         type: 3}
@@ -7788,7 +7793,7 @@ GameObject:
   - component: {fileID: 402432857}
   m_Layer: 0
   m_Name: Snow Tree (3)
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9249,7 +9254,7 @@ GameObject:
   - component: {fileID: 452678846}
   m_Layer: 0
   m_Name: Tree (1)
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10256,6 +10261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Plant - Bush 05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 9fb66d8c9d3b5194a82e9eed65a54afb,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 9fb66d8c9d3b5194a82e9eed65a54afb,
         type: 3}
@@ -13684,6 +13694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Plant - Bush 06
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 39562e88b536753438a3153c5fbdf7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 39562e88b536753438a3153c5fbdf7b8,
         type: 3}
@@ -33673,6 +33688,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Plant - Tree 03
       objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 9e7797bb065982d4497d030f065d6e2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 9e7797bb065982d4497d030f065d6e2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40463,6 +40483,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 17b0c1ef334d17e4bbb74c4778001705,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 17b0c1ef334d17e4bbb74c4778001705,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42803,7 +42828,7 @@ PrefabInstance:
     - target: {fileID: 2054156897017084014, guid: 678ddcfc5687aca479892caec1679691,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4045926632606408460, guid: 678ddcfc5687aca479892caec1679691,
         type: 3}
@@ -47635,6 +47660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Props - Pot 02
       objectReference: {fileID: 0}
+    - target: {fileID: 2577585254963922480, guid: 63ee4b6a40c55fd429759b807832ded1,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
+      objectReference: {fileID: 0}
     - target: {fileID: 2577585254963922481, guid: 63ee4b6a40c55fd429759b807832ded1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50033,6 +50063,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Plant - Tree 02
       objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: 7277dd75e907b27448ec1de08238d0bb,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
+      objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: 7277dd75e907b27448ec1de08238d0bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -50522,7 +50557,7 @@ GameObject:
   - component: {fileID: 1474454433}
   m_Layer: 0
   m_Name: Snow Tree (2)
-  m_TagString: Untagged
+  m_TagString: objects
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57231,6 +57266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF Plant - Tree 01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055102311959635369, guid: f681a54372d73d74785b9c9d4ac477e8,
+        type: 3}
+      propertyPath: m_TagString
+      value: objects
       objectReference: {fileID: 0}
     - target: {fileID: 2055102311959635375, guid: f681a54372d73d74785b9c9d4ac477e8,
         type: 3}
