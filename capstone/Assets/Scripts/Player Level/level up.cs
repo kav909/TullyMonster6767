@@ -63,6 +63,16 @@ public class levelup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ATKAdd = GameObject.Find("ATK Add");
+        DEFAdd = GameObject.Find("DEF Add");
+        SPDAdd = GameObject.Find("SPD Add");
+        MAGAdd = GameObject.Find("MAG Add");
+        ATKText = GameObject.Find("ATK").GetComponent<Text>();
+        DEFText = GameObject.Find("DEF").GetComponent<Text>();
+        SPDText = GameObject.Find("SPD").GetComponent<Text>();
+        MAGText = GameObject.Find("MAG").GetComponent<Text>();
+        FreePointText = GameObject.Find("Free Point").GetComponent<Text>();
+        EXPBar = GameObject.Find("XPBar");
         if (EXPBar == null) return;
         if (ATKText == null || DEFText == null || SPDText == null || MAGText == null || FreePointText == null) return;
 

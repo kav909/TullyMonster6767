@@ -37,18 +37,20 @@ public class BuyEquipment : MonoBehaviour
     {
         manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
         Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
+        Equip = FindAnyObjectByType<Equip>();
     }
 
     // Update is called once per frame
     void Update()
     {
         interaction = GameObject.Find("Statue Range").GetComponent<Interaction>();
-        Equip = FindAnyObjectByType<Equip>();
+        
         manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
         Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
     }
     public void OnMouseDown()
     {
+        Equip = FindAnyObjectByType<Equip>();
         if (interaction.isInShop == false)
         {
             Debug.Log("Not in Shop!");
@@ -71,6 +73,7 @@ public class BuyEquipment : MonoBehaviour
         Debug.Log("Buy Weapon");
         if (gameObject.tag == "Weapon")
         {
+            Equip = FindAnyObjectByType<Equip>();
             int numOfNullinArray = 0;
             Debug.Log(itemStorage.WeaponSlot);
             for (int i = 0; i < itemStorage.WeaponSlot.Length; i++)
@@ -85,6 +88,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNullinArray);
             int x = Equip.findOpenWeaponIndex();
             Debug.Log("The index where the equipment is in the array: "+Array.IndexOf(itemStorage.WeaponSlot, gameObject));
@@ -109,6 +113,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenHeadIndex();
             Debug.Log(Array.IndexOf(itemStorage.HeadSlot, gameObject));
@@ -133,6 +138,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenFrontIndex();
             Debug.Log(Array.IndexOf(itemStorage.FrontSlot, gameObject));
@@ -157,6 +163,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenBodyIndex();
             Debug.Log(Array.IndexOf(itemStorage.BodySlot, gameObject));
@@ -181,6 +188,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenPantsIndex();
             Debug.Log(Array.IndexOf(itemStorage.PantsSlot, gameObject));
@@ -205,6 +213,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenGloveIndex();
             Debug.Log(Array.IndexOf(itemStorage.GloveSlot, gameObject));
@@ -229,6 +238,7 @@ public class BuyEquipment : MonoBehaviour
                     break;
                 }
             }
+            Equip = FindAnyObjectByType<Equip>();
             Debug.Log("The number of null there is is: " + numOfNull);
             int x = Equip.findOpenShoeIndex();
             Debug.Log(Array.IndexOf(itemStorage.ShoeSlot, gameObject));
@@ -237,6 +247,5 @@ public class BuyEquipment : MonoBehaviour
             gameObject.transform.position = new Vector2(0f, -80f);
             itemStorage.ShoeSlot[Array.IndexOf(itemStorage.ShoeSlot, gameObject)] = null;
         }
-
     }
 }

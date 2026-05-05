@@ -62,6 +62,7 @@ public class AddEquipment : MonoBehaviour
     {
         // assign();
         interaction = GameObject.Find("Statue Range").GetComponent<Interaction>();
+        //levelup = GameObject.FindFirstObjectByType<levelup>();
          Equip = GameObject.FindFirstObjectByType<Equip>();
     }
     public void OnMouseDown()
