@@ -16,6 +16,7 @@ public class Interaction : MonoBehaviour
     [SerializeField] Text StateText;
     [SerializeField] LockedDoor LockedDoor;
     [SerializeField] Chest Chest;
+    [SerializeField] Text Money;
     public bool interactable;
     [SerializeField] TextStorage storage;
     public bool haveKey;
@@ -39,6 +40,7 @@ public class Interaction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Money = GameObject.Find("Money").GetComponent<Text>();
         equip = FindAnyObjectByType<Equip>();
         if (interactable && Input.GetKeyDown(KeyCode.T))
         {
@@ -124,6 +126,7 @@ public class Interaction : MonoBehaviour
             //Scene targetScene = SceneManager.GetSceneByName("Shop");
             //SceneManager.SetActiveScene(targetScene);
             goBackFromShop.goToShop();
+            Money.gameObject.transform.position = new Vector2(0f, 195.5f);
         }
     }
   

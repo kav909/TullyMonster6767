@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     public Text text;
-
+    public int money = 50;
+    [SerializeField] Text moneyText;
     Rigidbody2D rb;
     float footstepTimer = 0f;
     [SerializeField] float speed = 5f;
@@ -59,6 +60,7 @@ public class player : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ani = GameObject.Find("player").GetComponent<Animator>();
+        moneyText = GameObject.Find("Money").GetComponent<Text>();
     }
 
     private void OnDestroy()
@@ -93,6 +95,8 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moneyText = GameObject.Find("Money").GetComponent<Text>();
+        moneyText.text = "Money: " + money;
         if (GameObject.Find("Change Scene") != null)
             leoChangeScene = GameObject.Find("Change Scene").GetComponent<ChangesScene>().kavBool;
         else

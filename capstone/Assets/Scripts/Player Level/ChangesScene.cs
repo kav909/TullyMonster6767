@@ -19,7 +19,7 @@ public class ChangesScene : MonoBehaviour
     public static ChangesScene Instance;
     public bool atLevelBoard;
     [SerializeField] AddEquipment AddEquipment;
-
+    [SerializeField] Equip InventoryTab;
     public bool kavBool;
     private void Awake()
     {
@@ -53,6 +53,7 @@ public class ChangesScene : MonoBehaviour
     }
     void Update()
     {
+        InventoryTab = GameObject.FindAnyObjectByType<Equip>();
         subScene = GameObject.FindGameObjectWithTag("SubScene");
         if(!atLevelBoard &&!isPickedUp){////////////////////////////&& !AddEquipment.isPickedUp
             gameObject.transform.position = subScene.transform.position;
@@ -84,6 +85,7 @@ public class ChangesScene : MonoBehaviour
         }
     private void OnMouseDown()
     {
+        InventoryTab.gameObject.SetActive(true);
         if (!atLevelBoard)
         {
             Equip.SetActive(true);
@@ -117,7 +119,7 @@ public class ChangesScene : MonoBehaviour
             kavBool = false;
             //GameObject.Find("Player object 1").SetActive(true);
             //Camera.isAtLevelBoard = false;
-            Equip.SetActive(false);
+            Equip.gameObject.transform.position = new Vector2(0f, -100f);
             atLevelBoard = false;
             //SceneManager.LoadScene(lastIndex, LoadSceneMode.Additive);
             if (isPickedUp && !AddEquipment.isSelecting)

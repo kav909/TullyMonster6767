@@ -9,6 +9,7 @@ public class BuyEquipment : MonoBehaviour
     [SerializeField] ItemStorage itemStorage;
     [SerializeField] Shopplace Shopplace;
     [SerializeField] Interaction interaction;
+    [SerializeField] player player;
     public static BuyEquipment Instance;
     private void Awake()
     {
@@ -44,7 +45,7 @@ public class BuyEquipment : MonoBehaviour
     void Update()
     {
         interaction = GameObject.Find("Statue Range").GetComponent<Interaction>();
-        
+        player = GameObject.FindAnyObjectByType<player>();
         manager = GameObject.Find("PriceManager").GetComponent<PriceManager>();
         Shopplace = GameObject.Find("weapon shop").GetComponent<Shopplace>();
     }
@@ -55,6 +56,13 @@ public class BuyEquipment : MonoBehaviour
         {
             Debug.Log("Not in Shop!");
             return;
+        }
+        if(gameObject.GetComponent<AddEquipment>().getPrice() > player.money){
+            Debug.Log("No Enough Money!!");
+            return;
+        }
+        else{
+            Debug.Log("Brought!!");
         }
         int numOfNull = 0;
         for (int i = 0; i < manager.priceList.Count; i++)
@@ -73,7 +81,7 @@ public class BuyEquipment : MonoBehaviour
         Debug.Log("Buy Weapon");
         if (gameObject.tag == "Weapon")
         {
-            Equip = FindAnyObjectByType<Equip>();
+            
             int numOfNullinArray = 0;
             Debug.Log(itemStorage.WeaponSlot);
             for (int i = 0; i < itemStorage.WeaponSlot.Length; i++)
